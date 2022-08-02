@@ -330,7 +330,7 @@ merge_rules:
 | **publish\_status\_check** | Boolean       | Determines if Aviator bot will publish a status check back on the PR. This status check represents the current state of PR in the Aviator queue.                                                                                           |
 | **enable\_comments**       | Boolean       | Determines if Aviator bot can add comments on the PR to describe the actions performed on the PR by the bot. Aviator bot comments include information such as failure reasons and the position of the PR in the queue. Defaults to `true`. |
 | **ci\_timeout\_mins**      | Integer       | The time before we determine that the CI has timed out. Defaults to no time out.                                                                                                                                                           |
-| **base\_branches**         | List\[String] | These branches are the ones that Aviator will monitor as valid branches to merge into. Defaults to only `main`/`master`. Regexes are allowed.                                                                                              |
+| **base\_branches**         | List\[String] | These branches are the ones that Aviator will monitor as valid branches to merge into. Defaults to your repository default branch as configured on GitHub. Regexes are allowed.                                                            |
 {% endtab %}
 
 {% tab title="Example" %}
