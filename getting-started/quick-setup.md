@@ -6,7 +6,7 @@ description: "Get started today, and be up and running in\_under 3 minutes."
 
 This setup guide will walk you through the initial set up for MergeQueue. Since most capabilities of Aviator revolve around merging, we recommend you to start here.&#x20;
 
-1\. Create an account. [Register here](https://mergequeue.com/register).
+1\. Create an account. [<mark style="color:blue;">Register here</mark>](https://mergequeue.com/register).
 
 2\. Follow the onboarding flow to connect to the Aviator Github app, authorize one or more repositories that you want to automate.
 
