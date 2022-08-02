@@ -78,14 +78,14 @@ Note: The webhook payload only includes PRs that have been added to the ChangeSe
 
 Once the global CI is triggered, your service should report the status check back using the `status_run` POST endpoint:
 
-{% swagger method="post" path="/v1/status_run" baseUrl="https://mergequeue.com/api" summary="Report CI global status check" %}
+{% swagger method="post" path="/v1/status_run" baseUrl="https://api.aviator.co/api" summary="Report CI global status check" %}
 {% swagger-description %}
 Example:
 
 `curl -X POST`\
 `-H "Authorization: Bearer "`\
 `-H "Content-Type: application/json"`\
-`https://mergequeue.com/api/v1/status_run`\
+`https://api.aviator.co/api/v1/status_run`\
 `-d '{ "status_run_id": 8, "state": "success", "name": "full-build", "message": "Build successful", "target_url": "https://example.com/full-build/8" }'`
 {% endswagger-description %}
 

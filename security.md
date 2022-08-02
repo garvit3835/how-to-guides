@@ -100,4 +100,4 @@ Vendor risk is determined and the appropriate vendor reviews are performed prior
 
 ### Contact Us
 
-If you have any questions, comments or concerns or if you wish to report a potential security issue, please contact [security@aviator.co](mailto:security@aviator.co).
+If you have any questions, comments or concerns or if you wish to report a potential security issue, please contact [<mark style="color:blue;">security@aviator.co</mark>](mailto:security@aviator.co).

@@ -6,7 +6,7 @@ The objective of this dynamic queue feature is to provide the benefits of both a
 
 ### Affected targets in Bazel
 
-This is extremely powerful for build systems like Bazel and Buck, where affected targets invalidated by a change can be computed. For example see [bazel-diff](https://github.com/Tinder/bazel-diff).
+This is extremely powerful for build systems like Bazel and Buck, where affected targets invalidated by a change can be computed. For example see [<mark style="color:blue;">bazel-diff</mark>](https://github.com/Tinder/bazel-diff)<mark style="color:blue;">.</mark>
 
 ### Other build systems
 
@@ -18,13 +18,13 @@ In this configuration, the mono-repo is separated into logically independent que
 
 ### Implementation
 
-The main effort required of your team is to implement a mechanism to declare which targets are affected by a change. If you need assistance with this configuration, please contact us at [howto@aviator.co](mailto:howto@aviator.co).
+The main effort required of your team is to implement a mechanism to declare which targets are affected by a change. If you need assistance with this configuration, please contact us at [<mark style="color:blue;">howto@aviator.co</mark>](mailto:howto@aviator.co).
 
 ### API
 
 Since this approach needs additional information associated with each merge request, it currently works with an API endpoint (instead of the Github Labels that our other modes use). The information for affected targets is represented as a JSON array of strings (the strings here are not a predetermined set that needs to be drawn from, and can be dynamically generated), and has an optional custom commit message.
 
-**POST** [https://api.aviator.co/api/v1/pull\_request/](https://mergequeue.com/api/v1/pull\_request/queue)
+**POST** [<mark style="color:blue;">https://api.aviator.co/api/v1/pull\_request/</mark>](https://mergequeue.com/api/v1/pull\_request/queue)<mark style="color:blue;"></mark>
 
 ```json
 {

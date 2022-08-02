@@ -54,4 +54,4 @@ Aviator uses this permission to view, update, and merge pull requests which are 
 
 ## Further reading
 
-For a detailed explanation of what actions are enabled why the permissions above, see the [GitHub developer docs for app permissions](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps). Aviator does not use every single permission that it is granted (since GitHub only allows app developers to choose broad buckets of permissions like “administration” rather than just “branch protection rules”).
+For a detailed explanation of what actions are enabled why the permissions above, see the [<mark style="color:blue;">GitHub developer docs for app permissions</mark>](https://docs.github.com/en/rest/overview/permissions-required-for-github-apps). Aviator does not use every single permission that it is granted (since GitHub only allows app developers to choose broad buckets of permissions like “administration” rather than just “branch protection rules”).

@@ -2,7 +2,7 @@
 
 If you think sequential merging may not work for your use case, you can try Parallel mode. We designed Parallel mode with high output teams in mind where sequential continuous integration cycles may cause long wait cycles. This feature is only available in the Pro plan.
 
-If you plan to set up parallel mode for your team, please reach out to [howto@aviator.co](mailto:howto@aviator.co). We are offering free onboarding training for your entire engineering team, so your team can ask any questions they may have and understand all behaviors.
+If you plan to set up parallel mode for your team, please reach out to [<mark style="color:blue;">howto@aviator.co</mark>](mailto:howto@aviator.co). We are offering free onboarding training for your entire engineering team, so your team can ask any questions they may have and understand all behaviors.
 
 Parallel Mode requires good understanding of several concepts, as things work somewhat differently in parallel mode. The main principle is to run builds optimistically in parallel, and falling back when a failure occurs. To enable parallel mode, you can find a toggle option along with a few more settings on the Merge Rules page. We have described all the settings below.
 
@@ -64,7 +64,7 @@ There are a few ways in which Parallel Mode can be reset. One was the stuck beha
 
 ### **Manual reset**
 
-If the queue is stuck, you may want to reset the queue. This can be done from the [Queues page](https://mergequeue.com/queue/queued) by clicking "Reset Queue" button. This will close all existing draft PRs and requeue everything by creating new draft PRs.
+If the queue is stuck, you may want to reset the queue. This can be done from the [<mark style="color:blue;">Queues page</mark>](https://mergequeue.com/queue/queued) by clicking "Reset Queue" button. This will close all existing draft PRs and requeue everything by creating new draft PRs.
 
 ### **Skip the line in parallel mode**
 

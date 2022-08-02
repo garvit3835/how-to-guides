@@ -4,7 +4,7 @@ Merge rules are at the core of how the Aviator bot behaves. MergeQueue primarily
 
 ### Option 1: Dashboard UI
 
-The best option for a quick setup is via the [Merge Rules](https://mergequeue.com/github/rules) page. However, the UI does not expose all possible customizations.
+The best option for a quick setup is via the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page. However, the UI does not expose all possible customizations.
 
 {% hint style="warning" %}
 Some of the Rules listed in the yaml configuration below are not supported in the Dashboard UI. Your repo will require using one of the configuration file options if you want to use advanced rules. We only recommend using the Dashboard UI option if you require a simple setup.
@@ -14,7 +14,7 @@ The only required setting is the `Label for trigger` -  this will default to `me
 
 ![Label for trigger is the only required setting.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.43.35 PM.png>)
 
-All of the settings in the UI are covered in the [Rules](merge-rules.md#rules) section below. Each setting also has a tooltip that provides more information.
+All of the settings in the UI are covered in the [<mark style="color:blue;">Rules</mark>](merge-rules.md#rules) section below. Each setting also has a tooltip that provides more information.
 
 #### Configuring Status Checks
 
@@ -28,7 +28,7 @@ If your team is using Parallel mode, by default, Aviator bot will use the same c
 
 ### Option 2: Dashboard Yaml Configuration
 
-On the [Merge Rules](https://mergequeue.com/github/rules) page, there is a `Yaml configuration` tab that allows you to both update and validate a configuration file.
+On the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page, there is a `Yaml configuration` tab that allows you to both update and validate a configuration file.
 
 ![](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.38.57 PM.png>)
 
@@ -194,7 +194,7 @@ merge_rules:
 
 #### Parallel Mode
 
-The following are only applicable if the above `merge_mode` is set to `parallel`. You can learn more about [Parallel Mode here](../how-to-guides/parallel-mode/).
+The following are only applicable if the above `merge_mode` is set to `parallel`. You can learn more about [<mark style="color:blue;">Parallel Mode here</mark>](../how-to-guides/parallel-mode/).
 
 {% tabs %}
 {% tab title="Attributes" %}

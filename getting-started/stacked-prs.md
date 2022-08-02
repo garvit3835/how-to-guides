@@ -16,7 +16,7 @@ Aviator helps you manage stacked PRs at two points during the code lifecycle: du
 
 ### Installing av
 
-Follow the [Aviator CLI installation instructions](../reference/aviator-cli/installation.md) to download and install the `av` tool. Make sure to add a GitHub access token to your settings file and run `av init` in the repository where you'll be working with stacked PRs.
+Follow the [<mark style="color:blue;">Aviator CLI installation instructions</mark>](../reference/aviator-cli/installation.md) to download and install the `av` tool. Make sure to add a GitHub access token to your settings file and run `av init` in the repository where you'll be working with stacked PRs.
 
 ### Creating a stack
 
@@ -69,10 +69,10 @@ When creating this PR, we set the base branch in GitHub as `bookstore-backend` r
 Merging a stack with Aviator is a little different than merging a non-stacked PR.
 
 {% hint style="warning" %}
-Make sure not to use the "Merge" button in the GitHub UI for a stacked PR, as this will usually not do what you expect and can be hard to undo. Always use Aviator to merge a stacked PR. [See FAQs for more information.](../reference/stacked-prs/faqs-and-troubleshooting.md#what-happens-if-i-use-the-github-merge-button-instead-of-aviator-to-merge-a-stacked-pr)
+Make sure not to use the "Merge" button in the GitHub UI for a stacked PR, as this will usually not do what you expect and can be hard to undo. Always use Aviator to merge a stacked PR. [<mark style="color:blue;">See FAQs for more information.</mark>](../reference/stacked-prs/faqs-and-troubleshooting.md#what-happens-if-i-use-the-github-merge-button-instead-of-aviator-to-merge-a-stacked-pr)<mark style="color:blue;"></mark>
 {% endhint %}
 
-When merging a stack, we usually want to merge the whole stack (or a subset of it that we've decided is ready for merge) rather than individual PRs one-by-one. When you queue a stacked PR for merge, we merge that PR _and everything that comes before it_ all in one go. To make it obvious that this behavior is happening, we require developers to issue the `/aviator stack merge` command on the GitHub PR (as a [slash command comment](../reference/slash-commands.md)).
+When merging a stack, we usually want to merge the whole stack (or a subset of it that we've decided is ready for merge) rather than individual PRs one-by-one. When you queue a stacked PR for merge, we merge that PR _and everything that comes before it_ all in one go. To make it obvious that this behavior is happening, we require developers to issue the `/aviator stack merge` command on the GitHub PR (as a [<mark style="color:blue;">slash command comment</mark>](../reference/slash-commands.md)).
 
 {% hint style="info" %}
 The `/aviator stack merge` command should be given in the form of a comment on the GitHub pull request page in your web browser. Merging/queueing a PR via the command line is not yet supported.

@@ -2,7 +2,7 @@
 
 ## **Managing team access**
 
-Aviator offers multi-user account capabilities in all plans. You can invite all your team members to access the Aviator dashboard at no additional cost. See the [Billing](../faqs/billing.md) section to understand how pricing works.
+Aviator offers multi-user account capabilities in all plans. You can invite all your team members to access the Aviator dashboard at no additional cost. See the [<mark style="color:blue;">Billing</mark>](../faqs/billing.md) section to understand how pricing works.
 
 To invite your team members to access the Aviator dashboard, go to the Users and Roles page, and enter their email address along with an appropriate role.
 
@@ -21,4 +21,4 @@ Aviator also offers capability for users to login using Google SSO. Additionally
 
 ## **SAML authentication**
 
-Aviator also offers SAML based authentication that can be configured for Okta or other SAML providers. We only offer SAML authentication in our enterprise plans, [read more here](access-management.md#saml-authentication).
+Aviator also offers SAML based authentication that can be configured for Okta or other SAML providers. We only offer SAML authentication in our enterprise plans, [<mark style="color:blue;">read more here</mark>](access-management.md#saml-authentication).

@@ -1,6 +1,6 @@
 # Installation
 
-The Aviator command line tool (invoked as `av`) can be used to streamline and automate common tasks within your Git and GitHub workflows. Currently, the tool is used primarily to manage [Stacked PRs](../../getting-started/stacked-prs.md).
+The Aviator command line tool (invoked as `av`) can be used to streamline and automate common tasks within your Git and GitHub workflows. Currently, the tool is used primarily to manage [<mark style="color:blue;">Stacked PRs</mark>](../../getting-started/stacked-prs.md)<mark style="color:blue;">.</mark>
 
 ## First-time setup
 
@@ -10,7 +10,7 @@ The `av` tool can be installed in a few ways, depending on your operating system
 
 #### Homebrew (MacOS, Linux)
 
-First, if not already done, [install Homebrew](https://brew.sh/).
+First, if not already done, [<mark style="color:blue;">install Homebrew</mark>](https://brew.sh/)<mark style="color:blue;">.</mark>
 
 Then, install `av` using the Homebrew tap.
 
@@ -20,7 +20,7 @@ brew install aviator-co/tap/av
 
 #### Download executable (advanced, all operating systems)
 
-Download the latest `av` executable from the [GitHub releases page on the `av` repository](https://github.com/aviator-co/av/releases). Extract the archive and add the executable to your `PATH`.
+Download the latest `av` executable from the <mark style="color:blue;"></mark> [<mark style="color:blue;">GitHub releases page on the</mark> <mark style="color:blue;"></mark><mark style="color:blue;">`av`</mark> <mark style="color:blue;"></mark><mark style="color:blue;">repository</mark>](https://github.com/aviator-co/av/releases). Extract the archive and add the executable to your `PATH`.
 
 ### 2. Connect av to GitHub
 
@@ -62,4 +62,4 @@ brew upgrade av
 
 #### Download executable
 
-Follow the [installation instructions above](installation.md#download-executable-advanced-all-operating-systems) and overwrite the previous `av` binary with the newly downloaded binary.
+Follow the [<mark style="color:blue;">installation instructions above</mark>](installation.md#download-executable-advanced-all-operating-systems) and overwrite the previous `av` binary with the newly downloaded binary.

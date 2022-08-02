@@ -13,7 +13,7 @@ We use docker images to support easy installation of Aviator on any cloud provid
 ### Prerequisites
 
 1. Ubuntu or Debian installation on the box.
-2. Docker engine is installed. You can follow instructions [here](https://docs.docker.com/engine/install/ubuntu/).
+2. Docker engine is installed. You can follow instructions [<mark style="color:blue;">here</mark>](https://docs.docker.com/engine/install/ubuntu/).
 3. You have SSH access to the box.
 4. A user with sudo permissions on the box.
 5. You have access to the secrets file provided by Aviator.
@@ -131,7 +131,7 @@ Additionally, you should generate a private key from the bottom of the page. Thi
 
 ### Step 5
 
-Verify that docker engine exists, otherwise follow the instructions [here](https://docs.docker.com/engine/install/ubuntu/) to install.
+Verify that docker engine exists, otherwise follow the instructions [<mark style="color:blue;">here</mark>](https://docs.docker.com/engine/install/ubuntu/) <mark style="color:blue;"></mark> to install.
 
 ### Step 6
 

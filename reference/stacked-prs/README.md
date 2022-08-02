@@ -1,6 +1,6 @@
 # Stacked PRs
 
-Stacked PRs are managed primarily using the [`av` command line tool](../aviator-cli/).
+Stacked PRs are managed primarily using the [<mark style="color:blue;">`av`</mark> <mark style="color:blue;"></mark><mark style="color:blue;">command line tool</mark>](../aviator-cli/).
 
 ## How does it work?
 

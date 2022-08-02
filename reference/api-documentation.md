@@ -2,11 +2,11 @@
 
 ## **Authentication**
 
-Aviator uses basic key based authentication. You can view and manage your API key in the [Aviator dashboard](https://mergequeue.com/account/api). We only support a single API token. Once a token is generated, you can reset it to invalidate your existing token and create a new one.
+Aviator uses basic key based authentication. You can view and manage your API key in the [<mark style="color:blue;">Aviator dashboard</mark>](https://mergequeue.com/account/api). We only support a single API token. Once a token is generated, you can reset it to invalidate your existing token and create a new one.
 
 API keys that are used to fetch Aviator analytics are currently read-only, but in the future these may be used for other purposes. Please make sure to keep them secure.
 
-Authentication to the API is performed via [HTTP Basic Auth](http://en.wikipedia.org/wiki/Basic\_access\_authentication). Provide your API key as the bearer token:
+Authentication to the API is performed via [<mark style="color:blue;">HTTP Basic Auth</mark>](http://en.wikipedia.org/wiki/Basic\_access\_authentication)<mark style="color:blue;">.</mark> Provide your API key as the bearer token:
 
 ```shell
 curl -H "Authorization: Bearer <aviator_token>"

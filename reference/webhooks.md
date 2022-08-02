@@ -10,18 +10,18 @@ Each event corresponds to a certain set of actions that can happen on your organ
 
 Each webhook event payload also contains properties unique to the event. Most of the common properties are listed below.
 
-| Key                  | Description                                                                                                                                   |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **action**           | All webhook payloads contain an action property that contains the specific activity that triggered the event.                                 |
-| **repository**       | Name of Github repository associated with the action.                                                                                         |
-| **organization**     | Name of the Github organization associated with the action.                                                                                   |
-| **pr\_number**       | _Integer_. PR Number associated with the action.                                                                                              |
-| **author**           | Github handle of the author of the PR.                                                                                                        |
-| **status**           | Current status of the PR. Valid options: open, pending, queued, blocked, merged                                                               |
-| **skip\_line**       | _Boolean_. Represents whether the skip line label is present for the PR.                                                                      |
-| **status\_code**     | Represents the reason for failure, if there was a failure. See [Status Codes](comments-and-status-codes.md) section for all possible options. |
-| **message**          | _Optional_. Present if there is an additional message provided by Github on the reason for failure.                                           |
-| **failed\_ci\_list** | _Optional_. _List_. List of CI names that failed in case of CI failure.                                                                       |
+| Key                  | Description                                                                                                                                                                                                      |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **action**           | All webhook payloads contain an action property that contains the specific activity that triggered the event.                                                                                                    |
+| **repository**       | Name of Github repository associated with the action.                                                                                                                                                            |
+| **organization**     | Name of the Github organization associated with the action.                                                                                                                                                      |
+| **pr\_number**       | _Integer_. PR Number associated with the action.                                                                                                                                                                 |
+| **author**           | Github handle of the author of the PR.                                                                                                                                                                           |
+| **status**           | Current status of the PR. Valid options: open, pending, queued, blocked, merged                                                                                                                                  |
+| **skip\_line**       | _Boolean_. Represents whether the skip line label is present for the PR.                                                                                                                                         |
+| **status\_code**     | Represents the reason for failure, if there was a failure. See [<mark style="color:blue;">Status Codes</mark>](comments-and-status-codes.md) <mark style="color:blue;"></mark> section for all possible options. |
+| **message**          | _Optional_. Present if there is an additional message provided by Github on the reason for failure.                                                                                                              |
+| **failed\_ci\_list** | _Optional_. _List_. List of CI names that failed in case of CI failure.                                                                                                                                          |
 
 ### Actions
 
