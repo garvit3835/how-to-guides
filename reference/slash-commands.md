@@ -6,7 +6,11 @@ Slash commands enable teams to manage their pull requests with Aviator directly 
 
 ### Merge
 
-The `/aviator merge` command queues a PR for merging. This can be used instead of adding the ready label.
+The `/aviator merge` command queues a PR for merging. This can be used instead of adding the ready label. You can also specify [affected targets](../how-to-guides/affected-targets.md) as an additional parameter. See affected targets mode to learn more.
+
+```
+/aviator merge --targets=frontend,backend,api
+```
 
 ### Cancel
 
