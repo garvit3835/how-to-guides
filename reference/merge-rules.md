@@ -57,6 +57,7 @@ merge_rules:
     - /release-*/
   enable_comments: true
   ci_timeout_mins: 60
+  require_all_checks_pass: false
   preconditions:
     validations:
     - name: missing JIRA ticket in PR title
@@ -96,6 +97,7 @@ merge_rules:
         - check_2
       batch_size: 1
       batch_max_wait_minutes: 0
+      require_all_draft_checks_pass: false
   auto_update:
     enabled: false
     label: "auto_update"
