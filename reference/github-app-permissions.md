@@ -6,6 +6,8 @@ description: Permissions & explanations
 
 The Aviator app requests a set of permissions on your GitHub repositories that you choose to connect with Aviator. While Aviator tries to request as few permissions as it needs to function, GitHub only allows us to request fairly broad groups of permissions. We’re committed to your privacy and security, so Aviator only uses the subset of permissions it needs to do its job.
 
+## Repository Permissions
+
 ### Administration (read only)
 
 This permission includes read-only access to repository settings, teams, and collaborators.
@@ -51,6 +53,14 @@ Aviator is required to request this permission (it is mandatory for all GitHub a
 This permissions includes access to pull requests and related comments, assignees, labels, milestones, and merges.
 
 Aviator uses this permission to view, update, and merge pull requests which are managed by Aviator (e.g., when adding the ready-to-merge label to a pull request that should be placed into the queue).
+
+## Organization Permissions
+
+### Members (read only)
+
+This permission includes access to organization, and team membership.
+
+Aviator uses this permission to confirm membership of users. This allows for actions to be restricted to only certain teams or organization members.
 
 ## Further reading
 
