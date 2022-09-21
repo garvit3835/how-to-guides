@@ -38,7 +38,3 @@ Below is the list of actions that can be configured in the MQ UI to receive webh
 | **blocked**        | When the PR fails to merge and is blocked. The typical reason for failures can be retrieved from `status_code`, including CI failure or merge conflict. |
 | **stuck**          | _(Parallel mode only)_ When a PR is stuck if the original PR is still running the checks after the specified timeout.                                   |
 | **reset**          | _(Parallel mode only)_ When a parallel PR queue is reset.                                                                                               |
-
-### Slack notifications <a href="#slack-notifications" id="slack-notifications"></a>
-
-You can use the Slack app integration to receive notifications about queue events. Currently supported Slack events are queued, merged and failed. Slack notifications can be enabled from the Webhooks page.

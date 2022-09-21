@@ -18,6 +18,7 @@
 * [Comments and Status Codes](reference/comments-and-status-codes.md)
 * [Slash Commands](reference/slash-commands.md)
 * [Webhooks](reference/webhooks.md)
+* [Slack Integration](reference/slack-integration.md)
 * [API Documentation](reference/api-documentation.md)
 * [Github App Permissions](reference/github-app-permissions.md)
 * [Aviator CLI](reference/aviator-cli/README.md)
