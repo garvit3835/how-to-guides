@@ -28,16 +28,16 @@ Example:
 `https://api.aviator.co/api/v1/repo/`
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" required="true" type="String" %}
+{% swagger-parameter in="body" name="org" type="String" required="true" %}
 Name of the Github organization.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="name" required="true" type="String" %}
+{% swagger-parameter in="body" name="name" type="String" required="true" %}
 Name of the repository in the Github organization.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="paused" required="true" type="Boolean" %}
-Whether to pause or unpause the queue.
+{% swagger-parameter in="body" name="paused" type="Boolean" required="true" %}
+Whether to pause or unpause the queue
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
