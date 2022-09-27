@@ -1,120 +1,4 @@
-# Merge Rules
-
-Merge rules are at the core of how the Aviator bot behaves. MergeQueue primarily relies on GitHub Labels to communicate with pull requests. There are several attributes that you can customize for each repository using a yaml configuration file.
-
-### Option 1: Dashboard UI
-
-The best option for a quick setup is via the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page. However, the UI does not expose all possible customizations.
-
-{% hint style="warning" %}
-Some of the Rules listed in the yaml configuration below are not supported in the Dashboard UI. Your repo will require using one of the configuration file options if you want to use advanced rules. We only recommend using the Dashboard UI option if you require a simple setup.
-{% endhint %}
-
-The only required setting is the `Label for trigger` -  this will default to `mergequeue`. Once you add this to a PR, Aviator will queue and merge the PR.
-
-![Label for trigger is the only required setting.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.43.35 PM.png>)
-
-All of the settings in the UI are covered in the [<mark style="color:blue;">Rules</mark>](merge-rules.md#rules) section below. Each setting also has a tooltip that provides more information.
-
-#### Configuring Status Checks
-
-See `Required Checks` under `Merge Preconditions` to set status checks for your PRs that need to be validated before merging. Selecting `Use Github mergeability check` will use all Github required tests for the repo.
-
-![Select Required status checks.](<../.gitbook/assets/Screen Shot 2022-07-13 at 4.34.12 PM.png>)
-
-If your team is using Parallel mode, by default, Aviator bot will use the same checks for original PRs and draft PRs. However, if you want to customize checks for draft PRs, you can do so under `Override required checks` in the Parallel Mode section.
-
-![Override required checks for draft PRs.](<../.gitbook/assets/Screen Shot 2022-07-13 at 4.37.18 PM.png>)
-
-### Option 2: Dashboard Yaml Configuration
-
-On the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page, there is a `Yaml configuration` tab that allows you to both update and validate a configuration file.
-
-![](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.38.57 PM.png>)
-
-### Option 3: Create Yaml File within your repository
-
-You can also create a configuration file stored in `.mergequeue/config.yml`. The file will only be read once it is merged into the repository's default branch. It will also override any properties set in the Dashboard UI. The only required attribute is `merge_rules`.`labels.trigger.`
-
-<details>
-
-<summary>Complete Yaml configuration</summary>
-
-```yaml
-version: 1.0.0
-merge_rules:
-  labels:
-    trigger: "label_name"
-    skip_line: "skip_line"
-    merge_failed: "blocked"
-    skip_delete_branch: "do-not-delete"
-  update_latest: true
-  delete_branch: false
-  use_rebase: false
-  publish_status_check: true
-  base_branches:
-    - master
-    - /release-*/
-  enable_comments: true
-  ci_timeout_mins: 60
-  require_all_checks_pass: false
-  preconditions:
-    validations:
-    - name: missing JIRA ticket in PR title
-      match:
-        type: title
-        regex:
-        - -\s\[[^\]]*\]
-        - ()
-    - name: validation_body
-      match:
-        type: body
-        regex:
-        - -\s\[[^\]]*\]
-    number_of_approvals: 1
-    required_checks:
-      - check_1
-      - "check 2"
-      - name: conditional_check
-        acceptable_statuses:
-          - skipped
-          - success
-    use_github_mergeability: true
-    conversation_resolution_required: false
-  merge_mode:
-    type: "parallel"
-    parallel_mode:
-      use_affected_targets: false
-      use_fast_forwarding: false
-      max_parallel_builds: 10
-      max_requeue_attempts: 3
-      stuck_pr_label: "label"
-      stuck_pr_timeout_mins: 90
-      block_parallel_builds_label: "block_batch"
-      check_mergeability_to_queue: false
-      override_required_checks:
-        - "check 1"
-        - check_2
-      batch_size: 1
-      batch_max_wait_minutes: 0
-      require_all_draft_checks_pass: false
-  auto_update:
-    enabled: false
-    label: "auto_update"
-    max_runs_for_update: 10
-  merge_commit:
-    use_title_and_body: true
-    cut_body_before: "----"
-    cut_body_after: "+++"
-  merge_strategy:
-    name: "squash"
-    override_labels:
-      squash: "mq-squash"
-      rebase: "mq-rebase"
-      merge: "mq-merge"
-```
-
-</details>
+# Attributes & Examples
 
 ## Rules
 
@@ -196,7 +80,7 @@ merge_rules:
 
 #### Parallel Mode
 
-The following are only applicable if the above `merge_mode` is set to `parallel`. You can learn more about [<mark style="color:blue;">Parallel Mode here</mark>](../how-to-guides/parallel-mode/).
+The following are only applicable if the above `merge_mode` is set to `parallel`. You can learn more about [<mark style="color:blue;">Parallel Mode here</mark>](../../how-to-guides/parallel-mode/).
 
 {% tabs %}
 {% tab title="Attributes" %}
@@ -208,8 +92,8 @@ The following are only applicable if the above `merge_mode` is set to `parallel`
 | **stuck\_pr\_timeout\_mins**          | Integer       | Aviator bot will determine the PR to be stuck after the specified timeout and dequeue it. Defaults to no time out.                                                                                                                                                                                                                                     |
 | **block\_parallel\_builds\_label**    | String        | Once added to a PR, no further Draft PRs will be built on top of it until that PR is merged or dequeued.                                                                                                                                                                                                                                               |
 | **check\_mergeability\_to\_queue**    | Boolean       | If enabled, Aviator bot will only queue the PR if it passes all mergeability checks. Defaults to `false`.                                                                                                                                                                                                                                              |
-| **use\_affected\_targets**            | Boolean       | If enabled, allows using [affected targets](../how-to-guides/affected-targets.md) in your repo.                                                                                                                                                                                                                                                        |
-| **use\_fast\_forwarding**             | Boolean       | If enabled, uses [fast forwarding](../how-to-guides/fast-forwarding.md) to merge PRs.                                                                                                                                                                                                                                                                  |
+| **use\_affected\_targets**            | Boolean       | If enabled, allows using [affected targets](../../how-to-guides/affected-targets.md) in your repo.                                                                                                                                                                                                                                                     |
+| **use\_fast\_forwarding**             | Boolean       | If enabled, uses [fast forwarding](../../how-to-guides/fast-forwarding.md) to merge PRs.                                                                                                                                                                                                                                                               |
 | **override\_required\_checks**        | List\[String] | Use this attribute if you would like different checks for your original PRs and draft PRs. The checks defined here will be used for the draft PRs created in Parallel mode.                                                                                                                                                                            |
 | **batch\_size**                       | Integer       | The number of queued PRs batched together for a draft PR CI run. Defaults to 1.                                                                                                                                                                                                                                                                        |
 | **batch\_max\_wait\_minutes**         | Integer       | The time to wait before creating the next batch of PRs if there are not enough queued PRs to create a full batch. Defaults to 0.                                                                                                                                                                                                                       |
