@@ -18,7 +18,7 @@ https://api.aviator.co/api/v1/...
 
 ### Repository
 
-{% swagger method="post" path="/v1/repo" baseUrl="https://api.aviator.co/api" summary="Pause / unpause the merging of PRs on a repository." %}
+{% swagger method="post" path="/repo" baseUrl="https://api.aviator.co/api/v1" summary="Pause / unpause the merging of PRs on a repository." %}
 {% swagger-description %}
 Example:
 
@@ -53,7 +53,7 @@ Whether to pause or unpause the queue
 
 ### Branches
 
-{% swagger method="post" path="/api/v1/branches" baseUrl="https://api.aviator.co" summary="Pause / unpause the merging of PRs for specific base branches." %}
+{% swagger method="post" path="/branches" baseUrl="https://api.aviator.co/api/v1" summary="Pause / unpause the merging of PRs for specific base branches." %}
 {% swagger-description %}
 You can specify a glob pattern of base branches to pause or activate the Aviator queue. This ensures that you can continue merging branches to other base branches. You can override to pause / unpause all branches by using the Repository endpoint described above.
 
@@ -62,7 +62,7 @@ Example:
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `-d '{ "pattern": "release-*", "repository": {"org": "aviator", "name": "`av-demo-release`"}, "paused": true}'`\
-`https://api.aviator.co/api/v1/repo/`
+`https://api.aviator.co/api/v1/branches/`
 
 
 {% endswagger-description %}
@@ -109,7 +109,7 @@ Whether to pause or unpause the queue
 
 ### PullRequest
 
-{% swagger method="post" path="v1/pull_request" baseUrl="https://api.aviator.co/api/" summary="Queue or Dequeue a Pull Request" %}
+{% swagger method="post" path="/pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Queue or Dequeue a Pull Request" %}
 {% swagger-description %}
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`
 
@@ -195,6 +195,59 @@ Body of merge commit message
       "org": "aviator-co"
     }
   }
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="post" path="/pull_request/backport" baseUrl="https://api.aviator.co/api/v1" summary="Request to backport a PR on the specified target branch." %}
+{% swagger-description %}
+Example:
+
+`curl -X POST -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`-d '{"target_branch": "release-v1", "`source\_pull`": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}}}'`\
+`https://api.aviator.co/api/v1/pull_request/backport`
+
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="target_branch" type="String" required="true" %}
+Name of the base branch to backport this PR to
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="source_pull" type="Object" required="true" %}
+PullRequest object for the current branch
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> number" type="Integer" required="true" %}
+PullRequest number
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> repository" type="Object" required="true" %}
+GitHub repository associated with the PullRequest
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> > org" type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> > name" type="String" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "source_pull": {
+      "number": 1234,
+      "repository": {
+        "org": "aviator",
+        "name": "av-demo-release"
+      }
+    },
+    "target_branch": "release-v1",
+    "message": "Backporting initiated for 1234 to release-v1. Check comments in the PR #1234 for the status"
 }
 ```
 {% endswagger-response %}
