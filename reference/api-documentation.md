@@ -11,14 +11,14 @@ Authentication to the API is performed via [<mark style="color:blue;">HTTP Basic
 ```shell
 curl -H "Authorization: Bearer <aviator_token>"
 -H "Content-Type: application/json"
-https://api.aviator.co/api/v1/curl -H "Authorization: Bearer <aviator_token>" \\ -H "Content-Type: application/json" \\ <https://mergequeue.com/api/v1/>
+https://api.aviator.co/api/v1/...
 ```
 
 ## API Objects
 
 ### Repository
 
-{% swagger method="post" path="/v1/repo" baseUrl="https://api.aviator.co/api" summary="Pause / unpause the Aviator bot processing on a repository." %}
+{% swagger method="post" path="/v1/repo" baseUrl="https://api.aviator.co/api" summary="Pause / unpause the merging of PRs on a repository." %}
 {% swagger-description %}
 Example:
 
@@ -51,6 +51,62 @@ Whether to pause or unpause the queue
 {% endswagger-response %}
 {% endswagger %}
 
+### Branches
+
+{% swagger method="post" path="/api/v1/branches" baseUrl="https://api.aviator.co" summary="Pause / unpause the merging of PRs for specific base branches." %}
+{% swagger-description %}
+You can specify a glob pattern of base branches to pause or activate the Aviator queue. This ensures that you can continue merging branches to other base branches. You can override to pause / unpause all branches by using the Repository endpoint described above.
+
+Example:
+
+`curl -X POST -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`-d '{ "pattern": "release-*", "repository": {"org": "aviator", "name": "`av-demo-release`"}, "paused": true}'`\
+`https://api.aviator.co/api/v1/repo/`
+
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="repository" type="Object" required="true" %}
+Repository object associated with the branch
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> org" type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> name" type="String" required="true" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="pattern" type="String" required="true" %}
+Glob pattern representing the base branch. E.g. 
+
+`master`
+
+ or 
+
+`release-*`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="paused" type="Boolean" required="true" %}
+Whether to pause or unpause the queue
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "pattern": "release-*",
+    "repository": {
+      "org": "aviator",
+      "name": "av-demo-release"
+    },
+    "paused": true
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 ### PullRequest
 
 {% swagger method="post" path="v1/pull_request" baseUrl="https://api.aviator.co/api/" summary="Queue or Dequeue a Pull Request" %}
@@ -70,7 +126,7 @@ Whether to pause or unpause the queue
 \
 
 
-`https://mergequeue.com/api/v1/pull_request/`
+`https://api.aviator.co/api/v1/pull_request/`
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="action" required="true" %}
