@@ -265,11 +265,9 @@ Example:
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="start" required="false" type="String" %}
-UTC Start date in 
 
-_YYYY-MM-DD_
 
- format. Example: 2021-07-21
+UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="end" required="false" type="String" %}
@@ -409,5 +407,44 @@ Standard tz format string. Defaults to account timezone. Example: America/Los_An
 ```
 {% endtab %}
 {% endtabs %}
+{% endswagger-response %}
+{% endswagger %}
+
+### Queue
+
+{% swagger method="get" path="/v1/queue/stats" baseUrl="https://api.aviator.co/api" summary="Get live statistics about the state of the merge queue" %}
+{% swagger-description %}
+Currently this endpoint only reports statistics about the depth of the queue.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" type="String" required="true" %}
+The GitHub organization that the repo belongs to.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" type="String" required="true" %}
+The name of the GitHub repo.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Success" %}
+```javascript
+{
+  // Stats about the current depth of the queue.
+  "depth": {
+    // The total number of PRs that are in the queue.
+    // Excludes PRs that have not been queued yet or that have been
+    // marked as blocked.
+    "queued": 8, 
+    // The number of PRs actively being processed.
+    // In serial mode, this value is always equal to the "queued" value.
+    // In parallel mode, this will be at most the "max_parallel_builds" setting
+    // and indicates the numbers of PRs that have draft PRs created.
+    "processing": 2, 
+    // The number of PRs that are queued but not yet being processed.
+    // In parallel mode, this is equal to queued - processing.
+    // In serial mode, this is always zero.
+    "waiting": 6
+  }
+}
+```
 {% endswagger-response %}
 {% endswagger %}
