@@ -22,7 +22,26 @@ github:
     # The GitHub base URL to use.
     # Only set this if you use an on-prem enterprise GitHub installation
     # (leave blank if your repo is hosted on github.com)
-    baseUrl: "https://github.internal.mycorp.net"
+    baseUrl: "https://github.com"
+
+pullRequest:
+    # If true, always open PRs as a draft.
+    # If false, PRs will be opened as ready-for-review unless the --draft flag
+    # is specified on commands that create pull requests.
+    draft: false
+    
+    # If true, pull requests will be temporarily transitioned to draft state
+    # while being rebased. This avoids accidentally adding unnecessary reviewers
+    # to a pull request due to a CODEOWNERS file while the pull request is in a
+    # transient state. This only applies when a pull request's base branch is
+    # changing.
+    # If not specified in the config, the default value is true if there is a
+    # CODEOWNERS file present and false otherwise.
+    rebaseWithDraft: false
+    
+    # If true, open a web browser to the pull request page whenever a pull
+    # request is created for the first time.
+    openBrowser: true
 ```
 {% endcode %}
 
