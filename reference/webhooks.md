@@ -6,9 +6,11 @@ When configuring a webhook, you can use the UI to choose which event actions wil
 
 Each event corresponds to a certain set of actions that can happen on your organization’s repository. For example, if you subscribe to the merge failure event you'll receive detailed payloads every time a PR fails to merge.
 
-### Payloads
+## PullRequest events
 
-Each webhook event payload also contains properties unique to the event. Most of the common properties are listed below.
+### Payload
+
+Each PullRequest webhook event payload contains the following properties.&#x20;
 
 | Key                  | Description                                                                                                                                                                                                      |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,3 +40,24 @@ Below is the list of actions that can be configured in the MQ UI to receive webh
 | **blocked**        | When the PR fails to merge and is blocked. The typical reason for failures can be retrieved from `status_code`, including CI failure or merge conflict. |
 | **stuck**          | _(Parallel mode only)_ When a PR is stuck if the original PR is still running the checks after the specified timeout.                                   |
 | **reset**          | _(Parallel mode only)_ When a parallel PR queue is reset.                                                                                               |
+
+## Batch events
+
+Batch events contain one or more PullRequests that are queued together in a single batch. These events are triggered regardless of configured batch\_size.
+
+### Payload
+
+| Key                | Description                                                                                                                                            |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **action**         | All webhook payloads contain an action property that contains the specific activity that triggered the event.                                          |
+| **repository**     | Name of Github repository associated with the action.                                                                                                  |
+| **organization**   | Name of the Github organization associated with the action.                                                                                            |
+| **pull\_requests** | A _list_ of pull\__requests associated with the batch._ Each pull\_request object contains `pr_number`, `author`, `status`, `skip_line`, `status_code` |
+| **message**        | _Optional_. Present if there is an additional message provided by Github on the reason for failure.                                                    |
+
+### Actions
+
+| Name              | When it's triggered             |
+| ----------------- | ------------------------------- |
+| **batch\_merged** | When a batch of PRs are merged. |
+| **batch\_failed** | When a batch failed to merge.   |
