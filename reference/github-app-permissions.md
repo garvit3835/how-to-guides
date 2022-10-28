@@ -54,7 +54,7 @@ This permissions includes access to pull requests and related comments, assignee
 
 Aviator uses this permission to view, update, and merge pull requests which are managed by Aviator (e.g., when adding the ready-to-merge label to a pull request that should be placed into the queue).
 
-### Workflows
+### Workflows (read & write)
 
 This permission includes ability to add or update an existing workflow.
 
