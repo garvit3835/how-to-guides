@@ -54,6 +54,12 @@ This permissions includes access to pull requests and related comments, assignee
 
 Aviator uses this permission to view, update, and merge pull requests which are managed by Aviator (e.g., when adding the ready-to-merge label to a pull request that should be placed into the queue).
 
+### Workflows
+
+This permission includes ability to add or update an existing workflow.
+
+Aviator uses this permissions to be able to merge pull requests that contain changes in directory `.github/workflows/`. Without this permission, Aviator may return an error when trying to queue or merge that particular pull request.
+
 ## Organization Permissions
 
 ### Members (read only)
