@@ -36,7 +36,8 @@
 * [Access Management](manage/access-management.md)
 * [Analytics](manage/analytics.md)
 * [Timeline](manage/timeline.md)
-* [On-premise Installation](manage/on-premise-installation.md)
+* [On-premise Installation](manage/on-premise-installation/README.md)
+  * [Slack Integration](manage/on-premise-installation/slack-integration.md)
 
 ## How To Guides
 

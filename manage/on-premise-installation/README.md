@@ -123,7 +123,7 @@ After creating the Github app, you can add a logo. Find a copy of Aviator Logo i
 
 From the Github app page for Aviator, take a note of the App ID specified on the top. This is your _github\_app\_id_.
 
-![](../.gitbook/assets/screenshot.png)
+![](../../.gitbook/assets/screenshot.png)
 
 ### Step 4
 
