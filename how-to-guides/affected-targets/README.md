@@ -20,7 +20,7 @@ In this configuration, the mono-repo is separated into logically independent que
 
 The main effort required of your team is to implement a mechanism to declare which targets are affected by a change. If you need assistance with this configuration, please contact us at [<mark style="color:blue;">howto@aviator.co</mark>](mailto:howto@aviator.co).
 
-### Using API
+### API
 
 Since this approach needs additional information associated with each merge request, it currently works with an API endpoint (instead of the Github Labels that our other modes use). The information for affected targets is represented as a JSON array of strings (the strings here are not a predetermined set that needs to be drawn from, and can be dynamically generated), and has an optional custom commit message.
 
@@ -46,21 +46,11 @@ Since this approach needs additional information associated with each merge requ
 
 The maximum number of unique “affectedTargets” supported is 1,000,000 per account.
 
-### Using slash command
-
-If you prefer to do this manually, you can also specify the affected targets as a Slash command comment in your PR. The targets can be represented as a comma separated list in the `/aviator merge` command:
-
-```
-/aviator merge --targets=frontend,api,android
-```
-
-This way you can run multi-queue approach without needed a complex system like bazel.
-
 ### Example
 
 Let’s say we have a project with 4 targets: A, B, C, and D. It doesn’t matter what they are, but they could, for example, represent 4 artifacts that the project publishes. Now, let’s say we have the following PRs, and we compute the targets they affect (compared to the merge base on the **main** branch):
 
-![](<../.gitbook/assets/Screen Shot 2022-05-10 at 1.25.21 PM Medium.jpeg>)
+![](<../../.gitbook/assets/Screen Shot 2022-05-10 at 1.25.21 PM Medium.jpeg>)
 
 Given the declarations of changed targets above, Aviator can apply different parallel testing and merge strategies that keep unrelated PRs in different test queues.
 

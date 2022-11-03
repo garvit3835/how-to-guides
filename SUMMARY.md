@@ -44,7 +44,8 @@
 * [Parallel Mode](how-to-guides/parallel-mode/README.md)
   * [Batching](how-to-guides/parallel-mode/batching.md)
 * [Fast Forwarding](how-to-guides/fast-forwarding.md)
-* [Affected Targets](how-to-guides/affected-targets.md)
+* [Affected Targets](how-to-guides/affected-targets/README.md)
+  * [Directory based affected targets](how-to-guides/affected-targets/directory-based-affected-targets.md)
 * [Personal Access Tokens](how-to-guides/personal-access-tokens.md)
 * [SAML Configuration](how-to-guides/saml-configuration.md)
 

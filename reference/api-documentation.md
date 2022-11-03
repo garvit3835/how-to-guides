@@ -162,7 +162,7 @@ Organization associated with the repository
 {% swagger-parameter in="body" name="> affected_targets" type="List[String]" %}
 Affected targets for the PR. Please see 
 
-[Affected Targets](../how-to-guides/affected-targets.md)
+[Affected Targets](../how-to-guides/affected-targets/)
 
  section for more details.
 {% endswagger-parameter %}
