@@ -7,8 +7,8 @@ We use docker images to support easy installation of Aviator on any cloud provid
 ### Minimum requirements for the Aviator server
 
 * [x] 4 CPU
-* [x] 16 GB memory
-* [x] 50 GB storage
+* [x] 8 GB memory
+* [x] 25 GB storage
 
 ### Prerequisites
 
