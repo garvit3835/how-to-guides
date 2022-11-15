@@ -62,9 +62,7 @@ Example:
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `-d '{ "pattern": "release-*", "repository": {"org": "aviator", "name": "`av-demo-release`"}, "paused": true}'`\
-`https://api.aviator.co/api/v1/branches/`
-
-
+`https://api.aviator.co/api/v1/branches`
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="repository" type="Object" required="true" %}
@@ -102,6 +100,58 @@ Whether to pause or unpause the queue
       "name": "av-demo-release"
     },
     "paused": true
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/branches" baseUrl="https://api.aviator.co/api/v1" summary="Get base branches and their statuses (paused / unpaused)" %}
+{% swagger-description %}
+You can specify a glob pattern of base branches to fetch the status of. If not provided, it will fetch the status of all base branches for a specific repository.\
+\
+Example:
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`-d '{ "repository": {"org": "aviator", "name": "`av-demo-release`"}, "pattern": "release-*"}'`\
+`https://api.aviator.co/api/v1/branches`
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="repository" type="Object" required="true" %}
+Repository object associated with the branch
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="> org " type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="> name" type="String" required="true" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="pattern" type="String" %}
+Glob pattern representing the base branch. E.g. 
+
+`master`
+
+ or 
+
+`release-*`
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Success" %}
+```json
+{
+    "branches": [
+        {
+            "pattern": "release-*",
+            "paused": true
+        }
+    ],
+    "repository": {
+        "name": "av-demo-release"
+        "org": "aviator"
+    }
 }
 ```
 {% endswagger-response %}
