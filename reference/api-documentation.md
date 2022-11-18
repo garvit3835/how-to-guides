@@ -303,6 +303,48 @@ Name of the repository
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/pull_request" baseUrl="" summary="Fetch information of a PR based on the branch name" %}
+{% swagger-description %}
+Example:
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`https://api.aviator.co/api/v1/pull_request?org=orgname&repo=reponame&branch=branchname`&#x20;
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" type="String" required="true" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="branch" type="String" required="true" %}
+Branch associated with PR
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Success" %}
+```javascript
+{
+    "author": "author-name",
+    "base_branch": "master",
+    "head_branch": "mq-qa-8440-1",
+    "number": 89,
+    "queued": true,
+    "queued_at": "2022-11-16T17:21:41.350499",
+    "repository": {
+        "name": "repo-name",
+        "org": "org-name"
+    },
+    "skip_line": false,
+    "status": "queued",
+    "title": "mq-qa-8440-1"
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 ### Analytics
 
 {% swagger method="get" path="/v1/analytics" baseUrl="https://api.aviator.co/api" summary="Get list of analytics objects representing statistics on a daily basis." %}
