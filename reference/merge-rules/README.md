@@ -106,6 +106,11 @@ merge_rules:
     use_title_and_body: true
     cut_body_before: "----"
     cut_body_after: "+++"
+    apply_title_regexes:
+      - pattern: "AVTR-"
+        replace: "AVTR_"
+      - pattern: "MQ-BOT"
+        replace: "MQ BOT"
   merge_strategy:
     name: "squash"
     override_labels:

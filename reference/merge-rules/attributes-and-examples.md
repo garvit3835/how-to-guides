@@ -151,11 +151,12 @@ merge_rules:
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name                      | Type    | Description                                                                                                                                  |
-| ------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **use\_title\_and\_body** | Boolean | Determines whether Aviator bot will replace default commit messages offered by Github. Defaults to `false`.                                  |
-| **cut\_body\_before**     | String  | A marker string to cut the PR body description. The commit message will contain the PR body after this marker. Leave empty for no cropping.  |
-| **cut\_body\_after**      | String  | A marker string to cut the PR body description. The commit message will contain the PR body before this marker. Leave empty for no cropping. |
+| Name                      | Type                  | Description                                                                                                                                                                                                                                  |
+| ------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **use\_title\_and\_body** | Boolean               | Determines whether Aviator bot will replace default commit messages offered by Github. Defaults to `false`.                                                                                                                                  |
+| **cut\_body\_before**     | String                | A marker string to cut the PR body description. The commit message will contain the PR body after this marker. Leave empty for no cropping.                                                                                                  |
+| **cut\_body\_after**      | String                | A marker string to cut the PR body description. The commit message will contain the PR body before this marker. Leave empty for no cropping.                                                                                                 |
+| **apply\_title\_regexes** | List\[ReplacePattern] | Contains the strings `pattern` and `replace` to indicate what pattern to replace in the PR title. This will be applied to the merge commit. In parallel mode, this also applies to the draft PR title. See the example tab for more details. |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -167,6 +168,11 @@ merge_rules:
     use_title_and_body: true
     cut_body_before: "----"
     cut_body_after: "+++"
+    apply_title_regexes:
+      - pattern: "AVTR-"
+        replace: "AVTR_"
+      - pattern: "MQ-BOT"
+        replace: "MQ BOT"
 ```
 {% endtab %}
 {% endtabs %}
