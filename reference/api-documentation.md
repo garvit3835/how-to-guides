@@ -345,6 +345,84 @@ Branch associated with PR
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="pull_request/queued" baseUrl="" summary="Fetch information of PRs that are in the queued state" %}
+{% swagger-description %}
+Example:&#x20;
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`https://api.aviator.co/api/v1/pull_request/?org=orgname&repo=reponame&base_branch=master`&#x20;
+
+
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" type="String" required="true" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="base_branch" type="String" %}
+Target branch to fetch queued PRs for
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Success" %}
+```javascript
+{
+    "pull_requests": [
+        {
+            "author": "ohcnivek",
+            "base_branch": "master",
+            "head_branch": "mq-qa-8440-1",
+            "number": 89,
+            "queued": true,
+            "queued_at": "2022-11-16T17:21:41.350499",
+            "repository": {
+                "name": "kevin-test",
+                "org": "ohcnivek"
+            },
+            "skip_line": false,
+            "status": "queued",
+            "title": "mq-qa-8440-1"
+        },
+        {
+            "author": "ohcnivek",
+            "base_branch": "master",
+            "head_branch": "mq-qa-8440-2",
+            "number": 90,
+            "queued": true,
+            "queued_at": "2022-11-16T17:21:50.001884",
+            "repository": {
+                "name": "kevin-test",
+                "org": "ohcnivek"
+            },
+            "skip_line": false,
+            "status": "queued",
+            "title": "mq-qa-8440-2"
+        },
+        {
+            "author": "ohcnivek",
+            "base_branch": "master",
+            "head_branch": "mq-qa-8440-3",
+            "number": 91,
+            "queued": true,
+            "queued_at": "2022-11-16T17:22:00.185823",
+            "repository": {
+                "name": "kevin-test",
+                "org": "ohcnivek"
+            },
+            "skip_line": false,
+            "status": "queued",
+            "title": "mq-qa-8440-3"
+        }
+    ]
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 ### Analytics
 
 {% swagger method="get" path="/v1/analytics" baseUrl="https://api.aviator.co/api" summary="Get list of analytics objects representing statistics on a daily basis." %}
