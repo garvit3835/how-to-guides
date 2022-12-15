@@ -351,7 +351,7 @@ Example:&#x20;
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
-`https://api.aviator.co/api/v1/pull_request/?org=orgname&repo=reponame&base_branch=master`&#x20;
+`https://api.aviator.co/api/v1/pull_request/queued?org=orgname&repo=reponame&base_branch=master`&#x20;
 
 
 {% endswagger-description %}
