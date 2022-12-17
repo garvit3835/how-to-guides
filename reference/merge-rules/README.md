@@ -95,6 +95,10 @@ merge_rules:
       override_required_checks:
         - "check 1"
         - check_2
+        - name: conditional_check
+        acceptable_statuses:
+          - cancelled
+          - success
       batch_size: 1
       batch_max_wait_minutes: 0
       require_all_draft_checks_pass: false
