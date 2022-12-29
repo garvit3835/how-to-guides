@@ -18,6 +18,7 @@
   * [Attributes & Examples](reference/merge-rules/attributes-and-examples.md)
   * [Audit Trail](reference/merge-rules/audit-trail.md)
 * [Comments and Status Codes](reference/comments-and-status-codes.md)
+* [Pilot - Automated actions](reference/pilot-automated-actions.md)
 * [Slash Commands](reference/slash-commands.md)
 * [Webhooks](reference/webhooks.md)
 * [Slack Integration](reference/slack-integration.md)
