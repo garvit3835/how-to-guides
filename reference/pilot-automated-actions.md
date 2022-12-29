@@ -74,7 +74,7 @@ You can also specify who labeled the PR or who the author is. Here a GitHub user
     pull_request: synchronize
 ```
 
-submitted: The PR is ready for review.. This means that it was either opened, or switched from draft to ready for review.
+* **submitted**: The PR is ready for review.. This means that it was either opened, or switched from draft to ready for review.
 
 ```
   trigger:
