@@ -14,9 +14,8 @@
 
 ## Reference
 
-* [Merge Rules](reference/merge-rules/README.md)
-  * [Attributes & Examples](reference/merge-rules/attributes-and-examples.md)
-  * [Audit Trail](reference/merge-rules/audit-trail.md)
+* [Simple merge rules](reference/simple-merge-rules.md)
+* [Configuration file](reference/configuration-file.md)
 * [Pilot - Automated actions](reference/pilot-automated-actions.md)
 * [Comments and Status Codes](reference/comments-and-status-codes.md)
 * [Slash Commands](reference/slash-commands.md)
@@ -35,6 +34,7 @@
 ## Manage
 
 * [Access Management](manage/access-management.md)
+* [Audit Trail](manage/audit-trail.md)
 * [Analytics](manage/analytics.md)
 * [Timeline](manage/timeline.md)
 * [On-premise Installation](manage/on-premise-installation/README.md)
