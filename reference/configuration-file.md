@@ -169,6 +169,8 @@ merge_rules:
     use_title_and_body: true
     cut_body_before: "----"
     cut_body_after: "+++"
+    strip_html_comments: false
+    include_coauthors: true
     apply_title_regexes:
       - pattern: "AVTR-"
         replace: "AVTR_"
@@ -183,6 +185,8 @@ merge_rules:
 | **use\_title\_and\_body** | Boolean               | Determines whether Aviator bot will replace default commit messages offered by Github. Defaults to `false`.                                                                                                                                  |
 | **cut\_body\_before**     | String                | A marker string to cut the PR body description. The commit message will contain the PR body after this marker. Leave empty for no cropping.                                                                                                  |
 | **cut\_body\_after**      | String                | A marker string to cut the PR body description. The commit message will contain the PR body before this marker. Leave empty for no cropping.                                                                                                 |
+| **strip\_html\_comments** | Boolean               | Strip out the hidden HTML comments from the commit message when merging the PR. Defaults to `false`.                                                                                                                                         |
+| **include\_coauthors**    | Boolean               | Include coauthors (if any) in the commit message when merging the PR. Defaults to `true`.                                                                                                                                                    |
 | **apply\_title\_regexes** | List\[ReplacePattern] | Contains the strings `pattern` and `replace` to indicate what pattern to replace in the PR title. This will be applied to the merge commit. In parallel mode, this also applies to the draft PR title. See the example tab for more details. |
 {% endtab %}
 {% endtabs %}
