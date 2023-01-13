@@ -79,7 +79,11 @@ Use the following settings to create the app:
 _**Please review the following carefully, any mismatch here could result in unexpected behavior of the app.**_
 {% endhint %}
 
+**Administrator**:  Read only
+
 **Checks**: Read & Write
+
+**Commit statuses**: Read & Write
 
 **Contents**: Read & Write
 
@@ -89,17 +93,27 @@ _**Please review the following carefully, any mismatch here could result in unex
 
 **Pull requests**: Read & Write
 
-**Commit statuses**: Read & Write
+**Workflows**: Read & Write
 
 **Members**: Read only
 
-**Administrator**:  Read only
+****
 
 **Subscribe to events**:
 
+Branch Protection rules
+
+Check Run
+
+Check Suite
+
 Label
 
+Issue Comments
+
 Member
+
+Public
 
 Pull request
 
@@ -107,11 +121,9 @@ Pull request review
 
 Pull request review comment
 
+Push
+
 Status
-
-Check Runs
-
-Issue Comments
 
 **Where can Github App be installed**: Any account
 
