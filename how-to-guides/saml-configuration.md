@@ -2,7 +2,7 @@
 
 All of Aviator’s cloud accounts support Google SSO based login. Self-hosted Aviator deployments support Google, Okta, Active Directory, or other SAML SSO providers.
 
-## Google SSO
+## Google SSO for onprem
 
 To setup Google SSO for on-premise installation, you will need to create Oauth authorization credentials in the Google developer console to identify the application to Google's OAuth 2.0 server.
 
@@ -26,6 +26,10 @@ Restart the server, and Google SSO should work.
 
 Aviator supports SAML 2.0 based authentication. To request SAML authentication for your account, please contact [<mark style="color:blue;">howto@aviator.co</mark>](mailto:howto@aviator.co). See instructions below for Okta. If you have any other identity provider, please contact us for instructions.
 
+### Note for onprem users
+
+Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the instructions below.
+
 ### Okta setup
 
 1. Sign into Okta as an administrator.
@@ -35,10 +39,10 @@ Aviator supports SAML 2.0 based authentication. To request SAML authentication f
 5. Enter **General Settings** for the application:
    * App name: **Aviator**
    * **App logo** (optional). You can download the application logo for the application, you can download one from [here](https://mergequeue.com/static/img/merge.png). \[INSERT NEW LOGO]
-6. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://aviator.yourdomain.com/saml/okta/configure</mark>](https://aviator.yourdomain.com/saml/okta/configure\*)<mark style="color:blue;"></mark>
-7. Copy the unique **Single Sign on url**, of format: [**https://aviator.yourdomain.com/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
+6. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)<mark style="color:blue;"></mark>
+7. Copy the unique **Single Sign on url**, of format: [**https://app.aviator.co/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
 
-![](<../.gitbook/assets/Screen Shot 2022-05-10 at 11.54.40 AM.png>)
+![identity provider setup](<../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
 
 8\. Enter SAML Settings, including:
 
@@ -65,7 +69,7 @@ Aviator supports SAML 2.0 based authentication. To request SAML authentication f
 
 13\. Go to the **Assignments** tab, and assign the app to the appropriate groups / users to access.
 
-14\. Go back to the SAML configuration page and update the following properties: [<mark style="color:blue;">https://aviator.yourdomain.com/saml/okta/configure</mark>](https://aviator.yourdomain.com/saml/okta/configure\*)<mark style="color:blue;"></mark>
+14\. Go back to the SAML configuration page and update the following properties: [https://app.aviator.co/saml/okta/configure](https://app.aviator.co/saml/okta/configure)
 
 * **Metadata url**: Paste the Metadata URL copied from step 11
 * **Email domains to allow**: enter your company email domain, e.g. [**example.com**](http://example.com)
