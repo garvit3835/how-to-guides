@@ -33,14 +33,13 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 ### Okta setup
 
 1. Sign into Okta as an administrator.
-2. Switch to the **Classic UI**, using the drop-down in the upper left.
-3. Go to Admin Dashboard > Applications > **Add Application**.
-4. Click **Create New App** and choose **SAML 2.0** as the Sign on method.
-5. Enter **General Settings** for the application:
+2. Go to Admin Dashboard > Applications > **Add Application**. If you don't see that option, you might need to switch to the **Classic UI**, using the drop-down in the upper left.
+3. Click **Create New App** and choose **SAML 2.0** as the Sign on method.
+4. Enter **General Settings** for the application:
    * App name: **Aviator**
-   * **App logo** (optional). You can download the application logo for the application, you can download one from [here](https://mergequeue.com/static/img/merge.png). \[INSERT NEW LOGO]
-6. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)<mark style="color:blue;"></mark>
-7. Copy the unique **Single Sign on url**, of format: [**https://app.aviator.co/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
+   * **App logo** (optional). You can download the application logo for the application, you can download one from [here](https://api.aviator.co/static/img/aviator\_long.png).
+5. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)<mark style="color:blue;"></mark>
+6. Copy the unique **Single Sign on url**, of format: [**https://app.aviator.co/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
 
 ![identity provider setup](<../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
 
@@ -61,11 +60,11 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 * I’m an Okta customer adding an internal app
 * This is an internal app that we have created.
 
-11\. Click **Finish**. On the next screen, click the Sign On tab and click on **Identity Provider metadata.**
+11\. Click **Finish**. On the next screen, click the **Sign On** tab and go to SAML Signing Certificates and select SHA-2 Actions dropdown. Select View IdP metadata.
 
-![](<../.gitbook/assets/Screen Shot 2022-05-10 at 12.08.48 PM.png>)
+<figure><img src="../.gitbook/assets/Screen Shot 2023-02-14 at 9.36.27 PM.png" alt=""><figcaption></figcaption></figure>
 
-12\. Copy the url that it opens, this is your **Metadata URL**.
+12\. Copy the url that it opens, this is your **Metadata URL**. It should typically end with: `/sso/saml/metadata`
 
 13\. Go to the **Assignments** tab, and assign the app to the appropriate groups / users to access.
 
