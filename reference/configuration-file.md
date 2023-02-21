@@ -116,6 +116,12 @@ merge_rules:
           acceptable_statuses:
             - skipped
             - success
+      batch_size: 1
+      batch_max_wait_minutes: 0
+      require_all_draft_checks_pass: false
+      skip_draft_when_up_to_date: false
+      use_optimistic_validation: true
+      optimistic_validation_failure_depth: 2
 ```
 
 {% tabs %}
