@@ -61,7 +61,7 @@ Example:
 
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
-`-d '{ "pattern": "release-*", "repository": {"org": "aviator", "name": "`av-demo-release`"}, "paused": true}'`\
+`-d '{ "pattern": "release-*", "repository": {"org": "aviator", "name": "`av-demo-release`"}, "paused": true, "paused_message": "This release branch has been paused."}'`\
 `https://api.aviator.co/api/v1/branches`
 {% endswagger-description %}
 
@@ -89,6 +89,10 @@ Glob pattern representing the base branch. E.g.
 
 {% swagger-parameter in="body" name="paused" type="Boolean" required="true" %}
 Whether to pause or unpause the queue
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="paused_message" type="String" %}
+A customized message to post on the top PR when this branch is paused.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
