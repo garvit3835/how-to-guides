@@ -228,6 +228,54 @@ merge_rules:
 {% endtab %}
 {% endtabs %}
 
+### Status Comment
+
+Aviator posts a status comment on every open pull request by default. Aviator automatically updates the status comment whenever the pull request is updated.
+
+Custom messages can be specified (`open_message`, `queued_message`, and `blocked_message`) to add information specific to your organization or repository (such as common troubleshooting steps).
+
+```yaml
+merge_rules:
+  # Configuration for the Aviator status comment.
+  # Optional (defaults to publish: "always" with no custom messages).
+  status_comment:
+    # When to publish the Aviator status comment.
+    # Optional. Valid values are "always", "queued", or "never".
+    # Default value is "always".
+    #   - "always": Post the status comment whenever the pull request is opened.
+    #   - "queued": Post the status comment when the pull request is queued.
+    #   - "never": Disable the status comment.
+    publish: "always"
+    
+    # A message to include in the status comment if the pull request is in the
+    # open state. Supports markdown.
+    # Optional.
+    open_message: "..."
+    
+    # A message to include in the status comment if the pull request is in the
+    # queued state. Supports markdown.
+    # Optional.
+    queued_message: "..."
+    
+    # A message to include in the status comment if the pull request is in the
+    # blocked state. Supports markdown.
+    # Optional.
+    blocked_message: "..."
+```
+
+{% tabs %}
+{% tab title="Attributes" %}
+
+
+| Name                 | Type   | Description                                                                                              |
+| -------------------- | ------ | -------------------------------------------------------------------------------------------------------- |
+| **publish**          | String | One of `always`, `queued`, or `never`. Defaults to `always`.                                             |
+| **open\_message**    | String | An optional message to include in the Aviator status comment when the pull request is open (not queued). |
+| **queued\_message**  | String | An optional message to include in the Aviator status comment when the pull request is queued.            |
+| **blocked\_message** | String | An optional message to include in the Aviator status comment when the pull request is blocked.           |
+{% endtab %}
+{% endtabs %}
+
 ### Other
 
 ```
