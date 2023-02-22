@@ -249,6 +249,7 @@ merge_rules:
     # Optional. Valid values are "always", "queued", or "never".
     # Default value is "always".
     #   - "always": Post the status comment whenever the pull request is opened.
+    #   - "ready": Publish the status comment when the pull request is ready for review.
     #   - "queued": Post the status comment when the pull request is queued.
     #   - "never": Disable the status comment.
     publish: "always"
@@ -275,7 +276,7 @@ merge_rules:
 
 | Name                 | Type   | Description                                                                                              |
 | -------------------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| **publish**          | String | One of `always`, `queued`, or `never`. Defaults to `always`.                                             |
+| **publish**          | String | One of `always`, `ready`, `queued`, or `never`. Defaults to `always`.                                    |
 | **open\_message**    | String | An optional message to include in the Aviator status comment when the pull request is open (not queued). |
 | **queued\_message**  | String | An optional message to include in the Aviator status comment when the pull request is queued.            |
 | **blocked\_message** | String | An optional message to include in the Aviator status comment when the pull request is blocked.           |
