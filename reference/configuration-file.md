@@ -101,7 +101,8 @@ merge_rules:
     parallel_mode:      
       use_affected_targets: false
       use_fast_forwarding: true      
-      max_parallel_builds: 10      
+      max_parallel_builds: 10
+      max_parallel_paused_builds: 1      
       max_requeue_attempts: 3      
       stuck_pr_label: "label"      
       stuck_pr_timeout_mins: 90      
@@ -126,9 +127,12 @@ merge_rules:
 
 {% tabs %}
 {% tab title="Attributes" %}
+
+
 | Name                                       | Type                                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **max\_parallel\_builds**                  | Integer                                 | The maximum number of builds that Aviator bot will run at any time. Defaults to no limit.                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **max\_parallel\_paused\_builds**          | Integer                                 | <p>Must be less than <code>max_parallel_builds</code>. Defaults to <code>null</code>. <br><br>The maximum number of PRs that Aviator will create draft PRs for the PRs that are in paused state.  If set to 0, Aviator will not create any draft PRs on paused base branches. If set to <code>null</code> there will be no specific limit for paused PRs.<br><br>The paused draft PRs always counts towards the cap set by <code>max_parallel_builds</code>.</p>                                                   |
 | **max\_requeue\_attempts**                 | Integer                                 | The maximum number of times Aviator bot will requeue a CI run after failing. Note that PRs will only be requeued if the original PR CI is passing but the draft PR CI fails. Defaults to no requeuing.                                                                                                                                                                                                                                                                                                             |
 | **stuck\_pr\_label**                       | String                                  | The label that Aviator bot will add if it determines a PR to be stuck.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **stuck\_pr\_timeout\_mins**               | Integer                                 | Aviator bot will determine the PR to be stuck after the specified timeout and dequeue it. Defaults to no time out.                                                                                                                                                                                                                                                                                                                                                                                                 |
