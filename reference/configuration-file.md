@@ -47,13 +47,14 @@ merge_rules:
   preconditions:    
     number_of_approvals: 1    
     required_checks:
-    # Note: both a string or a more detailed conditional check is accepted
-    # for conditional_check, both skipped and success are considered passing      
-      - check_1      
+      # Note: both a string or a more detailed conditional check is accepted
+      # for conditional_check, both skipped and success are considered passing      
+      - check_1
       - name: conditional_check
         acceptable_statuses:
           - skipped
-          - success   
+          - success
+      - "golang-*"  # matches golang-test, golang-lint, etc.
     use_github_mergeability: true    
     conversation_resolution_required: false
     validations:
@@ -72,13 +73,15 @@ merge_rules:
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name                                                                    | Type                                    | Description                                                                                                                                                                                        |
-| ----------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **number\_of\_approvals**                                               | Integer                                 | Minimum number of reviewers that should approve the PullRequest before it can qualify to be merged. Defaults to 1.                                                                                 |
-| **required\_checks**                                                    | List\[Union\[String, ConditionalCheck]] | Checks that need to pass before Aviator bot will merge the PR. Also supports other acceptable CI statuses if your repo uses conditional status checks. See the Example tab.                        |
-| <p><strong></strong></p><p><strong>use_github_mergeability</strong></p> | Boolean                                 | Determines whether to use the default required checks specified in branch protection rules on GitHub. When this setting is enabled, Aviator bot will ignore `required_checks`. Defaults to `true`. |
-| **conversation\_resolution\_required**                                  | Boolean                                 | Determines whether Aviator bot will queue the PR only after all conversations are resolved.                                                                                                        |
-| **validations**                                                         | List\[Validation]                       | Custom validation rules using regexes for the PR body or title. See the Example tab for more details.                                                                                              |
+
+
+| Name                                                                    | Type                                    | Description                                                                                                                                                                                                          |
+| ----------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **number\_of\_approvals**                                               | Integer                                 | Minimum number of reviewers that should approve the PullRequest before it can qualify to be merged. Defaults to 1.                                                                                                   |
+| **required\_checks**                                                    | List\[Union\[String, ConditionalCheck]] | Checks that need to pass before Aviator bot will merge the PR. Supports shell wildcard (glob) patterns. Also supports other acceptable CI statuses if your repo uses conditional status checks. See the Example tab. |
+| <p><strong></strong></p><p><strong>use_github_mergeability</strong></p> | Boolean                                 | Determines whether to use the default required checks specified in branch protection rules on GitHub. When this setting is enabled, Aviator bot will ignore `required_checks`. Defaults to `true`.                   |
+| **conversation\_resolution\_required**                                  | Boolean                                 | Determines whether Aviator bot will queue the PR only after all conversations are resolved.                                                                                                                          |
+| **validations**                                                         | List\[Validation]                       | Custom validation rules using regexes for the PR body or title. See the Example tab for more details.                                                                                                                |
 {% endtab %}
 {% endtabs %}
 
@@ -140,7 +143,7 @@ merge_rules:
 | **check\_mergeability\_to\_queue**         | Boolean                                 | If enabled, Aviator bot will only queue the PR if it passes all mergeability checks. Defaults to `false`.                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **use\_affected\_targets**                 | Boolean                                 | If enabled, allows using [affected targets](../how-to-guides/affected-targets/) in your repo.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **use\_fast\_forwarding**                  | Boolean                                 | If enabled, uses [fast forwarding](../how-to-guides/fast-forwarding.md) to merge PRs.                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **override\_required\_checks**             | List\[Union\[String, ConditionalCheck]] | Use this attribute if you would like different checks for your original PRs and draft PRs. The checks defined here will be used for the draft PRs created in Parallel mode. Also supports other acceptable CI statuses if your repo uses conditional status checks. See the Example tab.                                                                                                                                                                                                                           |
+| **override\_required\_checks**             | List\[Union\[String, ConditionalCheck]] | Use this attribute if you would like different checks for your original PRs and draft PRs. The checks defined here will be used for the draft PRs created in Parallel mode. Supports shell wildcard (glob) patterns. Also supports other acceptable CI statuses if your repo uses conditional status checks. See the Example tab.                                                                                                                                                                                  |
 | **batch\_size**                            | Integer                                 | The number of queued PRs batched together for a draft PR CI run. Defaults to 1.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **batch\_max\_wait\_minutes**              | Integer                                 | The time to wait before creating the next batch of PRs if there are not enough queued PRs to create a full batch. Defaults to 0.                                                                                                                                                                                                                                                                                                                                                                                   |
 | **require\_all\_draft\_checks\_pass**      | Boolean                                 | Determines if Aviator will enforce all checks to pass for the constructed draft PRs. If true, any single failing test will cause the draft PR to fail. These checks include the ones we receive status updates for via GitHub. This may work well if your repo has conditional checks. Requires at least one check to be present. Defaults to `false`.                                                                                                                                                             |
