@@ -33,9 +33,9 @@ Since this approach needs additional information associated with each merge requ
     "number": 1234,
     "repository": {
        "name": "repo_name",
-       "organization": "org_name",
+       "org": "org_name",
     },
-    "affectedTargets": ["targetA", "targetB", …],
+    "affected_targets": ["targetA", "targetB", …],
     "merge_commit_message": {
       "title": "This is the title. Fixes [TASK-123]",
       "body": "This is where the commit body goes."
