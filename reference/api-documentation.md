@@ -186,6 +186,10 @@ Glob pattern representing the base branch. E.g.
 {% swagger-parameter in="body" name="action" required="true" %}
 Action taken. Valid options: 
 
+`update`
+
+, 
+
 `queue`
 
  or 

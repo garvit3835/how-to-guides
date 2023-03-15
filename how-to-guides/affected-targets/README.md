@@ -28,7 +28,7 @@ Since this approach needs additional information associated with each merge requ
 
 ```json
 {
-  "action": "queue",
+  "action": "update",
   "pull_request": {
     "number": 1234,
     "repository": {
