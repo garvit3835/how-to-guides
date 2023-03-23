@@ -150,6 +150,7 @@ Glob pattern representing the base branch. E.g.
         {
             "pattern": "release-*",
             "paused": true
+            "paused_message": "This branch is currently paused for the release"
         }
     ],
     "repository": {
