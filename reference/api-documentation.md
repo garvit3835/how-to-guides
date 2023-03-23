@@ -175,7 +175,11 @@ Glob pattern representing the base branch. E.g.
 \
 
 
-`-d '{"action": "queue", "pull_request": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}, "affected_targets": ["targetA", "targetB"], "merge_commit_message": {"title": "This is where title goes", "body": "This is where body goes"}}}'`
+`-d '{"action": "queue", "pull_request": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}, "head_commit_sha":" "`
+
+69f4404fda48aa2932abfbcb6956a9ccd473b17d
+
+`", "affected_targets": ["targetA", "targetB"], "merge_commit_message": {"title": "This is where title goes", "body": "This is where body goes"}}}'`
 
 \
 
@@ -215,6 +219,10 @@ Name of the repository
 
 {% swagger-parameter in="body" name="> > org" required="true" %}
 Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="> head_commit_sha" %}
+Representing the commit SHA of the head of the PR.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> affected_targets" type="List[String]" %}

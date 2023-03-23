@@ -35,6 +35,7 @@ Since this approach needs additional information associated with each merge requ
        "name": "repo_name",
        "org": "org_name",
     },
+    "head_commit_sha": "69f4404fda48aa2932abfbcb6956a9ccd473b17d",
     "affected_targets": ["targetA", "targetB", …],
     "merge_commit_message": {
       "title": "This is the title. Fixes [TASK-123]",
