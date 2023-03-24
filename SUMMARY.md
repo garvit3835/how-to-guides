@@ -10,7 +10,7 @@
   * [Global CI Validation](getting-started/changesets/global-ci-validation.md)
   * [FAQs](getting-started/changesets/faqs.md)
 * [Stacked PRs](getting-started/stacked-prs.md)
-* [FlakyBot](getting-started/flakybot.md)
+* [TestDeck](getting-started/testdeck.md)
 
 ## Reference
 

@@ -8,7 +8,7 @@ There are 4 key components to Aviator:
 
 1. **MergeQueue** - an automated queue that manages the merging workflow for your GitHub repository to help protect important branches from broken builds. The Aviator bot uses GitHub Labels to identify Pull Requests (PRs) that are ready to be merged, validates CI checks, processes semantic conflicts, and merges the PRs automatically.
 2. **ChangeSets** - workflows to synchronize validating and merging multiple PRs within the same repository or multiple repositories. Useful when your team often sees groups of related PRs that need to merged together, or otherwise treated as a single broader unit of change.
-3. **FlakyBot** - a tool to automatically detect, take action on and process results from flaky tests in your CI infrastructure.
+3. **TestDeck** - a tool to automatically detect, take action on and process results from flaky tests in your CI infrastructure.
 4. **Stacked PRs CLI** - a command line tool that helps developers manage cross-PR dependencies. This tool also automates syncing and merging of stacked PRs. Useful when your team wants to promote a culture of smaller, incremental PRs instead of large changes, or when your workflows involve keeping multiple, dependent PRs in sync.&#x20;
 
 ## How Aviator works
