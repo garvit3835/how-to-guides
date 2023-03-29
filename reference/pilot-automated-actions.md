@@ -145,7 +145,7 @@ If you want more custom controls over the actions, you may also choose to write 
 actions:
   - script:
       code: |
-        console.log("hello", "world", event, event.target, event.pull_request.number);
-        aviator.github.addLabel({ label: "urgent", target: event.pull_request.id });
+        console.log("hello", "world", event, event.target, event.pullRequest.number);
+        aviator.github.addLabel({ label: "urgent", target: event.pullRequest.id });
 
 ```
