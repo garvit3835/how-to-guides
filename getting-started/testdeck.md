@@ -135,23 +135,39 @@ Other useful details include history of a specific test suite, as well as a part
 
 ## TestDeck API
 
-The flaky test API can be used to fetch the results of all flaky tests in the last 30 days. The results are paginated with maximum of 100 results returned in the response. The results are in the order of the most recent flaky, based on `first_occurrence`.
+{% swagger method="get" path="/flaky" baseUrl="https://api.aviator.co/api/v1/testdeck" summary="Get flaky tests in the last 30 days." %}
+{% swagger-description %}
+The flaky test API can be used to fetch the results of all flaky tests in the last 30 days. The results are paginated with maximum of 100 results returned in the response. The results are in the order of the most recent flaky, based on 
 
-### Request
+`first_occurrence`
 
-```
-GET https://api.aviator.co/api/v1/testdeck/flaky?org=<repo_org>&repo=<repo_name>&test_suite=<suite_name>&page=1
-```
+.
+{% endswagger-description %}
 
-### Response
+{% swagger-parameter in="body" name="org" type="String" required="true" %}
+Organization name for the repo.
+{% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="repo" type="String" required="true" %}
+Repository name.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="github_check_name" type="String" required="true" %}
+Github check name.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="page" type="Integer" %}
+Page number.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
   "repository": {
      "name": "repo_name",
      "org": "repo_org"
   },
-  "test_suite": {
+  "github_check": {
     "name": "ci/circleci: unit-tests",
     "provider": "CircleCI"
   },
@@ -161,7 +177,7 @@ GET https://api.aviator.co/api/v1/testdeck/flaky?org=<repo_org>&repo=<repo_name>
       "class_name": "core.payments.SecurityCodeTest",
       "first_occurrence": "2022-11-16T17:21:41.350499",
       "last_occurrence": "2022-11-18T11:13:23.12361",
-      "details_url": "https://app.aviator.co/flaky/checks/test/101063/history",
+      "details_url": "https://app.aviator.co/flaky/test_case/101063",
       "last_24_hours_count": 5
     },
     {
@@ -173,6 +189,8 @@ GET https://api.aviator.co/api/v1/testdeck/flaky?org=<repo_org>&repo=<repo_name>
   ]
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
 ## TestDeck webhooks
 
