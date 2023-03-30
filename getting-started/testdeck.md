@@ -95,7 +95,9 @@ To upload all files from an XML folder from a build step:
 
 ```yaml
 steps:
-  - label: "🔨 Test"command: "make test"plugins:
+  - label: "🔨 Test"
+    command: "make test"
+    plugins:
       - aviator#v1.0.0:
           files: "test/junit-*.xml"
 ```
