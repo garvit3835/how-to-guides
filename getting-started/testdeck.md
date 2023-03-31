@@ -56,9 +56,6 @@ usage:
             name: Run tests and upload results
             command: |
               python -m pytest -vv --junitxml="test_results/output.xml"
-        - store_artifacts:
-            path: ./test_results/output.xml
-            destination: output.xml
         - aviator-upload-orb/upload:
             assets: "test_results/*.xml"
   workflows:
