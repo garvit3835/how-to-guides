@@ -2,26 +2,6 @@
 
 All of Aviator’s cloud accounts support Google SSO based login. Self-hosted Aviator deployments support Google, Okta, Active Directory, or other SAML SSO providers.
 
-## Google SSO for onprem
-
-To setup Google SSO for on-premise installation, you will need to create Oauth authorization credentials in the Google developer console to identify the application to Google's OAuth 2.0 server.
-
-1. Go to the [<mark style="color:blue;">Developer Credentials page</mark>](https://console.developers.google.com/apis/credentials).
-2. Click **Create credentials > OAuth client ID**.
-3. Select the **Web application** application type.
-4. Name your OAuth 2.0 client and add the Javascript origins and redirect urls replacing the following with your domain.
-
-![](<../.gitbook/assets/Screen Shot 2022-05-10 at 11.28.34 AM.png>)
-
-5\. Add the Google Client ID and Client Secret that is on this page to your docker `.env`  file.
-
-```shell
-GOOGLE_CLIENT_ID={YOUR_GOOGLE_CLIENT_ID}
-GOOGLE_CLIENT_SECRET={YOUR_GOOGLE_CLIENT_SECRET}
-```
-
-Restart the server, and Google SSO should work.
-
 ## SAML 2.0
 
 Aviator supports SAML 2.0 based authentication. To request SAML authentication for your account, please contact [<mark style="color:blue;">howto@aviator.co</mark>](mailto:howto@aviator.co). See instructions below for Okta. If you have any other identity provider, please contact us for instructions.
@@ -41,7 +21,7 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 5. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)<mark style="color:blue;"></mark>
 6. Copy the unique **Single Sign on url**, of format: [**https://app.aviator.co/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
 
-![identity provider setup](<../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
+![identity provider setup](<../../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
 
 8\. Enter SAML Settings, including:
 
@@ -53,7 +33,7 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 
 9\. Enter the attribute statements, which will be used to map attributes between Okta and Aviator. Please note that these values are case-sensitive.
 
-![](<../.gitbook/assets/Screen Shot 2022-05-10 at 12.07.08 PM.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-05-10 at 12.07.08 PM.png>)
 
 10\. Click **Next**. Then, set Okta support parameters for the application. Recommended settings:
 
@@ -62,7 +42,7 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 
 11\. Click **Finish**. On the next screen, click the **Sign On** tab and go to SAML Signing Certificates and select SHA-2 Actions dropdown. Select View IdP metadata.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-02-14 at 9.36.27 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-02-14 at 9.36.27 PM.png" alt=""><figcaption></figcaption></figure>
 
 12\. Copy the url that it opens, this is your **Metadata URL**. It should typically end with: `/sso/saml/metadata`
 

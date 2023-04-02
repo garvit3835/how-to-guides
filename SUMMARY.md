@@ -39,6 +39,7 @@
 * [Timeline](manage/timeline.md)
 * [On-premise Installation](manage/on-premise-installation/README.md)
   * [Slack Integration](manage/on-premise-installation/slack-integration.md)
+  * [Google SSO Login](manage/on-premise-installation/google-sso-login.md)
 
 ## How To Guides
 
@@ -48,7 +49,8 @@
 * [Affected Targets](how-to-guides/affected-targets/README.md)
   * [Directory based affected targets](how-to-guides/affected-targets/directory-based-affected-targets.md)
 * [Personal Access Tokens](how-to-guides/personal-access-tokens.md)
-* [SAML Configuration](how-to-guides/saml-configuration.md)
+* [SAML Configuration](how-to-guides/saml-configuration/README.md)
+  * [Microsoft Active Directory](how-to-guides/saml-configuration/microsoft-active-directory.md)
 
 ***
 
