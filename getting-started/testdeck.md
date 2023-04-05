@@ -2,7 +2,7 @@
 
 ## What is a flaky test
 
-A flaky test is a non-deterministic tests that pass and fail without any code changes. It causes builds to fail even though the developer hasn’t made any related changes. This requires manual reruns of full CI that results in unnecessary developer overhead and increases in CI compute cost.
+A flaky test is a non-deterministic test that passes and fails without any code changes. It causes builds to fail even though the developer hasn’t made any related changes. This requires manual reruns of full CI that result in unnecessary developer overhead and increase in CI compute cost.
 
 ## Overview
 
@@ -28,8 +28,6 @@ Aviator fetches the test results by using a custom plugin. Currently, we support
 
 ### CircleCI
 
-To install Aviator on CircleCI, please use the Aviator orb defined [here](https://github.com/aviator-co/circleci-upload-orb).
-
 **Step 1**: Configure the API token in the [environment variables section](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project) as:
 
 ```
@@ -39,29 +37,25 @@ AVIATOR_API_TOKEN=av_live_xxxxxxx
 **Step 2**: Add a step after your test execution step.
 
 ```yaml
-description: >
-  Add the `aviator-upload-orb/upload` command after
-  getting test results in order to upload them to the Aviator server.
-usage:
-  version: 2.1
-  orbs:
-    aviator-upload-orb: aviator/aviator-upload-orb@0.0.3
-  jobs:
-    test:
-      docker:
-        - image: cimg/python:3.7
-      steps:
-        - checkout
-        - run:
-            name: Run tests and upload results
-            command: |
-              python -m pytest -vv --junitxml="test_results/output.xml"
-        - aviator-upload-orb/upload:
-            assets: "test_results/*.xml"
-  workflows:
-    test-and-upload:
-      jobs:
-        - test
+version: 2.1
+orbs:
+  aviator-upload-orb: aviator/aviator-upload-orb@0.0.3
+jobs:
+  test:
+    docker:
+      - image: cimg/python:3.7
+    steps:
+      - checkout
+      - run:
+          name: Run tests and upload results
+          command: |
+            python -m pytest -vv --junitxml="test_results/output.xml"
+      - aviator-upload-orb/upload:
+          assets: "test_results/*.xml"
+workflows:
+  test-and-upload:
+    jobs:
+      - test
 ```
 
 Once this is done, you should be able to verify that the artifacts are getting uploaded by looking at your CircleCI. You should see something like:
@@ -69,10 +63,14 @@ Once this is done, you should be able to verify that the artifacts are getting u
 ```bash
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100 37559  100    60  100 37499     61  38680 --:--:-- --:--:-- --:--:-- 38720
-{"success":true,"message":"Artifact uploaded successfully."}
+100  5103  100    20  100  5083     36   9295 --:--:-- --:--:-- --:--:--  9329
+{
+  "status": 200
+}
 CircleCI received exit code 0
 ```
+
+The `aviator-upload-orb` used above is available publicly at [aviator-co/circleci-upload-orb](https://github.com/aviator-co/circleci-upload-orb).
 
 ### Buildkite
 
