@@ -79,7 +79,7 @@ To install Aviator on Buildkite, please use the Buildkite plugin defined [here](
 **Step 1**: Configure the API token in the [environment variables section](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project) as:
 
 ```
-AVIATOR_API_KEY=av_live_xxxxxxx
+AVIATOR_API_TOKEN=av_live_xxxxxxx
 ```
 
 **Step 2**: Now you can either upload the artifacts from the same step as the test run or create a separate step:
@@ -104,7 +104,9 @@ You can also use build artifacts generated in a previous step:
 ```yaml
 steps:
   # Run tests and upload 
-  - label: "🔨 Test"command: "make test --junit=tests-N.xml"artifact_paths: "tests-*.xml"
+  - label: "🔨 Test"
+    command: "make test --junit=tests-N.xml"
+    artifact_paths: "tests-*.xml"
 
   - wait
 
