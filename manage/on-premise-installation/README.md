@@ -97,7 +97,7 @@ _**Please review the following carefully, any mismatch here could result in unex
 
 **Members**: Read only
 
-****
+
 
 **Subscribe to events**:
 
@@ -143,7 +143,7 @@ Additionally, you should generate a private key from the bottom of the page. Thi
 
 ### Step 5
 
-Verify that docker engine exists, otherwise follow the instructions [<mark style="color:blue;">here</mark>](https://docs.docker.com/engine/install/ubuntu/) <mark style="color:blue;"></mark> to install.
+Verify that docker engine exists, otherwise follow the instructions [<mark style="color:blue;">here</mark>](https://docs.docker.com/engine/install/ubuntu/) to install.
 
 ### Step 6
 

@@ -26,6 +26,7 @@
 * [Aviator CLI](reference/aviator-cli/README.md)
   * [Installation](reference/aviator-cli/installation.md)
   * [Configuration](reference/aviator-cli/configuration.md)
+  * [Splitting a Commit](reference/aviator-cli/splitting-a-commit.md)
 * [Stacked PRs](reference/stacked-prs/README.md)
   * [Creating Stacked PRs](reference/stacked-prs/creating-stacked-prs.md)
   * [Navigating & Modifying Stacked PRs](reference/stacked-prs/navigating-and-modifying-stacked-prs.md)
