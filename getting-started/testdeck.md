@@ -213,8 +213,8 @@ Example JSON payload for webhook:
   "test_case": {
     "name": "test_invalid_security_code",
     "class_name": "core.payments.SecurityCodeTest",
-    "first_occurence": "2022-11-16T17:21:41.350499",
-    "last_occurence": "2022-11-18T11:13:23.12361",
+    "first_occurrence": "2022-11-16T17:21:41.350499",
+    "last_occurrence": "2022-11-18T11:13:23.12361",
     "last_24_hours_count": 5
   },
   "commit_sha": "c576a61d26f72ad335660bdaefa4d63306c5752c"
