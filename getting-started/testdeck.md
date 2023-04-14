@@ -1,12 +1,10 @@
 # TestDeck
 
-## What is a flaky test
-
-A flaky test is a non-deterministic test that passes and fails without any code changes. It causes builds to fail even though the developer hasn’t made any related changes. This requires manual reruns of full CI that result in unnecessary developer overhead and increase in CI compute cost.
-
 ## Overview
 
-Aviator helps by identifying flaky tests and taking actions to reduce overhead. It has two main capabilities: reporting and auto-rerunning.
+Aviator's TestDeck helps by identifying flaky tests and taking actions to reduce overhead. It has two main capabilities: reporting and auto-rerunning.
+
+A flaky test is a non-deterministic test that passes and fails without any code changes. It causes builds to fail even though the developer hasn’t made any related changes. This requires manual reruns of full CI that result in unnecessary developer overhead and increase in CI compute cost.
 
 ### Reporting
 
@@ -15,7 +13,7 @@ Aviator captures and analyzes test results from your preferred CI provider, proc
 * Identify flaky tests in the system reactively and proactively. These results are reported through our dashboard and using APIs and webhooks.
 * Historical view of a particular test case - how often the test has failed (flaky or not), has the test become stable / unstable. Views by feature branches vs. base branches.
 * Visibility into whether test stability is degrading or improving for base branches.
-* Visibility into whether test run times are going increasing or decreasing (analyze P50, P90, etc. of test run times).
+* Visibility into whether test run times are increasing or decreasing (analyze P50, P90, etc. of test run times).
 * Ability to proactively rerun the test suite at a particular cadence (nightly job) to identify flakes.
 
 ### **Auto-rerun unreliable tests**
@@ -193,11 +191,11 @@ Page number.
 
 ## TestDeck webhooks
 
-Aviator already support a [webhook framework](https://docs.aviator.co/reference/webhooks) that lets you listen to various events. By using Aviator’s new capabilities to detect flaky tests, you can now subscribe to these flaky test webhooks to take actions based on the event payload.
+Aviator already supports a [webhook framework](https://docs.aviator.co/reference/webhooks) that lets you listen to various events. By using Aviator’s new capabilities to detect flaky tests, you can now subscribe to these flaky test webhooks to take actions based on the event payload.
 
 ### Event payload
 
-Example JSON payload for webhook:
+Example JSON payload for TestDeck webhook:
 
 ```json
 {
