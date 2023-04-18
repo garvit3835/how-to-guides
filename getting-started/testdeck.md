@@ -114,6 +114,43 @@ steps:
           files: "tests-*.xml"
 ```
 
+### GitHub Actions
+
+**Step 1**: Configure the API token as a [secret in your repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
+
+**Step 2**: Add the GitHub Action as a step in your job. Make sure to specify the inputs `assets` and `aviator_api_token`. Add the conditional `if: success() || failure()` in the step to ensure that the test files are always uploaded, regardless of test failure/success.
+
+```yaml
+name: Run tests and upload results
+
+on: [push]
+
+jobs:
+  test-and-upload:
+    name: Test and Upload
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies and run test
+      run: |
+        pip install pytest
+        python -m pytest -vv --junitxml="test_results/output.xml"
+    - name: Upload files with github action
+      if: success() || failure()
+      uses: aviator-co/upload-action@v0.1.1
+      with:
+        assets: test_results/output.xml
+        aviator_api_token: ${{ secrets.AVIATOR_API_TOKEN }}
+```
+
+The GitHub action is available publicly at [aviator-co/upload-action](https://github.com/aviator-co/upload-action). You can also find it on [the GitHub Marketplace](https://github.com/marketplace/actions/aviator-test-uploader).
+
 ## TestDeck Dashboard
 
 ### Historical view
