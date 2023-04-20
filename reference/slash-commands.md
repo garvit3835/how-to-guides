@@ -26,6 +26,14 @@ The `/aviator refresh` command causes MergeQueue to re-examine your pull request
 
 Usually this is only necessary if GitHub fails to deliver an event to MergeQueue (e.g., during a GitHub outage).
 
+### Backport
+
+The `/aviator backport` command can be used to backport a given PR to the specified target branch. This opens a new PR that has the cherry-picked changes from the current PR but targetting the specified base branch.
+
+```
+/aviator backport <target_branch>
+```
+
 ### Stack Merge
 
 The `/aviator stack merge` command queues a stack for merging into the target branch of the stack (usually your repository default branch).
