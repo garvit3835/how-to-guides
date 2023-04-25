@@ -1,16 +1,14 @@
-# Merge rules - Getting started
+# Merge rules dashboard
 
 Merge rules are at the core of how the Aviator bot behaves. MergeQueue primarily relies on GitHub Labels to communicate with pull requests. There are several attributes that you can customize for each repository using a yaml configuration file.
 
-### Merge rules dashboard
-
-The best option for a quick setup is via the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page.
+The simplest option for a quick setup is via the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page.
 
 {% hint style="warning" %}
 Many advanced configurations are not available in the Dashboard UI and can only be configured through a configuration file. We only recommend using the Dashboard UI option if you require a simple setup.
 {% endhint %}
 
-The only required setting is the `Label for trigger` -  this will default to `mergequeue`. Once you add this to a PR, Aviator will queue and merge the PR.
+The only required setting is the `Label for trigger` -  defaults to `mergequeue`. Once you add this to a PR, Aviator will queue and merge the PR.
 
 ![Label for trigger is the only required setting.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.43.35 PM.png>)
 

@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [MergeQueue](mergequeue/README.md)
   * [Quick Setup](mergequeue/quick-setup.md)
-  * [Merge rules - Getting started](mergequeue/merge-rules-getting-started.md)
+  * [Merge rules dashboard](mergequeue/merge-rules-dashboard.md)
   * [Configuration file](mergequeue/configuration-file/README.md)
     * [Complete reference guide](mergequeue/configuration-file/complete-reference-guide.md)
     * [Audit Trail](mergequeue/configuration-file/audit-trail.md)
