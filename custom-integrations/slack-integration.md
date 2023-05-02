@@ -15,3 +15,5 @@ You can also link your GitHub account to the Slack integration. The Aviator Slac
 Once completed, you'll receive DMs about your PR activity.
 
 <figure><img src="../.gitbook/assets/Screen Shot 2022-09-20 at 5.23.01 PM.png" alt=""><figcaption><p>PR updates from the Aviator Slack app.</p></figcaption></figure>
+
+If you want to stop receiving DM notifications from Aviator, you can disconnect with `/aviator github disconnect`.
