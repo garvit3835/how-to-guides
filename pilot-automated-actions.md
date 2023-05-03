@@ -19,7 +19,7 @@ In the above example, we are triggering an instant merge action based on the lab
 
 ## Scenarios
 
-A scenario is a configurable, automated process that is invoked in response to a certain trigger and which in turn may be run several actions. Scenarios are often phrased in English as “if this, then that.”
+A scenario is a configurable, automated process that is invoked in response to a certain trigger and which in turn may run several actions. Scenarios are often phrased in English as “if this, then that.”
 
 In the configuration file, the scenarios object has three properties
 
@@ -116,7 +116,7 @@ actions:
 
 #### mergequeue
 
-Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior here.
+Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/advanced-concepts/priority-merges.md#instant-merge).
 
 #### slack
 
