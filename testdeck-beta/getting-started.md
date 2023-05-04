@@ -52,7 +52,7 @@ The `aviator-upload-orb` used above is available publicly at [<mark style="color
 
 To install Aviator on Buildkite, please use the Buildkite plugin defined [<mark style="color:blue;">here</mark>](https://github.com/buildkite-plugins/aviator-buildkite-plugin).
 
-**Step 1**: Configure the API token in the [<mark style="color:blue;">environment variables section</mark>](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project) as:
+**Step 1**: Configure the API token as a secret in Buildkite. You can set this in an environment hook on Buildkite agents or use your preferred secret storage. Read more about [<mark style="color:blue;">managing Buildkite secrets</mark>](https://buildkite.com/docs/pipelines/secrets#exporting-secrets-with-environment-hooks).
 
 ```
 AVIATOR_API_TOKEN=av_live_xxxxxxx
