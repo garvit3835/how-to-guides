@@ -21,4 +21,4 @@ Aviator also offers capability for users to login using Google SSO. Additionally
 
 ## **SAML authentication**
 
-Aviator also offers SAML based authentication that can be configured for Okta or other SAML providers. We only offer SAML authentication in our enterprise plans, [<mark style="color:blue;">read more here</mark>](access-management.md#saml-authentication).
+Aviator also offers SAML based authentication that can be configured for Okta or other SAML providers. We only offer SAML authentication in our enterprise plans, [<mark style="color:blue;">read more here</mark>](../custom-integrations/saml-configuration/).
