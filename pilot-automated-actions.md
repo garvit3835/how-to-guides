@@ -6,16 +6,16 @@ Each Pilot workflow contains one scenario and one or more actions. Here’s an e
 
 ```
 scenarios:
-- name: "emergency merge"
+- name: "instant merge"
   trigger:
     pull_request:
-      labeled: "av-emergency-merge"
+      labeled: "av-instant-merge"
   actions:
   - mergequeue:
      instant_merge: {}
 ```
 
-In the above example, we are triggering an instant merge action based on the label `av-emergency-merge`.
+In the above example, we are triggering an instant merge action based on the label `av-instant-merge`.
 
 ## Scenarios
 
@@ -46,7 +46,7 @@ It has the following associated events:
 ```
   trigger:
       pull_request:
-        labeled: "av-emergency-merge"
+        labeled: "av-instant-merge"
 ```
 
 You can also specify who labeled the PR or who the author is. Here a GitHub username can be provided. If you want to instead represent a team, you can use `@org/team`. Exactly one of `github_login` and `github_team` must be specified.
@@ -55,7 +55,7 @@ You can also specify who labeled the PR or who the author is. Here a GitHub user
   trigger:
     pull_request:
       labeled:
-        label "av-emergency-merge"
+        label "av-instant-merge"
         labeled_by: ghusername
 ```
 
@@ -63,7 +63,7 @@ You can also specify who labeled the PR or who the author is. Here a GitHub user
   trigger:
     pull_request:
       labeled:
-        label "av-emergency-merge"
+        label "av-instant-merge"
         authored_by: “@aviator-co/engineering”
 ```
 
