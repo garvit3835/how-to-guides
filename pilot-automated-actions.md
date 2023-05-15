@@ -116,7 +116,7 @@ actions:
 
 #### mergequeue
 
-Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/advanced-concepts/priority-merges.md#instant-merge).
+Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/priority-merges.md#instant-merge).
 
 #### slack
 

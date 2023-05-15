@@ -66,7 +66,7 @@ merge_rules:
 
 ### Using Parallel mode
 
-Also checkout the [<mark style="color:blue;">parallel mode section</mark>](../advanced-concepts/parallel-mode/) for details.
+Also checkout the [<mark style="color:blue;">parallel mode section</mark>](../parallel-mode/) for details.
 
 ```yaml
  merge_rules:
