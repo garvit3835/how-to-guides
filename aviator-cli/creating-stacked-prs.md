@@ -1,9 +1,5 @@
 # Creating Stacked PRs
 
-{% hint style="info" %}
-Check out the [Broken link](broken-reference "mention") guide for a full example of creating, managing, editing, and merging stacked PRs.
-{% endhint %}
-
 ### Creating a Branch
 
 Run the command
