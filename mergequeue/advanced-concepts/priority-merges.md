@@ -23,7 +23,7 @@ When using affected targets, only the PRs that affect the same target as the ski
 
 ## Instant merge
 
-In case of an instant merge, Aviator merge the PR directly without waiting for the CI to finish. This requires elevated permissions for Aviator and can be configured using the Pilot workflow. Please see how to configure instant merge in Pilot automated actions section.
+Instant merge is a merge method that Aviator merge the PR directly without waiting for the CI to finish. This requires elevated permissions for Aviator and can be configured using the Pilot workflow. Please see [the Pilot document](https://docs.aviator.co/pilot-automated-actions) on how to configure instant merge.
 
 ## FAQ
 
