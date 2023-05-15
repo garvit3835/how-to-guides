@@ -36,6 +36,7 @@
   * [Creating Stacked PRs](aviator-cli/creating-stacked-prs.md)
   * [Navigating & Modifying Stacked PRs](aviator-cli/navigating-and-modifying-stacked-prs.md)
   * [Splitting a Commit](aviator-cli/splitting-a-commit.md)
+  * [Git Subcommand Aliasing](aviator-cli/git-subcommand-aliasing.md)
   * [FAQs and Troubleshooting](aviator-cli/faqs-and-troubleshooting.md)
 * [TestDeck (Beta)](testdeck-beta/README.md)
   * [Getting started](testdeck-beta/getting-started.md)
