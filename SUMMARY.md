@@ -31,6 +31,7 @@
 * [Managing Stacked PRs](managing-stacked-prs.md)
 * [Aviator CLI](aviator-cli/README.md)
   * [Installation](aviator-cli/installation.md)
+  * [Quickstart](aviator-cli/quickstart.md)
   * [Concepts](aviator-cli/concepts.md)
   * [Configuration](aviator-cli/configuration.md)
   * [Creating Stacked PRs](aviator-cli/creating-stacked-prs.md)
