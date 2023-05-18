@@ -5,13 +5,17 @@
 We have two kinds of branches in Aviator CLI:
 
 * Trunk branches: Branches that PRs are merged into. Typically, `main` or `master`.
-* [Topic branches](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows#\_topic\_branch): Branches that contain proposed changes against trunk branches.
+*   [Topic branches](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows#\_topic\_branch): Branches that contain proposed changes against trunk branches.
+
+    <figure><img src="../.gitbook/assets/Trunk and Topic Branch.png" alt=""><figcaption><p>main is the trunk branch, and feature1 and feature2 are topic branches</p></figcaption></figure>
 
 A stack is a series of topic branches. Each branch has one parent branch, and the root of the stack has a trunk branch as a parent. One branch corresponds to one pull-request in GitHub. All pull-requests are ultimately merged into the trunk branch they are rooted. Aviator CLI internally tracks parent-child relationships of branches.
 
 When a parent branch is needed, and it is not specified, it uses the remote `HEAD` as the default trunk branch. This is typically a branch that you set as the default branch on GitHub.
 
 ## Sync
+
+<figure><img src="../.gitbook/assets/Sync Branches (2).png" alt=""><figcaption><p>After sync operation, the branches regain the parent-child relationship in their commits.</p></figcaption></figure>
 
 As you add more code to the stack, the state of the stack can be out of sync. For example:
 
