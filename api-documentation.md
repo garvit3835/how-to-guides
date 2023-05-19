@@ -14,7 +14,15 @@ curl -H "Authorization: Bearer <aviator_token>"
 https://api.aviator.co/api/v1/...
 ```
 
-## API Objects
+## GraphQL API (Beta)
+
+&#x20;The GraphQL API (which is currently in beta) can be accessed at `https://api.aviator.co/graphql`. Authorization is required as described above.
+
+An [interactive GraphQL playground](https://app.aviator.co/graphql) is also available which uses your current login credentials.
+
+The GraphQL API is documented as part of the GraphQL schema. For more information on GraphQL, see the [official GraphQL guide](https://graphql.org/learn/queries/).
+
+## REST API
 
 ### Repository
 
