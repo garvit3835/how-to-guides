@@ -36,6 +36,15 @@ $ git commit -m "Add a new file"
 
 The topic branch `mytopic` is intended to be merged to `main` later. If you want to use other branch as the merge destination, checkout that branch first.
 
+```mermaid
+gitGraph
+    commit id: "1"
+    commit id: "2"
+    branch mytopic
+    checkout mytopic
+    commit id: "b420345"
+```
+
 ## Create a pull-request
 
 Create a pull-request with `av pr create`. It shows an editor for the pull-request description. Every time you update your local branch, you can run this to update the pull-request.
@@ -75,6 +84,18 @@ $ git commit -m "Add another file"
  create mode 100644 newfile
 ```
 
+```mermaid
+gitGraph
+    commit id: "1"
+    commit id: "2"
+    branch mytopic
+    checkout mytopic
+    commit id: "b420345"
+    branch another_branch
+    checkout another_branch
+    commit id: "f60c4da"
+```
+
 ## Create a second pull-request
 
 The second pull-request can be created with `av pr create` now.
@@ -101,7 +122,23 @@ This will be updated once you merge the first pull-request.
 
 ## Merge and sync the pull-requests
 
-Let's merge the first pull-request now. We merge the first pull-request and keep the second pull-request open. After this, we want to make the second one to be rebased on top of the newly updated `main` branch. To do this, we run `av stack sync --trunk`.
+Let's merge the first pull-request now. We merge the first pull-request and keep the second pull-request open.
+
+```mermaid
+gitGraph
+    commit id: "1"
+    commit id: "2"
+    branch mytopic
+    checkout mytopic
+    commit id: "b420345"
+    branch another_branch
+    checkout another_branch
+    commit id: "f60c4da"
+    checkout main
+    merge mytopic
+```
+
+After this, we want to make the second one to be rebased on top of the newly updated `main` branch. To do this, we run `av stack sync --trunk`.
 
 ```
 $ av stack sync --trunk
@@ -126,6 +163,20 @@ $ av stack tree
 main
     * another_topic https://github.com/yourname/yourrepo/pull/17 
     mytopic https://github.com/yourname/yourrepo/pull/16
+```
+
+```mermaid
+gitGraph
+    commit id: "1"
+    commit id: "2"
+    branch mytopic
+    checkout mytopic
+    commit id: "b420345"
+    checkout main
+    merge mytopic
+    branch another_branch
+    checkout another_branch
+    commit id: "..."
 ```
 
 We can remove the local branch `mytopic` and remove the metadata from `av`.
