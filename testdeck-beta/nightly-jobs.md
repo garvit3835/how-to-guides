@@ -11,7 +11,7 @@ scenarios:
   actions:
   - test_suite:
       rerun:
-        suite_name: "buildkite/pytest"
+        name: "buildkite/pytest"
         count: 5
         use_latest_green_commit: true
         branch: "master"
