@@ -28,7 +28,7 @@ merge_rules:
 
 Here is the current workflow of parallel mode. It defaults to `batch_size`=1 since each additional CI pipeline will combine the changes from 1 PR and all the previous PRs in the queue.
 
-![Workflow with batch\_size=1.](<../../../.gitbook/assets/Screen Shot 2022-04-01 at 11.23.26 AM.png>)
+![Workflow with batch\_size=1.](<../../.gitbook/assets/Screen Shot 2022-04-01 at 11.23.26 AM.png>)
 
 ### Workflow with batching
 
@@ -38,7 +38,7 @@ Pipeline #1 will batch together the changes from PR#1, PR#2, and PR#3. Once the 
 
 Pipeline #2 will batch together the changes from Pipeline #1 and PR#4, PR#5, and PR#6. Once the CI passes, PRs 4-6 will be merged.
 
-![Workflow with batch\_size=3.](<../../../.gitbook/assets/Screen Shot 2022-04-01 at 2.16.32 PM.png>)
+![Workflow with batch\_size=3.](<../../.gitbook/assets/Screen Shot 2022-04-01 at 2.16.32 PM.png>)
 
 By increasing the `batch_size` from 1 to 3, we can merge 6 PRs vs 2 PRs in the same time it takes to run 2 CI pipelines.
 
@@ -46,9 +46,7 @@ Here’s a quick comparison of how many additional CI pipelines\* are run with d
 
 \*Additional CI pipelines are the CI runs in addition to the CI that runs on the original PR.
 
-|                         | batch\_size = 1 | batch\_size = 3 | batch\_size = 5 |
-| ----------------------- | --------------- | --------------- | --------------- |
-| Additional CI Pipelines | 10              | 4               | 2               |
+<table><thead><tr><th width="160"></th><th>batch_size = 1</th><th>batch_size = 3</th><th>batch_size = 5</th></tr></thead><tbody><tr><td>Additional CI Pipelines</td><td>10</td><td>4</td><td>2</td></tr></tbody></table>
 
 ### Handling Failures
 
@@ -60,7 +58,7 @@ For example, let's say our `batch_size`=5 and we have PRs #1-5 in a single batch
 
 If the draft PR fails, then we will close draft PR #6, and requeue all of PRs #1-5. These PRs will be put into two bisected batches - the first batch contains PRs #1-3, the second batch contains PRs #4-5.
 
-![Bisection if draft PR fails.](<../../../.gitbook/assets/Screen Shot 2022-05-26 at 1.16.35 PM.png>)
+![Bisection if draft PR fails.](<../../.gitbook/assets/Screen Shot 2022-05-26 at 1.16.35 PM.png>)
 
 If a PR in the batch fails, we similarly requeue with bisection. In the above example, if PR #1 fails, then we block PR #1 and requeue PRs #2-5. Those PRs will be requeued into two batches - PRs #2-3 in one batch, PRs #4-5 in the other.
 

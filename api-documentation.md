@@ -486,35 +486,7 @@ Standard tz format string. Defaults to account timezone. Example: America/Los_An
 {% swagger-response status="200: OK" description="Success" %}
 {% tabs %}
 {% tab title="Parameters" %}
-| Parameter             | Description                                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **time\_in\_queue**   | List of objects representing time spent by PRs in queue                                                     |
-| **>date**             | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-14                                                    |
-| **>min**              | Minimum time in seconds                                                                                     |
-| **>avg**              | Average time in seconds                                                                                     |
-| **>p50**              | 50th percentile in seconds                                                                                  |
-| **>p75**              | 75th percentile in seconds                                                                                  |
-| **>p90**              | 90th percentile in seconds                                                                                  |
-| **>p100**             | 100th percentile in seconds                                                                                 |
-| **mergequeue\_usage** | List of objects representing the Aviator bot usage compared to total PRs merged.                            |
-| **>date**             | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-14                                                    |
-| **>total**            | Total number of PRs merged                                                                                  |
-| **>merged\_by\_bot**  | Total number of PRs merged by Aviator bot                                                                   |
-| **blocked\_reason**   | List of objects representing the blocked reasons identified by the Aviator bot while processing queued PRs. |
-| **>date**             | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-14                                                    |
-| **>merge\_conflict**  | Failed due to merge conflict                                                                                |
-| **>ci\_failure**      | Failed due to CI status check failure. This only accounts for required check failures.                      |
-| **>manual\_dequeue**  | A PR was manually removed from the queue                                                                    |
-| **>ci\_timeout**      | CI timed out based on the configuration in MergeQueue rules                                                 |
-| **>other**            | Failed due to any other reason                                                                              |
-| **sync\_frequency**   | List of objects representing how many times a PR fetched a base branch on an aggregate basis.               |
-| **>date**             | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-14                                                    |
-| **>min**              | Minimum sync times                                                                                          |
-| **>avg**              | Average sync times                                                                                          |
-| **>p50**              | 50th percentile of number of sync times                                                                     |
-| **>p75**              | 75th percentile of number of sync times                                                                     |
-| **>p90**              | 90th percentile of number of sync times                                                                     |
-| **>p100**             | 100th percentile of number of sync times                                                                    |
+<table><thead><tr><th width="201.5919403422235">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><strong>time_in_queue</strong></td><td>List of objects representing time spent by PRs in queue</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>min</strong></td><td>Minimum time in seconds</td></tr><tr><td><strong>>avg</strong></td><td>Average time in seconds</td></tr><tr><td><strong>>p50</strong></td><td>50th percentile in seconds</td></tr><tr><td><strong>>p75</strong></td><td>75th percentile in seconds</td></tr><tr><td><strong>>p90</strong></td><td>90th percentile in seconds</td></tr><tr><td><strong>>p100</strong></td><td>100th percentile in seconds</td></tr><tr><td><strong>mergequeue_usage</strong></td><td>List of objects representing the Aviator bot usage compared to total PRs merged.</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>total</strong></td><td>Total number of PRs merged</td></tr><tr><td><strong>>merged_by_bot</strong></td><td>Total number of PRs merged by Aviator bot</td></tr><tr><td><strong>blocked_reason</strong></td><td>List of objects representing the blocked reasons identified by the Aviator bot while processing queued PRs.</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>merge_conflict</strong></td><td>Failed due to merge conflict</td></tr><tr><td><strong>>ci_failure</strong></td><td>Failed due to CI status check failure. This only accounts for required check failures.</td></tr><tr><td><strong>>manual_dequeue</strong></td><td>A PR was manually removed from the queue</td></tr><tr><td><strong>>ci_timeout</strong></td><td>CI timed out based on the configuration in MergeQueue rules</td></tr><tr><td><strong>>other</strong></td><td>Failed due to any other reason</td></tr><tr><td><strong>sync_frequency</strong></td><td>List of objects representing how many times a PR fetched a base branch on an aggregate basis.</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>min</strong></td><td>Minimum sync times</td></tr><tr><td><strong>>avg</strong></td><td>Average sync times</td></tr><tr><td><strong>>p50</strong></td><td>50th percentile of number of sync times</td></tr><tr><td><strong>>p75</strong></td><td>75th percentile of number of sync times</td></tr><tr><td><strong>>p90</strong></td><td>90th percentile of number of sync times</td></tr><tr><td><strong>>p100</strong></td><td>100th percentile of number of sync times</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Example" %}

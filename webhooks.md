@@ -49,13 +49,7 @@ Batch events contain one or more PullRequests that are queued together in a sing
 
 ### Payload
 
-| Key                | Description                                                                                                                                            |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **action**         | All webhook payloads contain an action property that contains the specific activity that triggered the event.                                          |
-| **repository**     | Name of GitHub repository associated with the action.                                                                                                  |
-| **organization**   | Name of the GitHub organization associated with the action.                                                                                            |
-| **pull\_requests** | A _list_ of pull\__requests associated with the batch._ Each pull\_request object contains `pr_number`, `author`, `status`, `skip_line`, `status_code` |
-| **message**        | _Optional_. Present if there is an additional message provided by GitHub on the reason for failure.                                                    |
+<table><thead><tr><th width="369">Key</th><th>Description</th></tr></thead><tbody><tr><td><strong>action</strong></td><td>All webhook payloads contain an action property that contains the specific activity that triggered the event.</td></tr><tr><td><strong>repository</strong></td><td>Name of GitHub repository associated with the action.</td></tr><tr><td><strong>organization</strong></td><td>Name of the GitHub organization associated with the action.</td></tr><tr><td><strong>pull_requests</strong></td><td>A <em>list</em> of pull_<em>requests associated with the batch.</em> Each pull_request object contains <code>pr_number</code>, <code>author</code>, <code>status</code>, <code>skip_line</code>, <code>status_code</code></td></tr><tr><td><strong>message</strong></td><td><em>Optional</em>. Present if there is an additional message provided by GitHub on the reason for failure.</td></tr></tbody></table>
 
 ### Actions
 
