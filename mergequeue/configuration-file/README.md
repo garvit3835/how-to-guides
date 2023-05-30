@@ -49,7 +49,7 @@ merge_rules:
   labels:
     trigger: "mergequeue"
   preconditions:
-    conversation_resolution_required: false
+    conversation_resolution_required: true
 ```
 
 ### No approval
