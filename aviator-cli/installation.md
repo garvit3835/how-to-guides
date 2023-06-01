@@ -24,7 +24,7 @@ Download the latest `av` executable from the [<mark style="color:blue;">GitHub r
 
 ### 2. Connect av to GitHub
 
-The `av` tool uses a GitHub personal access token (PAT) to authenticate with GitHub on your behalf. This is required to create and inspect PRs (e.g., when using the `av pr create` command). The generated token should have the `repo` scope (all other scopes can be left un-checked).
+The `av` tool uses a [GitHub personal access token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic) to authenticate with GitHub on your behalf. This is required to create and inspect PRs (e.g., when using the `av pr create` command). The generated token should have the `repo` scope (all other scopes can be left un-checked).
 
 ![Required permissions for the GitHub personal access token that you will use with av](<../.gitbook/assets/Screen Shot 2022-05-26 at 11.20.35 AM.png>)
 
