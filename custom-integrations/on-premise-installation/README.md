@@ -189,7 +189,7 @@ At this point, you should be able to open `av-hostname` in the browser.
 
 ### Step 9
 
-Once the page loads, you can go and register a new account from the url on the app and follow the instructions.
+Once the page loads, you can go and register a new account from the following url on the app and follow the instructions.
 
 ```
 /register
