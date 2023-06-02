@@ -18,7 +18,7 @@ All of the settings in the UI are also covered in the Rules section of [<mark st
 
 See `Required Checks` under `Merge Preconditions` to set status checks for your PRs that need to be validated before merging. Selecting `Use GitHub mergeability check` will use all Github required tests for the repo.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-12-29 at 9.14.58 AM.png" alt=""><figcaption><p>required check configuration from UI</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/required_checks.png" alt=""><figcaption><p>required check configuration from UI</p></figcaption></figure>
 
 If your team is using Parallel mode, by default, Aviator bot will use the same checks for original PRs and draft PRs. However, if you want to customize checks for draft PRs, you can do so under `Override required checks` in [<mark style="color:blue;">the Parallel Mode section</mark>](parallel-mode/).
 

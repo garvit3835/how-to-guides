@@ -22,4 +22,4 @@ This setup guide will walk you through the initial set up for MergeQueue. Since 
 
 6\. That's it. You are ready to go. Now when a PR is ready, tag the PR with the trigger label defined above. Let the Aviator bot handle the rest.
 
-![Simply add the trigger label and your PR will be queued and merged.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.37.18 PM (1).png>)
+![Simply add the trigger label and your PR will be queued and merged.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.37.18 PM.png>)

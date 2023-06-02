@@ -189,9 +189,17 @@ At this point, you should be able to open `av-hostname` in the browser.
 
 ### Step 9
 
-Once the page loads, you can go and register a new account and follow the instructions. It will guide you to connect the GitHub Repository with the GitHub app you created. Once authorized, you should see the connected repositories on your Repository page.
+Once the page loads, you can go and register a new account from the url on the app and follow the instructions.
 
-Use the same account for all purposes. You can invite other team members to this account from the Users and Roles section.
+```
+/register
+```
+
+It will guide you to connect the GitHub Repository with the GitHub app you created. Once authorized, you should see the connected repositories on your Repository page.
+
+Use the same account for all purposes. You can invite other team members to this account from the Account / Users and Roles section.
+
+Note that registering multiple accounts is disabled for onPrem, if you need additional accounts please contact support@aviator.co.
 
 ### Troubleshooting
 

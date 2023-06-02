@@ -19,7 +19,7 @@ The following comments are generated when this feature is enabled -
 
 Some of the comments explained above and below are posted as sticky comments - a single comment on a PR that is edited as the status of the PR changes. The goal is to keep the comments relevant and reduce noise on the PR.
 
-![The sticky comment posted when the trigger label is added.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.37.18 PM.png>)
+![The sticky comment posted when the trigger label is added.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.37.18 PM (1).png>)
 
 Once the PR is merged, Aviator will update the comment.
 

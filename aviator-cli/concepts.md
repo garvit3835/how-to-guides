@@ -7,7 +7,7 @@ We have two kinds of branches in Aviator CLI:
 * Trunk branches: Branches that PRs are merged into. Typically, `main` or `master`.
 *   [Topic branches](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows#\_topic\_branch): Branches that contain proposed changes against trunk branches.
 
-    <figure><img src="../.gitbook/assets/Trunk and Topic Branch.png" alt=""><figcaption><p>main is the trunk branch, and feature1 and feature2 are topic branches</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/Trunk and Topic Branch (1).png" alt=""><figcaption><p>main is the trunk branch, and feature1 and feature2 are topic branches</p></figcaption></figure>
 
 A stack is a series of topic branches. Each branch has one parent branch, and the root of the stack has a trunk branch as a parent. One branch corresponds to one pull-request in GitHub. All pull-requests are ultimately merged into the trunk branch they are rooted. Aviator CLI internally tracks parent-child relationships of branches.
 

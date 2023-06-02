@@ -21,5 +21,5 @@ Connect to your CI provider on the `Connections` page. We currently support Circ
 * [<mark style="color:blue;">CircleCI API Tokens</mark>](https://circleci.com/docs/managing-api-tokens)
 * [<mark style="color:blue;">Buildkite API Tokens</mark>](https://buildkite.com/docs/apis/managing-api-tokens)
 
-<figure><img src="../.gitbook/assets/ci_connections.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2022-09-01 at 4.42.01 PM.png" alt=""><figcaption></figcaption></figure>
 

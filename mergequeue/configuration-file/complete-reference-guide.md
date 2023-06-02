@@ -8,7 +8,7 @@ If you are looking for more customization options, you may want to use the YAML 
 
 You can directly apply the config on the `Yaml configuration` tab on the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page. Here you can also validate this configuration before applying.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-05-23 at 5.38.57 PM (1).png" alt=""><figcaption><p>applying YAML configuration from dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-05-23 at 5.38.57 PM.png" alt=""><figcaption><p>applying YAML configuration from dashboard</p></figcaption></figure>
 
 ### From GitHub repository
 

@@ -7,7 +7,7 @@ To setup Google SSO for on-premise installation, you will need to create Oauth a
 3. Select the **Web application** application type.
 4. Name your OAuth 2.0 client and add the Javascript origins and redirect urls replacing the following with your domain.
 
-<figure><img src="../../.gitbook/assets/javascript (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-05-10 at 11.28.34 AM.png" alt=""><figcaption></figcaption></figure>
 
 5. Add the Google Client ID and Client Secret that is on this page to your docker `.env`  file.
 
