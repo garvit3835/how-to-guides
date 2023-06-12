@@ -40,6 +40,7 @@
     * [Navigating & Modifying Stacked PRs](aviator-cli/navigating-and-modifying-stacked-prs.md)
     * [Creating Stacked PRs](aviator-cli/creating-stacked-prs.md)
     * [Create a User Access Token](aviator-cli/how-to-guides/create-a-user-access-token.md)
+    * [Rename a Branch](aviator-cli/how-to-guides/rename-a-branch.md)
   * [Concepts](aviator-cli/concepts.md)
   * [Configuration](aviator-cli/configuration.md)
   * [FAQs and Troubleshooting](aviator-cli/faqs-and-troubleshooting.md)
