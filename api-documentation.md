@@ -328,7 +328,7 @@ Name of the repository
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/pull_request" baseUrl="" summary="Fetch information of a PR based on the branch name" %}
+{% swagger method="get" path="/pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Fetch information of a PR based on the branch name or number" %}
 {% swagger-description %}
 Example:
 
@@ -346,7 +346,27 @@ Name of the repository
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="branch" type="String" required="true" %}
-Branch associated with PR
+Feature branch associated with PR. One of 
+
+`branch`
+
+ or 
+
+`number`
+
+ must be present.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="number" type="Integer" required="true" %}
+PR number to fetch. One of 
+
+`branch`
+
+ or 
+
+`number`
+
+ must be present.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
@@ -370,7 +390,7 @@ Branch associated with PR
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="pull_request/queued" baseUrl="" summary="Fetch information of PRs that are in the queued state" %}
+{% swagger method="get" path="pull_request/queued" baseUrl="https://api.aviator.co/api/v1/" summary="Fetch information of PRs that are in the queued state" %}
 {% swagger-description %}
 Example:&#x20;
 
@@ -443,6 +463,57 @@ Target branch to fetch queued PRs for
             "title": "mq-qa-8440-3"
         }
     ]
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### BotPullRequest
+
+{% swagger method="get" path="/bot_pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Fetch information of PRs associated with a provided Bot PullRequest" %}
+{% swagger-description %}
+A Bot PR is a draft PR created during parallel mode to validate the CI.
+
+Example:&#x20;
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`https://api.aviator.co/api/v1/bot_pull_request?org=orgname&repo=reponame&number=1234`&#x20;
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" type="String" required="true" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="number" type="Integer" required="true" %}
+PR number associated with the Bot PR
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Success" %}
+```
+{
+  "head_commit_sha": "acffa575c02f2cf000aabe69f44e8905bc04c25d",
+  "pull_requests": [
+    {
+      "author": "author-name",
+      "base_branch": "master",
+      "head_branch": "mq-qa-8440-1",
+      "number": 89,
+      "queued": true,
+      "queued_at": "2022-11-16T17:21:41.350499",
+      "repository": {
+          "name": "repo-name",
+          "org": "org-name"
+      },
+      "skip_line": false,
+      "status": "queued",
+      "title": "mq-qa-8440-1"
+    }
+  ]
 }
 ```
 {% endswagger-response %}
