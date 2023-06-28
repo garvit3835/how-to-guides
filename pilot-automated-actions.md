@@ -4,16 +4,15 @@ Aviator offers automated actions that can be configured via the configuration fi
 
 Each Pilot workflow contains one scenario and one or more actions. Here’s an example of a simple scenario:
 
-```
-scenarios:
-- name: "instant merge"
-  trigger:
-    pull_request:
-      labeled: "av-instant-merge"
-  actions:
-  - mergequeue:
-     instant_merge: {}
-```
+<pre class="language-yaml"><code class="lang-yaml">scenarios:
+<strong>  - name: "instant merge"
+</strong>    trigger:
+      pull_request:
+        labeled: "av-instant-merge"
+    actions:
+      - mergequeue:
+          instant_merge: {}
+</code></pre>
 
 In the above example, we are triggering an instant merge action based on the label `av-instant-merge`.
 
@@ -37,48 +36,49 @@ It has the following associated events:
 
 * **opened**: represents when the PR is opened
 
-<pre><code><strong>  trigger:
-</strong>    pull_request: opened
-</code></pre>
+```yaml
+trigger:
+  pull_request: opened
+```
 
 * **labeled**: when a GitHub label is added to the PR
 
-```
-  trigger:
-      pull_request:
-        labeled: "av-instant-merge"
+```yaml
+trigger:
+  pull_request:
+    labeled: "av-instant-merge"
 ```
 
 You can also specify who labeled the PR or who the author is. Here a GitHub username can be provided. If you want to instead represent a team, you can use `@org/team`. Exactly one of `github_login` and `github_team` must be specified.
 
-```
-  trigger:
-    pull_request:
-      labeled:
-        label "av-instant-merge"
-        labeled_by: ghusername
+```yaml
+trigger:
+  pull_request:
+    labeled:
+      label "av-instant-merge"
+      labeled_by: ghusername
 ```
 
-```
-  trigger:
-    pull_request:
-      labeled:
-        label "av-instant-merge"
-        authored_by: “@aviator-co/engineering”
+```yaml
+trigger:
+  pull_request:
+    labeled:
+      label "av-instant-merge"
+      authored_by: “@aviator-co/engineering”
 ```
 
 * **synchronize**: The PR was synchronized. This means that the pull request either had new commits pushed to it, was force-pushed, or had its base branch changed.
 
-```
-  trigger:
-    pull_request: synchronize
+```yaml
+trigger:
+  pull_request: synchronize
 ```
 
 * **submitted**: The PR is ready for review.. This means that it was either opened, or switched from draft to ready for review.
 
-```
-  trigger:
-    pull_request: submitted
+```yaml
+trigger:
+  pull_request: submitted
 ```
 
 Note that both submitted and opened events will be triggered when a PR is directly opened in review mode (as non-draft).
@@ -89,9 +89,9 @@ Associated events:
 
 * **approved**: The PR review provided was of approved type.
 
-```
+```yaml
 trigger:
-    pull_request_review: approved
+  pull_request_review: approved
 ```
 
 
@@ -106,12 +106,12 @@ There are a few types of actions.
 
 These include actions to add a label or add a reviewer.
 
-```
+```yaml
 actions:
   - github:
-     add_label: urgent
+    add_label: urgent
   - github:
-     add_reviewer: ghusername  # or “@org/team”
+    add_reviewer: ghusername  # or “@org/team”
 ```
 
 #### mergequeue
@@ -124,28 +124,27 @@ Send a slack notification to the connected Slack account. Note that this require
 
 When sending a DM to a user, you can specify the GitHub username associated with the user. If no github\_users are specified, then the notification is sent directly to the author of the PR.
 
-```
-  actions:
+```yaml
+actions:
   - slack:
-     channel:
+      channel:
         text: “A new PR has been posted”
   - slack:
-     direct:
+      direct:
         text: “A new PR has been posted”
-       github_users:
-         - ghuser1
-         - ghuser2
+        github_users:
+          - ghuser1
+          - ghuser2
 ```
 
 #### script
 
 If you want more custom controls over the actions, you may also choose to write a custom script using Javascript. All the other actions described above can be triggered via script as well. Here’s a quick example:
 
-```
+```yaml
 actions:
   - script:
       code: |
         console.log("hello", "world", event, event.target, event.pullRequest.number);
         aviator.github.addLabel({ label: "urgent", target: event.pullRequest.id });
-
 ```
