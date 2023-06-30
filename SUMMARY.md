@@ -34,6 +34,7 @@
   * [Installation](aviator-cli/installation.md)
   * [Quickstart](aviator-cli/quickstart.md)
   * [How-to Guides](aviator-cli/how-to-guides/README.md)
+    * [Add Commits in the Stack](aviator-cli/how-to-guides/add-commits-in-the-stack.md)
     * [Split a Commit](aviator-cli/splitting-a-commit.md)
     * [Split and Fold Pull Requests](aviator-cli/how-to-guides/split-and-fold-pull-requests.md)
     * [Adopt a Branch](aviator-cli/how-to-guides/adopt-a-branch.md)
