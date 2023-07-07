@@ -4,15 +4,16 @@ Aviator offers automated actions that can be configured via the configuration fi
 
 Each Pilot workflow contains one scenario and one or more actions. Here’s an example of a simple scenario:
 
-<pre class="language-yaml"><code class="lang-yaml">scenarios:
-<strong>  - name: "instant merge"
-</strong>    trigger:
+```yaml
+scenarios:
+  - name: "instant merge"
+    trigger:
       pull_request:
         labeled: "av-instant-merge"
     actions:
       - mergequeue:
           instant_merge: {}
-</code></pre>
+```
 
 In the above example, we are triggering an instant merge action based on the label `av-instant-merge`.
 
@@ -22,13 +23,13 @@ A scenario is a configurable, automated process that is invoked in response to a
 
 In the configuration file, the scenarios object has three properties
 
-* `name` -a readable name that uniquely identifies a particular scenario
+* `name` - a readable name that uniquely identifies a particular scenario
 * `trigger` - represents an object and an associated event that will trigger this scenario
 * `actions` - a list of actions that will be triggered in order when the trigger scenario condition is met.
 
-### Trigger
+### Triggers
 
-Each trigger is associated with a context of an object. Currently we support the following types of context:
+Each trigger is associated with a context of an object. Currently we support the following types of contexts:
 
 #### pull\_request
 
@@ -94,7 +95,58 @@ trigger:
   pull_request_review: approved
 ```
 
+#### mergequeue
 
+Associated events:
+
+* **queued:** A PR was added to the queue.
+
+```
+trigger:
+  mergequeue: queued
+```
+
+* **dequeued:** A PR was removed from the queue.
+
+```
+trigger:
+  mergequeue: dequeued
+```
+
+* **top\_of\_queue**: A new PR reached the top of the queue.
+
+```
+trigger:
+  mergequeue: top_of_queue
+```
+
+* **merged**: A PR was merged.
+
+```
+trigger:
+  mergequeue: merged
+```
+
+* **blocked**: A PR was blocked by Aviator.
+
+```
+trigger:
+  mergequeue: blocked
+```
+
+* **stuck**: A PR was marked as stuck by Aviator.
+
+```
+trigger:
+  mergequeue: stuck
+```
+
+* **reset**: The queue was reset.
+
+```
+trigger:
+  mergequeue: reset
+```
 
 ### Actions
 
@@ -117,6 +169,34 @@ actions:
 #### mergequeue
 
 Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/priority-merges/#instant-merge).
+
+```
+actions:
+  - mergequeue: queue
+  - mergequeue:
+    instant_merge: {}
+```
+
+There's also the ability to `pause` and `unpause`. By default, the entire repository (including all base branches) will be paused/unpaused.
+
+```
+actions:
+  - mergequeue: pause
+  - mergequeue: unpause
+```
+
+You can also specify a `branch_pattern` or a `paused_message`, both of these fields are optional.
+
+```
+actions:
+  - mergequeue:
+    pause:
+      branch_pattern: release-*
+      paused_message: "The release branch is paused while we wait on a fix."
+  - mergequeue:
+    unpause:
+      branch_pattern: release-*
+```
 
 #### slack
 
