@@ -58,6 +58,33 @@ Batch events contain one or more PullRequests that are queued together in a sing
 | **batch\_merged** | When a batch of PRs are merged. |
 | **batch\_failed** | When a batch failed to merge.   |
 
+## Config change event
+
+This webhook is triggered when configuration for a repository is changed. To listen to these webhook events, subscribe to `config_change` webhook.
+
+### Sample payload
+
+```
+{
+  "action": "config_change",
+  "repository": {
+    "name": "mergeit",
+    "org": "aviator"
+  },
+  "history": {
+    "modified_by": {
+      "email": "email@email.com",
+      "gh_username": "jainankit"
+    },
+    "modified_at": "2022-11-16T17:21:41.350499Z"
+    "commit_sha": "85d419bbca585f04456083fd98b7858c0f1e4d13",
+    "diff": "-     publish: \"always\"\n+     publish: \"ready\"",
+  }
+}
+```
+
+The `modified_by` property contains email and gh\_username. If the config was modified from the Dashboard, `email` of the user would be present, and if the config was modified from the GitHub repo change, a `gh_username` would be present. `commit_sha` property may also be only present if the change was made from the GitHub repository.
+
 ## Webhook Signatures
 
 All webhooks sent by Aviator include a digest signature to verify that the webhook was sent by Aviator itself. The signature is included in a `X-Aviator-Signature-SHA256` header and is calculated as the SHA256 of the webhook body using the Aviator account API token as the HMAC key.

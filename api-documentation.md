@@ -519,6 +519,70 @@ PR number associated with the Bot PR
 {% endswagger-response %}
 {% endswagger %}
 
+### Config Change
+
+{% swagger method="get" path="/config/history" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the history of config changes associated with a given pull request." %}
+{% swagger-description %}
+Returns a list of config history events as diffs of changes. `repo` and `org` must be provided.
+
+Example:
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`https://api.aviator.co/api/v1/config/history?org=orgname&repo=reponame`
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" type="String" required="true" %}
+Organization associated with the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" type="String" required="true" %}
+Name of the repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="start" type="String" %}
+UTC Start date in 
+
+_YYYY-MM-DD_
+
+ format. Example: 2021-07-21
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="end" type="String" %}
+UTC End date in 
+
+_YYYY-MM-DD_
+
+ format. Example: 2021-07-21
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Success" %}
+```
+{
+  "repository": {
+    "name": "mergeit",
+    "org": "aviator"
+  },
+  "history": [{
+      "applied_by": {
+        "email": "email@email.com",
+        "gh_username": "jainankit"
+      },
+      "applied_at": "2022-11-16T17:21:41.350499Z"
+      "commit_sha": "85d419bbca585f04456083fd98b7858c0f1e4d13",
+      "diff": "-     publish: \"always\"\n+     publish: \"ready\"",
+    },
+    {
+      ..
+    }
+  ]
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+The `modified_by` property contains email and gh\_username. If the config was modified from the Dashboard, `email` of the user would be present, and if the config was modified from the GitHub repo change, a `gh_username` would be present. `commit_sha` property may also be only present if the change was made from the GitHub repository.
+
 ### Analytics
 
 {% swagger method="get" path="/v1/analytics" baseUrl="https://api.aviator.co/api" summary="Get list of analytics objects representing statistics on a daily basis." %}
