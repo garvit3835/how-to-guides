@@ -1,6 +1,6 @@
 # Installation
 
-The Aviator command line tool (invoked as `av`) can be used to streamline and automate common tasks within your Git and GitHub workflows. Currently, the tool is used primarily to manage [<mark style="color:blue;">Stacked PRs</mark>](../managing-stacked-prs.md)<mark style="color:blue;">.</mark>
+The Aviator command line tool (invoked as `av`) can be used to streamline and automate common tasks within your Git and GitHub workflows. Currently, the tool is used primarily to manage Stacked PRs<mark style="color:blue;">.</mark>
 
 ## First-time setup
 
@@ -20,7 +20,7 @@ brew install aviator-co/tap/av
 
 #### Download executable (advanced, all operating systems)
 
-Download the latest `av` executable from the [<mark style="color:blue;">GitHub releases page on the</mark> <mark style="color:blue;"></mark><mark style="color:blue;">`av`</mark> <mark style="color:blue;"></mark><mark style="color:blue;">repository</mark>](https://github.com/aviator-co/av/releases). Extract the archive and add the executable to your `PATH`.
+Download the latest `av` executable from the [<mark style="color:blue;">GitHub releases page on the</mark> <mark style="color:blue;">`av`</mark> <mark style="color:blue;">repository</mark>](https://github.com/aviator-co/av/releases). Extract the archive and add the executable to your `PATH`.
 
 ### 2. Connect av to GitHub
 
@@ -48,7 +48,7 @@ av init
 
 ### 4. Use it!
 
-See the [managing-stacked-prs.md](../managing-stacked-prs.md "mention") quickstart guide for a step-by-step tutorial.
+See the [Broken link](broken-reference "mention") quickstart guide for a step-by-step tutorial.
 
 ## Upgrade <a href="#upgrade" id="upgrade"></a>
 
