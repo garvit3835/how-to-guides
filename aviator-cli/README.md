@@ -165,7 +165,7 @@ Global Flags:
 Use "av stack [command] --help" for more information about a command.
 </code></pre>
 
-## Advanced options
+## Advanced guides
 
 This is just a quick preview of things you can do with the Aviator CLI. Check our our [how to guides](https://docs.aviator.co/aviator-cli/how-to-guides) for more specific use cases:
 
