@@ -148,6 +148,12 @@ trigger:
   mergequeue: reset
 ```
 
+#### schedule
+
+Used to trigger scheduled events. Please read [scheduled-events.md](scheduled-events.md "mention") for examples.
+
+* **cron\_utc** - required string parameter. Accepts a [<mark style="color:blue;">unix cron format</mark>](https://www.ibm.com/docs/en/db2/11.5?topic=task-unix-cron-format). You can use a cron visual tool like [crontab.guru](https://crontab.guru/) for building your cron string.&#x20;
+
 ### Actions
 
 You can specify one or more actions to be executed based on the triggers specified in the scenarios. These actions are performed serially in the order specified and are executed in the context of the trigger. For instance, if we specify the `labeled` event for a `pull_request` in the trigger, then the associated action can be performed on the same PR that was labeled.
@@ -168,7 +174,7 @@ actions:
 
 #### mergequeue
 
-Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/priority-merges/#instant-merge).
+Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](../mergequeue/priority-merges/#instant-merge).
 
 ```
 actions:
