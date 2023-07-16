@@ -18,6 +18,7 @@
   * [ChangeSets](mergequeue/changesets/README.md)
     * [Global CI Validation](mergequeue/changesets/global-ci-validation.md)
     * [FAQs](mergequeue/changesets/faqs.md)
+  * [Managing flaky tests in MergeQueue](mergequeue/managing-flaky-tests-in-mergequeue.md)
   * [Optimizing CI execution](mergequeue/optimizing-ci-execution.md)
   * [Custom validations](mergequeue/custom-validations.md)
   * [Sticky comments and status check](mergequeue/sticky-comments-and-status-check.md)
