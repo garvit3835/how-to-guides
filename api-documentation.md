@@ -519,6 +519,77 @@ PR number associated with the Bot PR
 {% endswagger-response %}
 {% endswagger %}
 
+### Config
+
+{% swagger method="get" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the current YAML config associated with the given GitHub repository." %}
+{% swagger-description %}
+Example:
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`https://api.aviator.co/api/v1/config?org=orgname&repo=reponame`
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" required="true" %}
+Organization associated with the GitHub repository.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" required="true" %}
+Name of the GitHub repository.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```
+merge_rules:
+   labels:
+     trigger: "mergequeue"
+   merge_mode:
+    type: "parallel"
+    parallel_mode:
+      max_parallel_builds: 10
+      override_required_checks:
+        - build_and_test
+        - 'ci/circleci: build'
+```
+{% endswagger-response %}
+{% endswagger %}
+
+###
+
+{% swagger method="post" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Change the YAML config associated with the given GitHub repository." %}
+{% swagger-description %}
+The request accepts the payload as the raw string YAML format, and returns back response in a JSON format.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="org" required="true" %}
+Organization associated with a GitHub repository
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="repo" required="true" %}
+Name of the GitHub repository.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```
+{
+  "success": true
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+```
+{
+    "errors": [
+        "mergeRules -> mergeMode -> parallelMode -> updateBeforeRequeue: value could not be parsed to a boolean",
+        "mergeRules -> mergeMode -> parallelMode -> checkMergeabilityToQueue: value could not be parsed to a boolean"
+    ],
+    "success": false
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 ### Config Change
 
 {% swagger method="get" path="/config/history" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the history of config changes associated with a given pull request." %}
