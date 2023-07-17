@@ -592,7 +592,7 @@ Name of the GitHub repository.
 
 ### Config Change
 
-{% swagger method="get" path="/config/history" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the history of config changes associated with a given pull request." %}
+{% swagger method="get" path="/config/history" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the history of config changes associated with a given repository." %}
 {% swagger-description %}
 Returns a list of config history events as diffs of changes. `repo` and `org` must be provided.
 

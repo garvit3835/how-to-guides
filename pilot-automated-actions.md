@@ -100,13 +100,21 @@ trigger:
 Associated events:
 
 * **queued:** A PR was added to the queue.
+  * **skip\_line \[optional]**: A PR marked to skip the line was added to the queue.
 
 ```
 trigger:
   mergequeue: queued
 ```
 
-* **dequeued:** A PR was removed from the queue.
+To add the skip\_line option:
+
+```
+trigger:
+  mergequeue: 
+    queued:
+      skip_line: true
+```
 
 ```
 trigger:
@@ -150,7 +158,7 @@ trigger:
 
 #### schedule
 
-Used to trigger scheduled events. Please read [scheduled-events.md](scheduled-events.md "mention") for examples.
+Used to trigger scheduled events. Please read [scheduled-events.md](pilot-automated-actions/scheduled-events.md "mention") for examples.
 
 * **cron\_utc** - required string parameter. Accepts a [<mark style="color:blue;">unix cron format</mark>](https://www.ibm.com/docs/en/db2/11.5?topic=task-unix-cron-format). You can use a cron visual tool like [crontab.guru](https://crontab.guru/) for building your cron string.&#x20;
 
@@ -174,7 +182,7 @@ actions:
 
 #### mergequeue
 
-Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](../mergequeue/priority-merges/#instant-merge).
+Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/priority-merges/#instant-merge).
 
 ```
 actions:
@@ -206,15 +214,21 @@ actions:
 
 #### slack
 
-Send a slack notification to the connected Slack account. Note that this requires [Slack integration](https://docs.aviator.co/reference/slack-integration) to be active. You can either send a slack notification to a connected channel or as DM to a connected user.
+Send a Slack notification to the connected Slack account. Note that this requires [Slack integration](https://docs.aviator.co/reference/slack-integration) to be active.&#x20;
 
-When sending a DM to a user, you can specify the GitHub username associated with the user. If no github\_users are specified, then the notification is sent directly to the author of the PR.
+* **channel**: Send notification to a Slack channel.
+  * **text**: The text to send in the notification.
+  * **hook\_url \[optional]**: The webhook URL for a Slack channel. If not provided, the default channel set up with the Slack integration will be used.
+* **direct**: Send a Slack DM to a user directly.
+  * **text**: The text to send in the notification.
+  * **github\_users \[optional]**: The GitHub users to notify (must be the GitHub username associated with the user). If not specified, the notification will be sent to the author of the PR.
 
 ```yaml
 actions:
   - slack:
       channel:
         text: “A new PR has been posted”
+        hook_url: “https://hooks.slack.com/services/xxxxxxxxxxxxxxxxx”
   - slack:
       direct:
         text: “A new PR has been posted”

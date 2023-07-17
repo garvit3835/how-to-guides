@@ -55,7 +55,7 @@
   * [Slack notifications](testdeck-beta/slack-notifications.md)
   * [Nightly jobs](testdeck-beta/nightly-jobs.md)
   * [Auto rerun tests](testdeck-beta/auto-rerun-tests.md)
-* [Pilot - Automated actions](pilot-automated-actions/README.md)
+* [Pilot - Automated actions](pilot-automated-actions.md)
   * [Scheduled events](pilot-automated-actions/scheduled-events.md)
 * [Custom integrations](custom-integrations/README.md)
   * [Slack Integration](custom-integrations/slack-integration.md)
