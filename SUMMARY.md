@@ -48,6 +48,7 @@
   * [Concepts](aviator-cli/concepts.md)
   * [Configuration](aviator-cli/configuration.md)
   * [FAQs and Troubleshooting](aviator-cli/faqs-and-troubleshooting.md)
+  * [Manpages](aviator-cli/manpages/README.md)
 * [TestDeck (Beta)](testdeck-beta/README.md)
   * [Getting started](testdeck-beta/getting-started.md)
   * [TestDeck Dashboard](testdeck-beta/testdeck-dashboard.md)
