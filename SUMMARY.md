@@ -30,6 +30,7 @@
   * [Slash Commands](mergequeue/slash-commands.md)
   * [Analytics](mergequeue/analytics.md)
   * [Timeline](mergequeue/timeline.md)
+  * [Aviator Chrome Extension](mergequeue/aviator-chrome-extension.md)
 * [Aviator CLI](aviator-cli/README.md)
   * [Installation](aviator-cli/installation.md)
   * [Quickstart](aviator-cli/quickstart.md)
