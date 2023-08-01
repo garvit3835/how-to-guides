@@ -248,3 +248,18 @@ actions:
         console.log("hello", "world", event, event.target, event.pullRequest.number);
         aviator.github.addLabel({ label: "urgent", target: event.pullRequest.id });
 ```
+
+The following attributes are accessible via the `event` variable.
+
+* **pullRequest**
+  * **url:** The URL of the pull request.
+  * **number:** The number of the pull request. (ex. `event.pullRequest.number`)
+  * **state:** The state of the pull request. If the trigger is a `pull_request` trigger, options are: `open`, `closed`. If the trigger is a `mergequeue` trigger, options are: `open`, `queued`, `blocked`, `merged`, `tagged`.
+  * **labels:** Labels that are on the pull request.
+  * **user**
+    * **login:** The GitHub login of the user who opened the pull request.
+  * **skipLine** (`mergequeue` trigger only)**:** \[boolean] Whether the pull request was queued with skip line.
+  * **skipLineReason** (`mergequeue` trigger only)**:** The skip line reason for a pull request if it was given. (ex. `event.pullRequest.skipLineReason`)
+* **repository**
+  * **name:** The name of the repository. (ex. `event.repository.name`)
+  * **full\_name:** The full name of the repository, including the organization name, in the format `org/repo_name`.
