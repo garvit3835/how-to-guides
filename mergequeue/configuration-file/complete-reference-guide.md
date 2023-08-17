@@ -255,6 +255,7 @@ merge_rules:
   update_latest: true
   delete_branch: false
   use_rebase: false
+  publish_status_check: "ready"
   enable_comments: true
   ci_timeout_mins: 60
   base_branches:
