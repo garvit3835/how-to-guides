@@ -80,6 +80,7 @@
   * [Scheduled events](pilot-automated-actions/scheduled-events.md)
 * [Custom integrations](custom-integrations/README.md)
   * [Slack Integration](custom-integrations/slack-integration.md)
+  * [Personal Integrations](custom-integrations/personal-integrations.md)
   * [On-premise Installation](custom-integrations/on-premise-installation/README.md)
     * [Slack Integration](custom-integrations/on-premise-installation/slack-integration.md)
     * [Google SSO Login](custom-integrations/on-premise-installation/google-sso-login.md)

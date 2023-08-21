@@ -59,9 +59,9 @@ Create the following slash command, it will link a user’s Slack account with t
 
 **Request URL**: `https://<your_domain>/slack/slash_command`
 
-**Short Description**: `connect GitHub to your Slack account`
+**Short Description**: `connect your Slack account`
 
-**Usage Hint**: `github connect`
+**Usage Hint**: `connect`
 
 ## Connect the App
 
