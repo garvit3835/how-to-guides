@@ -221,7 +221,11 @@ Send a Slack notification to the connected Slack account. Note that this require
   * **hook\_url \[optional]**: The webhook URL for a Slack channel. If not provided, the default channel set up with the Slack integration will be used.
 * **direct**: Send a Slack DM to a user directly.
   * **text**: The text to send in the notification.
+  * **blocks \[optional]**: Customized Slack blocks to send in the notification. [See Slack's block building kit](https://api.slack.com/block-kit/building).
   * **github\_users \[optional]**: The GitHub users to notify (must be the GitHub username associated with the user). If not specified, the notification will be sent to the author of the PR.
+  * **github\_group \[optional]**: The GitHub group whose members will be notified.&#x20;
+  * **labels \[optional]**: Labels associated with this Slack DM that users can utilize to personalize DMs. By default, all specified users (either `github_users`, `github_group`, or the author of the PR will be notified). If you want to opt-out, see Personal Integrations.
+  * **opt-in \[optional]**: If True, then the users will need to voluntarily opt-in to receive the DM.
 
 ```yaml
 actions:
@@ -233,8 +237,9 @@ actions:
       direct:
         text: “A new PR has been posted”
         github_users:
-          - ghuser1
-          - ghuser2
+          - login: ghusername1
+          - login: ghusername2
+        github_group: "eng/infrastructure"
 ```
 
 #### script
