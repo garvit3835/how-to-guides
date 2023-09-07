@@ -1,14 +1,6 @@
 # Slack notifications
 
-You can also configure a daily summary to be reported via Slack for specific test suites. This requires the [<mark style="color:blue;">Slack integration</mark>](https://docs.aviator.co/reference/slack-integration) to be active. The Slack summary can be enabled via the YAML configuration file:
-
-```
-testdeck:
-  jobs:
-    - name: buildkite/pytest
-      daily_summary:
-        publish_time: "14:00" # UTC time as HH:MM
-```
+Aviator currently has a daily summary sent via Slack notification that runs every day at 12pm UTC.  This requires the [<mark style="color:blue;">Slack integration</mark>](https://docs.aviator.co/reference/slack-integration) to be active. Please contact **support@aviator.co** to enable this.
 
 The daily summary includes:
 
