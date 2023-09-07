@@ -7,3 +7,5 @@ The daily summary includes:
 * Total number of flaky runs today
 * Most flaky test case of the day
 * Any new flaky tests introduced in the last 24 hours
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-09-07 at 3.09.32 PM.png" alt=""><figcaption><p>Daily summary Slack notification.</p></figcaption></figure>
