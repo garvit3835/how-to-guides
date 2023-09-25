@@ -1,26 +1,22 @@
-# Personal Integrations
+# Slack Integration
 
-## GitHub Integration
+## Initial Slack Setup
 
-On the Personal Integrations page, each user can connect their GitHub account.
+You can use the Slack app integration to receive notifications about queue events. Currently supported Slack events are queued, merged and failed. Slack notifications can be enabled from the `Webhooks` page.
 
-<div data-full-width="false">
+<figure><img src="../.gitbook/assets/Screen Shot 2022-09-20 at 3.57.25 PM.png" alt=""><figcaption><p>Connect to Slack.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-08-20 at 6.13.08 PM.png" alt=""><figcaption></figcaption></figure>
+Once the Slack integration is set up, queue events for the account's repositories will be sent to the designated Slack channel.
 
-</div>
-
-Once connected, your team can write [custom Pilot workflows ](../pilot-automated-actions.md#slack)for specific GitHub users.
-
-## Slack Integration
+## Personal Slack Notifications
 
 ### DM Notifications
 
-You can link your Slack account to your Aviator account. The Aviator Slack app will send direct messages about your own PR activity. Simply use the slash command `/aviator connect` and login to complete the integration.
+Each individual can link their Slack account to their Aviator account. The Aviator Slack app will send direct messages about your own PR activity. Simply use the slash command `/aviator connect` and login to complete the integration.
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Follow link to connect your Slack account.</p></figcaption></figure>
 
-Once completed, you'll receive DMs about your PR activity.
+Once completed, you'll receive DMs about your own PR activity. Notifications about your PR activity will no longer go to the designated team Slack channel.
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Notifications for your PR activity.</p></figcaption></figure>
 
