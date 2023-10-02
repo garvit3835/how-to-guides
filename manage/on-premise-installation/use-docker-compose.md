@@ -1,8 +1,4 @@
-# On-premise Installation
-
-We use docker images to support easy installation of Aviator on any cloud provider or privately hosted network. There are two ways to setup: using a docker compose file or using a k8 helm configuration.
-
-## Using Docker Compose
+# Use Docker Compose
 
 ### Minimum requirements for the Aviator server
 
@@ -159,15 +155,7 @@ $ sudo chmod 0644 /opt/mergequeue/keys/mergequeue.pem
 
 Extract the _mergequeue.zip_ file, and open _enterprise/install.sh_ in your favorite editor. You will need to insert the secrets on lines 5 to 25. Here are some details for each secret value:
 
-| Value                                        | Description                                                                                                                                                              |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | Provided in the secrets file, used to pull docker images.                                                                                                                |
-| `LICENSE_KEY`                                | Provided in the secrets file.                                                                                                                                            |
-| `CERT_EMAIL`                                 | Email used by LetsEncrypt. This is where you will get emails about expiring certificates. During our setup of LetsEncrypt certificate, we also enable auto-renewal cron. |
-| `GITHUB_URL`                                 | Same as _github\_url_. This is only the hostname without any “https://” and any trailing slashes.                                                                        |
-| `HOSTNAME`                                   | Same as `av_hostname`. This is only the hostname of Aviator server without any “https://” and any trailing slashes.                                                      |
-| `GITHUB_APP_ID`                              | The same _github\_app\_id_ mentioned in Step 3.                                                                                                                          |
-| `SUMO_ACCESS_ID`, `SUMO_ACCESS_KEY`          | We use SumoLogic for log tracking. These values should be provided to you in the keys.                                                                                   |
+<table><thead><tr><th width="370">Value</th><th>Description</th></tr></thead><tbody><tr><td><code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code></td><td>Provided in the secrets file, used to pull docker images.</td></tr><tr><td><code>LICENSE_KEY</code></td><td>Provided in the secrets file.</td></tr><tr><td><code>CERT_EMAIL</code></td><td>Email used by LetsEncrypt. This is where you will get emails about expiring certificates. During our setup of LetsEncrypt certificate, we also enable auto-renewal cron.</td></tr><tr><td><code>GITHUB_URL</code></td><td>Same as <em>github_url</em>. This is only the hostname without any “https://” and any trailing slashes.</td></tr><tr><td><code>HOSTNAME</code></td><td>Same as <code>av_hostname</code>. This is only the hostname of Aviator server without any “https://” and any trailing slashes.</td></tr><tr><td><code>GITHUB_APP_ID</code></td><td>The same <em>github_app_id</em> mentioned in Step 3.</td></tr><tr><td><code>SUMO_ACCESS_ID</code>, <code>SUMO_ACCESS_KEY</code></td><td>We use SumoLogic for log tracking. These values should be provided to you in the keys.</td></tr></tbody></table>
 
 Save the file.
 
@@ -208,7 +196,3 @@ If the setup above fails, or docker fails to start containers, please reach out 
 ```shell
 $ sudo docker-compose logs
 ```
-
-## Using k8 configuration
-
-k8 configuration can be setup using similar steps. This is setup still in beta, contact us if you want to use k8 help charts for setup.

@@ -4,6 +4,8 @@ description: Slack Notifications for On-prem Installations
 
 # Slack Integration
 
+There are extra steps for the on-prem installations in order to use [Slack Integration](../../custom-integrations/personal-integrations.md).
+
 ## Create your Slack App
 
 To use Aviator’s Slack notifications, your team will need to set up a Slack app. Follow the steps below.
@@ -65,4 +67,4 @@ Create the following slash command, it will link a user’s Slack account with t
 
 ## Connect the App
 
-Follow the instructions here to connect the app to your account and get notifications: [Slack Integration](../slack-integration.md).
+Follow the instructions here to connect the app to your account and get notifications: [Slack Integration](../../custom-integrations/slack-integration.md).

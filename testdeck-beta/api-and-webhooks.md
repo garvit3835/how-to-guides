@@ -4,11 +4,7 @@
 
 {% swagger method="get" path="/flaky" baseUrl="https://api.aviator.co/api/v1/testdeck" summary="Get flaky tests in the last 30 days." expanded="true" %}
 {% swagger-description %}
-The flaky test API can be used to fetch the results of all flaky tests in the last 30 days. The results are paginated with maximum of 100 results returned in the response. The results are in the order of the most recent flaky, based on 
-
-`first_occurrence`
-
-.
+The flaky test API can be used to fetch the results of all flaky tests in the last 30 days. The results are paginated with maximum of 100 results returned in the response. The results are in the order of the most recent flaky, based on `first_occurrence`.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="org" type="String" required="true" %}

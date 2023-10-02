@@ -86,13 +86,7 @@ Name of the repository
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="pattern" type="String" required="true" %}
-Glob pattern representing the base branch. E.g. 
-
-`master`
-
- or 
-
-`release-*`
+Glob pattern representing the base branch. E.g. `master` or `release-*`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="paused" type="Boolean" required="true" %}
@@ -142,13 +136,7 @@ Name of the repository
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="pattern" type="String" %}
-Glob pattern representing the base branch. E.g. 
-
-`master`
-
- or 
-
-`release-*`
+Glob pattern representing the base branch. E.g. `master` or `release-*`
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
@@ -174,40 +162,14 @@ Glob pattern representing the base branch. E.g.
 
 {% swagger method="post" path="/pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Queue or Dequeue a Pull Request" %}
 {% swagger-description %}
-`curl -X POST -H "Authorization: Bearer <aviator_token>"`
-
-\
-
-
-`-H "Content-Type: application/json"`
-
-\
-
-
-`-d '{"action": "queue", "pull_request": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}, "head_commit_sha":" "`
-
-69f4404fda48aa2932abfbcb6956a9ccd473b17d
-
-`", "affected_targets": ["targetA", "targetB"], "merge_commit_message": {"title": "This is where title goes", "body": "This is where body goes"}}}'`
-
-\
-
-
+`curl -X POST -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`-d '{"action": "queue", "pull_request": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}, "head_commit_sha":" "`69f4404fda48aa2932abfbcb6956a9ccd473b17d`", "affected_targets": ["targetA", "targetB"], "merge_commit_message": {"title": "This is where title goes", "body": "This is where body goes"}}}'`\
 `https://api.aviator.co/api/v1/pull_request/`
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="action" required="true" %}
-Action taken. Valid options: 
-
-`update`
-
-, 
-
-`queue`
-
- or 
-
-`dequeue`
+Action taken. Valid options: `update`, `queue` or `dequeue`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="pull_request" type="Object" required="true" %}
@@ -235,11 +197,7 @@ Representing the commit SHA of the head of the PR.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> affected_targets" type="List[String]" %}
-Affected targets for the PR. Please see 
-
-[Affected Targets](mergequeue/affected-targets/)
-
- section for more details.
+Affected targets for the PR. Please see [Affected Targets](mergequeue/affected-targets/) section for more details.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> merge_commit_message" type="Object" %}
@@ -346,27 +304,11 @@ Name of the repository
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="branch" type="String" required="true" %}
-Feature branch associated with PR. One of 
-
-`branch`
-
- or 
-
-`number`
-
- must be present.
+Feature branch associated with PR. One of `branch` or `number` must be present.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="number" type="Integer" required="true" %}
-PR number to fetch. One of 
-
-`branch`
-
- or 
-
-`number`
-
- must be present.
+PR number to fetch. One of `branch` or `number` must be present.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
@@ -612,19 +554,11 @@ Name of the repository
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="start" type="String" %}
-UTC Start date in 
-
-_YYYY-MM-DD_
-
- format. Example: 2021-07-21
+UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="end" type="String" %}
-UTC End date in 
-
-_YYYY-MM-DD_
-
- format. Example: 2021-07-21
+UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
@@ -672,21 +606,15 @@ UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="end" required="false" type="String" %}
-UTC End date in 
-
-_YYYY-MM-DD_
-
- format. Example: 2021-07-21
+UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="repo" required="true" type="String" %}
-Name of the GitHub repo, in the format: 
-
-_orgname/reponame_
+Name of the GitHub repo, in the format: _orgname/reponame_
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="timezone" type="String" %}
-Standard tz format string. Defaults to account timezone. Example: America/Los_Angeles
+Standard tz format string. Defaults to account timezone. Example: America/Los\_Angeles
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
