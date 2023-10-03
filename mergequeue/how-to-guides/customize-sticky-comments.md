@@ -20,3 +20,11 @@ merge_rules:
     blocked_message: "..."
 
 ```
+
+Comments are enabled by default in your repository, you can modify this configuration from the config file:
+
+```
+merge_rules:
+  enable_comments: true
+```
+
