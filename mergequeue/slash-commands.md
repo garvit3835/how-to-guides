@@ -1,18 +1,14 @@
-# Slash Commands
+# Slash Commands Reference
 
-Slash commands enable teams to manage their pull requests with Aviator directly from the GitHub pull request page. The commands are invoked by including the line `/aviator <command>` anywhere in your comment (as long as it's on a line by itself). Only one slash command per comment is allowed.
+## Merge
 
-## Slash command reference
-
-### Merge
-
-The `/aviator merge` command queues a PR for merging. This can be used instead of adding the ready label. You can also specify affected targets as an additional parameter. See [<mark style="color:blue;">affected targets</mark> ](../affected-targets/)mode to learn more.
+The `/aviator merge` command queues a PR for merging. This can be used instead of adding the ready label. You can also specify affected targets as an additional parameter. See [<mark style="color:blue;">affected targets</mark> ](affected-targets/)mode to learn more.
 
 ```
 /aviator merge --targets=frontend,backend,api
 ```
 
-### Cancel
+## Cancel
 
 The `/aviator cancel` command de-queues a PR that has been previously queued.
 
@@ -20,13 +16,13 @@ The `/aviator cancel` command de-queues a PR that has been previously queued.
 When using the parallel queue mode, de-queuing a PR can negatively impact the performance of the queue (since any PR that was queued after the cancelled PR will have their CI reset).
 {% endhint %}
 
-### Refresh
+## Refresh
 
 The `/aviator refresh` command causes MergeQueue to re-examine your pull request. This can be useful if MergeQueue missed an event (such as you labeling your PR with the ready label).
 
 Usually this is only necessary if GitHub fails to deliver an event to MergeQueue (e.g., during a GitHub outage).
 
-### Backport
+## Backport
 
 The `/aviator backport` command can be used to backport a given PR to the specified target branch. This opens a new PR that has the cherry-picked changes from the current PR but targetting the specified base branch.
 
@@ -34,7 +30,7 @@ The `/aviator backport` command can be used to backport a given PR to the specif
 /aviator backport <target_branch>
 ```
 
-### Stack Merge
+## Stack Merge
 
 The `/aviator stack merge` command queues a stack for merging into the target branch of the stack (usually your repository default branch).
 
@@ -46,11 +42,11 @@ When merging a stack, any PRs that come later in the stack (after the PR where t
 For example, if your stack consists of PR1 through PR5, and PR3 is queued, PR4 and PR5 will have to be rebased on top of the commit where PR3 was merged into the stack's target branch (e.g., `main`). This means that PR3 must be merged before PR4 or PR5 can be queued.
 {% endhint %}
 
-### Stack Cancel
+## Stack Cancel
 
 The `aviator stack cancel` command de-queues a stack that has been previously queued.
 
-### Sync
+## Sync
 
 The `/aviator sync` command synchronizes the PR to be up-to-date with its base branch (i.e., creates a merge commit or rebases on top of the latest commit from the base branch, depending on your repository configuration).
 
