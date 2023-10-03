@@ -1,6 +1,10 @@
-# Custom validations
+# Set up Pre-Queue Conditions
 
-Aviator also supports validating the PR title and description. This can be achieved using custom validation in preconditions. For instance, if you want to require each PR title to have a ticket number, or if you have a checklist of items in the body, you can setup the preconditions:
+This guide describes how to setup [pre-queue conditions](../concepts/pre-queue-conditions.md).
+
+## RegExp PR Title and Body Validation
+
+Aviator supports validating the PR title and description. For instance, if you want to require each PR title to have a ticket number, or if you have a checklist of items in the body, you can setup the preconditions:
 
 ```yaml
 preconditions:
