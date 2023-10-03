@@ -80,7 +80,7 @@ merge_rules:
 
 #### Parallel Mode
 
-The following are only applicable if the above `merge_mode` is set to `parallel`. You can learn more about [<mark style="color:blue;">Parallel Mode here</mark>](../parallel-mode/).
+The following are only applicable if the above `merge_mode` is set to `parallel`. You can learn more about [<mark style="color:blue;">Parallel Mode here</mark>](../concepts/parallel-mode/).
 
 ```
 merge_rules:  

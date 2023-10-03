@@ -24,7 +24,7 @@ When a second PR (`PR #2`) is labeled with the trigger label, the bot will creat
 
 For every subsequent PR labeled with the trigger label, the bot will pick up all the existing queued PRs along with the labeled one and create a new Draft PR. This ensures the validation is always performed on the most recent changes. In this way, each subsequent PR has an associated Draft PR that is created when the original PR was labeled.
 
-![](<../../.gitbook/assets/Screen Shot 2022-05-17 at 3.19.23 PM.png>)
+![](<../../../.gitbook/assets/Screen Shot 2022-05-17 at 3.19.23 PM.png>)
 
 ## **CI behaviors**
 
@@ -82,7 +82,7 @@ You can also configure separate CI validations for the original PRs and the draf
 
 You can customize the required checks for Parallel mode using the Merge Rules UI. In the parallel mode section of the rules, you can choose "Override required checks". Here you can opt in to use the same checks on draft PRs or select the custom checks.
 
-![](<../../.gitbook/assets/Screen Shot 2022-07-18 at 10.12.09 AM (1).png>)
+![](<../../../.gitbook/assets/Screen Shot 2022-07-18 at 10.12.09 AM (1).png>)
 
 #### Option B: Through YAML config
 

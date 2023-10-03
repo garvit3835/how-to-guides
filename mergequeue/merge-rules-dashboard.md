@@ -20,6 +20,6 @@ See `Required Checks` under `Merge Preconditions` to set status checks for your 
 
 <figure><img src="../.gitbook/assets/required_checks.png" alt=""><figcaption><p>required check configuration from UI</p></figcaption></figure>
 
-If your team is using Parallel mode, by default, Aviator bot will use the same checks for original PRs and draft PRs. However, if you want to customize checks for draft PRs, you can do so under `Override required checks` in [<mark style="color:blue;">the Parallel Mode section</mark>](parallel-mode/).
+If your team is using Parallel mode, by default, Aviator bot will use the same checks for original PRs and draft PRs. However, if you want to customize checks for draft PRs, you can do so under `Override required checks` in [<mark style="color:blue;">the Parallel Mode section</mark>](concepts/parallel-mode/).
 
 ![Override required checks for draft PRs.](<../.gitbook/assets/Screen Shot 2022-07-13 at 4.37.18 PM.png>)
