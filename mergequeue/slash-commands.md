@@ -1,5 +1,9 @@
 # Slash Commands Reference
 
+{% hint style="info" %}
+Read the how-to-guide on [<mark style="color:blue;">using Slash commands</mark>](how-to-guides/slash-commands.md) from within GitHub comments.
+{% endhint %}
+
 ## Merge
 
 The `/aviator merge` command queues a PR for merging. This can be used instead of adding the ready label. You can also specify affected targets as an additional parameter. See [<mark style="color:blue;">affected targets</mark> ](affected-targets/)mode to learn more.
