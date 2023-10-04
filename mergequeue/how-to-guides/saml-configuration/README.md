@@ -1,4 +1,4 @@
-# SAML Configuration
+# Set Up SAML Configuration
 
 All of Aviator’s cloud accounts support Google SSO based login. Self-hosted Aviator deployments support Google, Okta, Active Directory, or other SAML SSO providers.
 
@@ -18,10 +18,10 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 4. Enter **General Settings** for the application:
    * App name: **Aviator**
    * **App logo** (optional). You can download the application logo for the application, you can download one from [here](https://api.aviator.co/static/img/aviator\_long.png).
-5. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)<mark style="color:blue;"></mark>
+5. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)
 6. Copy the unique **Single Sign on url**, of format: [**https://app.aviator.co/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
 
-![identity provider setup](<../../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
+![identity provider setup](<../../../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
 
 8\. Enter SAML Settings, including:
 
@@ -33,7 +33,7 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 
 9\. Enter the attribute statements, which will be used to map attributes between Okta and Aviator. Please note that these values are case-sensitive.
 
-![](<../../.gitbook/assets/Screen Shot 2022-05-10 at 12.07.08 PM.png>)
+![](<../../../.gitbook/assets/Screen Shot 2022-05-10 at 12.07.08 PM.png>)
 
 10\. Click **Next**. Then, set Okta support parameters for the application. Recommended settings:
 
@@ -42,7 +42,7 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 
 11\. Click **Finish**. On the next screen, click the **Sign On** tab and go to SAML Signing Certificates and select SHA-2 Actions dropdown. Select View IdP metadata.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-02-14 at 9.36.27 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screen Shot 2023-02-14 at 9.36.27 PM.png" alt=""><figcaption></figcaption></figure>
 
 12\. Copy the url that it opens, this is your **Metadata URL**. It should typically end with: `/sso/saml/metadata`
 

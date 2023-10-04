@@ -1,4 +1,4 @@
-# Pilot - Automated actions
+# Pilot Automated Actions
 
 Aviator offers automated actions that can be configured via the configuration file to perform specific actions depending on a particular event or scenario. You can write your own custom scenarios and corresponding actions in the configuration file.
 
@@ -182,7 +182,7 @@ actions:
 
 #### mergequeue
 
-Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/priority-merges/#instant-merge).
+Used to interact with Aviator’s merge queue. The `queue` action will enqueue the PR and `instant_merge` will merge the PR instantly. You can read more about instant merge behavior [<mark style="color:blue;">here</mark>](mergequeue/concepts/priority-merges/#instant-merge).
 
 ```
 actions:

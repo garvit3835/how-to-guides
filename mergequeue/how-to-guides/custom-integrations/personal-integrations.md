@@ -4,7 +4,7 @@
 
 You can use the Slack app integration to receive notifications about queue events. Currently supported Slack events are queued, merged and failed. Slack notifications can be enabled from the `Webhooks` page.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-09-20 at 3.57.25 PM.png" alt=""><figcaption><p>Connect to Slack.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screen Shot 2022-09-20 at 3.57.25 PM.png" alt=""><figcaption><p>Connect to Slack.</p></figcaption></figure>
 
 Once the Slack integration is set up, queue events for the account's repositories will be sent to the designated Slack channel.
 
@@ -14,11 +14,11 @@ Once the Slack integration is set up, queue events for the account's repositorie
 
 Each individual can link their Slack account to their Aviator account. The Aviator Slack app will send direct messages about your own PR activity. Simply use the slash command `/aviator connect` and login to complete the integration.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Follow link to connect your Slack account.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Follow link to connect your Slack account.</p></figcaption></figure>
 
 Once completed, you'll receive DMs about your own PR activity. Notifications about your PR activity will no longer go to the designated team Slack channel.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Notifications for your PR activity.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Notifications for your PR activity.</p></figcaption></figure>
 
 ### Personalized DMs (Opt-in or Opt-out)
 
@@ -58,5 +58,5 @@ scenarios:
    \
    For the Merged PRs trigger, by default, no users will receive DMs since the action requires users to opt-in. Anyone within the `engineering` GitHub group can opt-in by adding the `merged-pr` label to their opt-in list as shown below.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-09-01 at 3.52.20 PM.png" alt=""><figcaption><p>Personalize individual DMs with opt-out or opt-in labels.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screen Shot 2023-09-01 at 3.52.20 PM.png" alt=""><figcaption><p>Personalize individual DMs with opt-out or opt-in labels.</p></figcaption></figure>
 

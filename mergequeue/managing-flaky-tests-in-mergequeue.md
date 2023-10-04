@@ -1,10 +1,10 @@
-# Managing flaky tests in MergeQueue
+# Managing Flaky Tests in MergeQueue
 
 Flaky tests can be extremely frustrating for the health of your CI. These can especially be deteriorating when you want to incorporate a merge queue in your development workflow. Aviator MergeQueue offers capabilities to reduce the impact of flaky tests on your queue.
 
 ## Optimistic validation
 
-To understand the queue workflow around flaky tests, it’s worth first understanding how optimistic validation works. Note that these capabilities specifically work in [<mark style="color:blue;">parallel mode</mark>](concepts/parallel-mode/), including all variations of parallel mode ([<mark style="color:blue;">affected targets</mark>](affected-targets/), [<mark style="color:blue;">fast forwarding</mark>](broken-reference), and [<mark style="color:blue;">batching</mark>](concepts/parallel-mode/batching.md)).
+To understand the queue workflow around flaky tests, it’s worth first understanding how optimistic validation works. Note that these capabilities specifically work in [<mark style="color:blue;">parallel mode</mark>](concepts/parallel-mode/), including all variations of parallel mode ([<mark style="color:blue;">affected targets</mark>](concepts/affected-targets/), [<mark style="color:blue;">fast forwarding</mark>](broken-reference), and [<mark style="color:blue;">batching</mark>](concepts/parallel-mode/batching.md)).
 
 Consider a simple example of parallel mode where Aviator creates Draft PRs that combine changes from one or more queued PRs. These Draft PRs run the CIs in parallel to reduce the wait time. Let’s say there are two PRs `PR #1` and `PR #2` that are queued, and corresponding draft PRs are created such that draft `PR #3` has changes from `PR #1` and draft `PR #4` have changes from `PR #1` and `PR #2`.
 

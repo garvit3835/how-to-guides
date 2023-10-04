@@ -53,7 +53,7 @@ This capability is now available using GitHub’s [<mark style="color:blue;">Rul
 
 Once migrated to Ruleset, you can add Aviator app in the bypass list.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-05-26 at 11.26.05 AM.png" alt=""><figcaption><p>add Aviator app in the bypass list for the Ruleset</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screen Shot 2023-05-26 at 11.26.05 AM.png" alt=""><figcaption><p>add Aviator app in the bypass list for the Ruleset</p></figcaption></figure>
 
 #### Using personal access token
 
