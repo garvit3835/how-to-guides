@@ -44,7 +44,6 @@
     * [Timeline](mergequeue/concepts/timeline.md)
   * [Reference](mergequeue/reference/README.md)
     * [GitHub Slash Commands](mergequeue/slash-commands.md)
-    * [API Documentation](mergequeue/reference/api-documentation.md)
     * [Status Codes](mergequeue/reference/comments-and-status-codes.md)
   * [Customizing Required Checks](mergequeue/customizing-required-checks.md)
   * [Managing Flaky Tests in MergeQueue](mergequeue/managing-flaky-tests-in-mergequeue.md)
@@ -96,7 +95,13 @@
   * [Automatic Tests Re-Runs](testdeck-beta/auto-rerun-tests.md)
 * [Pilot Automated Actions](pilot-automated-actions.md)
   * [Scheduled Events](pilot-automated-actions/scheduled-events.md)
-* [Webhooks](webhooks.md)
+* [Aviator API](api/README.md)
+  * Tutorials
+    * [GraphQL API Quickstart](/api/tutorials/graphql-api-quickstart.md)
+  * Reference
+    * [JSON API](/api/reference/json-api.md)
+    * [GraphQL](/api/reference/graphql.md)
+    * [Webhooks](/api/reference/webhooks.md)
 
 ## Manage
 

@@ -1,4 +1,4 @@
-# Webhooks
+# Webhook Reference
 
 Your application can use webhooks to subscribe to events happening on your Aviator account.
 

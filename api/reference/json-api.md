@@ -1,4 +1,4 @@
-# API Reference 
+# JSON API Reference 
 
 ## **Authentication**
 
