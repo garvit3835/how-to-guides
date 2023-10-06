@@ -1,30 +1,6 @@
-# API Reference 
+# JSON API Reference
 
-## **Authentication**
-
-Aviator uses basic key based authentication. You can view and manage your API key in the [<mark style="color:blue;">Aviator dashboard</mark>](https://app.aviator.co/hooks/api). We only support a single API token. Once a token is generated, you can reset it to invalidate your existing token and create a new one.
-
-API keys that are used to fetch Aviator analytics are currently read-only, but in the future these may be used for other purposes. Please make sure to keep them secure.
-
-Authentication to the API is performed via [<mark style="color:blue;">HTTP Basic Auth</mark>](http://en.wikipedia.org/wiki/Basic\_access\_authentication)<mark style="color:blue;">.</mark> Provide your API key as the bearer token:
-
-```shell
-curl -H "Authorization: Bearer <aviator_token>"
--H "Content-Type: application/json"
-https://api.aviator.co/api/v1/...
-```
-
-## GraphQL API (Beta)
-
-&#x20;The GraphQL API (which is currently in beta) can be accessed at `https://api.aviator.co/graphql`. Authorization is required as described above.
-
-An [interactive GraphQL playground](https://app.aviator.co/graphql) is also available which uses your current login credentials.
-
-The GraphQL API is documented as part of the GraphQL schema. For more information on GraphQL, see the [official GraphQL guide](https://graphql.org/learn/queries/).
-
-## REST API
-
-### Repository
+## Repository
 
 {% swagger method="post" path="/repo" baseUrl="https://api.aviator.co/api/v1" summary="Pause / unpause the merging of PRs on a repository." %}
 {% swagger-description %}
@@ -59,7 +35,7 @@ Whether to pause or unpause the queue
 {% endswagger-response %}
 {% endswagger %}
 
-### Branches
+## Branches
 
 {% swagger method="post" path="/branches" baseUrl="https://api.aviator.co/api/v1" summary="Pause / unpause the merging of PRs for specific base branches." %}
 {% swagger-description %}
@@ -158,7 +134,7 @@ Glob pattern representing the base branch. E.g. `master` or `release-*`
 {% endswagger-response %}
 {% endswagger %}
 
-### PullRequest
+## PullRequest
 
 {% swagger method="post" path="/pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Queue or Dequeue a Pull Request" %}
 {% swagger-description %}
@@ -197,7 +173,7 @@ Representing the commit SHA of the head of the PR.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> affected_targets" type="List[String]" %}
-Affected targets for the PR. Please see [Affected Targets](mergequeue/affected-targets/) section for more details.
+Affected targets for the PR. Please see [<mark style="color:blue;">Affected Targets</mark>](mergequeue/affected-targets/) section for more details.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> merge_commit_message" type="Object" %}
@@ -410,7 +386,7 @@ Target branch to fetch queued PRs for
 {% endswagger-response %}
 {% endswagger %}
 
-### BotPullRequest
+## BotPullRequest
 
 {% swagger method="get" path="/bot_pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Fetch information of PRs associated with a provided Bot PullRequest" %}
 {% swagger-description %}
@@ -461,7 +437,7 @@ PR number associated with the Bot PR
 {% endswagger-response %}
 {% endswagger %}
 
-### Config
+## Config
 
 {% swagger method="get" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the current YAML config associated with the given GitHub repository." %}
 {% swagger-description %}
@@ -495,8 +471,6 @@ merge_rules:
 ```
 {% endswagger-response %}
 {% endswagger %}
-
-###
 
 {% swagger method="post" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Change the YAML config associated with the given GitHub repository." %}
 {% swagger-description %}
@@ -532,7 +506,7 @@ Name of the GitHub repository.
 {% endswagger-response %}
 {% endswagger %}
 
-### Config Change
+## Config Change
 
 {% swagger method="get" path="/config/history" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the history of config changes associated with a given repository." %}
 {% swagger-description %}
@@ -588,7 +562,7 @@ UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
 
 The `modified_by` property contains email and gh\_username. If the config was modified from the Dashboard, `email` of the user would be present, and if the config was modified from the GitHub repo change, a `gh_username` would be present. `commit_sha` property may also be only present if the change was made from the GitHub repository.
 
-### Analytics
+## Analytics
 
 {% swagger method="get" path="/v1/analytics" baseUrl="https://api.aviator.co/api" summary="Get list of analytics objects representing statistics on a daily basis." %}
 {% swagger-description %}
@@ -711,7 +685,7 @@ Standard tz format string. Defaults to account timezone. Example: America/Los\_A
 {% endswagger-response %}
 {% endswagger %}
 
-### Queue
+## Queue
 
 {% swagger method="get" path="/v1/queue/stats" baseUrl="https://api.aviator.co/api" summary="Get live statistics about the state of the merge queue" %}
 {% swagger-description %}
