@@ -113,5 +113,5 @@ The output should be similar to:
 
 ## Learn more
 
-* See the official [Introduction to GraphQL](https://graphql.org/learn/) tutorial to learn more about GraphQL.
-* [GraphQL API reference](/api/reference/graphql.md)
+* See the official [<mark style="color:blue;">Introduction to GraphQL</mark>](https://graphql.org/learn/) tutorial to learn more about GraphQL.
+* [<mark style="color:blue;">GraphQL API reference</mark>](/api/reference/graphql.md)

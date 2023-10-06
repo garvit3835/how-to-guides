@@ -1,6 +1,6 @@
 # API Authentication
 
-The Aviator [JSON API](json-api.md) and [GraphQL API](graphql.md) use token-based authentication.
+The Aviator [<mark style="color:blue;">JSON API</mark>](json-api.md) and [<mark style="color:blue;">GraphQL API</mark>](graphql.md) use token-based authentication.
 
 ## Account Token
 
@@ -10,6 +10,6 @@ This token should be provided via the HTTP `Authorization` header with the value
 
 ## User Access Token (UAT)
 
-A user access token provides access to API resources on behalf of a user. Users can have UATs. User access tokens can be created from the [Aviator dashboard](https://app.aviator.co/account/apitoken). These tokens always start with `av_uat_`.
+A user access token provides access to API resources on behalf of a user. Users can have UATs. User access tokens can be created from the [<mark style="color:blue;">Aviator dashboard</mark>](https://app.aviator.co/account/apitoken). These tokens always start with `av_uat_`.
 
 This token should be provided via the HTTP `Authorization` header with the value `Bearer <token>`.

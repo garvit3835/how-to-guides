@@ -173,7 +173,7 @@ Representing the commit SHA of the head of the PR.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> affected_targets" type="List[String]" %}
-Affected targets for the PR. Please see [Affected Targets](mergequeue/affected-targets/) section for more details.
+Affected targets for the PR. Please see [<mark style="color:blue;">Affected Targets</mark>](mergequeue/affected-targets/) section for more details.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="> merge_commit_message" type="Object" %}
