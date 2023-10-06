@@ -97,7 +97,7 @@
   * [Scheduled Events](pilot-automated-actions/scheduled-events.md)
 * [Aviator API](api/README.md)
   * Tutorials
-    * [GraphQL API Quickstart](/api/tutorials/graphql-api-quickstart.md)
+    * [GraphQL API Quickstart](/api/tutorial/graphql-api-quickstart.md)
   * Reference
     * [JSON API](/api/reference/json-api.md)
     * [GraphQL](/api/reference/graphql.md)

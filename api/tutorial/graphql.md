@@ -9,7 +9,7 @@ This tutorial will show you how to use the Aviator GraphQL API to access pull re
 * Enter `GraphQL tutorial` for the token name.
 * Select `30 days` for the token expiration.
 
-This should be in the format `av_uat_abcdefghijklmnopqrstuvwxyz`. Make sure to save this value as it can't be accessed again.
+This should be in the format `av_uat_abcdefghijklmnopqrstuvwxyz`. Make sure to save this value as it can't be accessed again after leaving the token creation page.
 
 In your terminal, set the `AV_API_TOKEN` environment variable to the value of the token you just created:
 
