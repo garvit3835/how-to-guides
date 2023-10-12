@@ -1,6 +1,6 @@
-# Aviator Chrome Extension
+# Chrome Extension
 
-You can use [Aviator Chrome Extension](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif) to enqueue your pull-request from GitHub.
+You can use [Aviator's Chrome Extension](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif) to enqueue your pull-request from GitHub.
 
 ## Installation
 

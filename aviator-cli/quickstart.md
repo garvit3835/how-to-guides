@@ -193,5 +193,5 @@ main
 
 ## What's next
 
-* [Learn how to add Aviator CLI commands as a Git subcommand](git-subcommand-aliasing.md)
+* [Learn how to add Aviator CLI commands as a Git subcommand](how-to-guides/git-subcommand-aliasing.md)
 * [Learn how to adopt a branch created from Git command](how-to-guides/adopt-a-branch.md)

@@ -1,14 +1,26 @@
-# Configuration file
+# Merge Rules
 
-Aviator supports a YAML based configuration file. This file can either be applied directly from the Aviator dashboard or configured in the GitHub repository.
+MergeQueue communicates with pull request using GitHub labels, GitHub comments and the [<mark style="color:blue;">Aviator CLI</mark>](../aviator-cli/). Merge rules are at the core of how the Aviator bot reacts to the actions taken on GitHub.
 
-### From Dashboard
+Some of the Basic Configuration can be modified using the [<mark style="color:blue;">Merge Rules dashboard</mark>](https://app.aviator.co/github/rules). For more advanced configuration, Aviator supports a YAML based configuration file. This file can either be applied directly from the Aviator dashboard or configured in the GitHub repository.
 
-You can directly apply the config on the _Yaml configuration_ tab on the[ <mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/rules) page. You can also validate this configuration before applying any changes.
+### Managing YAML from the dashboard
 
-### From GitHub repository
+You can directly apply the config on the _YAML configuration_ tab on the[ <mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/validate-config) page. We also recommend validating this configuration before applying any changes.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-10-12 at 3.15.26 PM.png" alt=""><figcaption></figcaption></figure>
+
+### Managing YAML from GitHub repository
 
 You can also create a configuration file stored in `.aviator/config.yml`. The file will only be read once it is merged into the repository's default branch. It will also override any properties set in the Dashboard UI.
+
+
+
+To review the complete reference guide, go to [<mark style="color:blue;">Merge Rules Configuration page</mark>](reference/complete-reference-guide.md). Find below some common examples to get you started.
+
+{% content-ref url="reference/complete-reference-guide.md" %}
+[complete-reference-guide.md](reference/complete-reference-guide.md)
+{% endcontent-ref %}
 
 ## Examples
 
@@ -66,7 +78,7 @@ merge_rules:
 
 ### Using Parallel mode
 
-Also checkout the [<mark style="color:blue;">parallel mode section</mark>](../concepts/parallel-mode/) for details.
+Also checkout the [<mark style="color:blue;">parallel mode section</mark>](concepts/parallel-mode/) for details.
 
 ```yaml
  merge_rules:
@@ -98,7 +110,7 @@ On failure, the PRs will automatically requeue before giving up. Only available 
 
 ### Auto update
 
-Keep your PRs up to date. Every time a new. commit is added to the base branch, the PRs are automatically updated using rebase or merge commit. See the [<mark style="color:blue;">auto update section</mark>](complete-reference-guide.md#auto-update) in the reference guide.
+Keep your PRs up to date. Every time a new. commit is added to the base branch, the PRs are automatically updated using rebase or merge commit. See the [<mark style="color:blue;">auto update section</mark>](reference/complete-reference-guide.md#auto-update) in the reference guide.
 
 ```yaml
  merge_rules:
@@ -123,3 +135,4 @@ Customize title and body when merging the PR.
      cut_body_before: "----"
      cut_body_after: "+++"
 ```
+

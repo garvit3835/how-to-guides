@@ -1,4 +1,4 @@
-# Configuring ChangeSets
+# Configure ChangeSets
 
 The [<mark style="color:blue;">ChangeSets feature</mark>](../concepts/changesets/) allows you to create a list of PRs to be merged together.&#x20;
 
@@ -15,5 +15,5 @@ There are a few settings you can configure on the [<mark style="color:blue;">Cha
 
 ### Step 3: Configure webhooks
 
-If you are using global CI validation, you must also make sure the webhook is configured. See the [<mark style="color:blue;">Webhooks</mark>](../../webhooks.md) section to configure your webhooks.&#x20;
+If you are using global CI validation, you must also make sure the webhook is configured. See the [<mark style="color:blue;">Webhooks</mark>](broken-reference) section to configure your webhooks.&#x20;
 
