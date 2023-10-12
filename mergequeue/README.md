@@ -6,7 +6,7 @@ description: Automated merge workflow
 
 ## Introduction <a href="#introduction" id="introduction"></a>
 
-MergeQueue is a configurable queue that manages the merge workflow for your GitHub repository. The Aviator bot uses GitHub labels to identify pull requests (PRs) that are ready to be merged and queues them. Once a PR has been queued, the Aviator bot pulls the latest base branch for each PR, runs and verifies the required status checks, and then merges the changes once the checks pass.&#x20;
+MergeQueue is a configurable queue that manages the merge workflow for your GitHub repository. The Aviator bot uses GitHub labels to identify pull requests (PRs) that are ready to be merged and queues them. Once a PR has been queued, the Aviator bot pulls the latest base branch for each PR, runs and verifies the required status checks, and then merges the changes once the checks pass.
 
 ![Dashboard view](<../.gitbook/assets/Screen Shot 2022-05-17 at 9.56.31 PM.png>)
 
@@ -35,12 +35,13 @@ Aviator provides several merge modes that you can optimize for your team's repos
 
 ![MergeQueue automatically dequeues PRs and reports build failures.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.33.58 PM.png>)
 
-#### Modes
+## Merge Modes
 
 * Default - The default mode uses a simple FIFO queue. PRs will be merged in the order they are queued. Aviator bot pulls latest changes from mainline to validate CI before merging.
 * [<mark style="color:blue;">Parallel mode</mark>](concepts/parallel-mode/) - CI builds are run optimistically in parallel in order to decrease time-to-merge for high output teams.
-* [<mark style="color:blue;">Fast Forwarding</mark>](how-to-guides/fast-forwarding.md) - This works similar to parallel mode, but keeps branch history linear and avoids creating extra commits.
-* [Affected targets](concepts/affected-targets/) - Use MergeQueue as a dynamic sub-queue based on the build targets.
+  * [<mark style="color:blue;">Fast Forwarding</mark>](how-to-guides/fast-forwarding.md) - This is an extension of Parallel mode and works similar to parallel mode, but keeps branch history linear and avoids creating extra commits.
+  * [Affected targets](concepts/affected-targets/) - This is also an extension to the parallel mode. This lets you use MergeQueue as a dynamic sub-queue based on the build targets.
+* No-Queue mode - As the name suggests, there is no FIFO queue in this mode. Instead Aviator simply waits for CI to finish after the PR is tagged, and then merges them automatically. You can optionally configure every PR to be automatically updated once before Aviator verifies CI checks.
 * [<mark style="color:blue;">ChangeSets</mark>](concepts/changesets/) - PRs can be merged together in a user-defined set.
 
 ## Status Checks

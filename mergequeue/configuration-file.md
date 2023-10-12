@@ -8,7 +8,7 @@ Some of the Basic Configuration can be modified using the [<mark style="color:bl
 
 You can directly apply the config on the _YAML configuration_ tab on the[ <mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/validate-config) page. We also recommend validating this configuration before applying any changes.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-10-12 at 3.15.26 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-10-12 at 3.22.07 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Managing YAML from GitHub repository
 
