@@ -10,7 +10,7 @@ MergeQueue is a configurable queue that manages the merge workflow for your GitH
 
 ![Dashboard view](<../.gitbook/assets/Screen Shot 2022-05-17 at 9.56.31 PM.png>)
 
-### **Why MergeQueue?**
+## **Why MergeQueue?**
 
 CI tools can run tests on every pull request when it's opened, as well as on every branch after it's pushed, but it may not be sufficient to avoid broken builds.
 
@@ -23,7 +23,7 @@ You could configure GitHub to block pull requests that are not up-to-date with `
 * Merge the pull request when it's done.
 * In case another pull request is merged before that, repeat the steps above.
 
-### How does it work?
+## How does it work?
 
 Aviator provides several merge modes that you can optimize for your team's repositories. All modes follow the same basic flow:
 
@@ -40,10 +40,10 @@ Aviator provides several merge modes that you can optimize for your team's repos
 * Default - The default mode uses a simple FIFO queue. PRs will be merged in the order they are queued. Aviator bot pulls latest changes from mainline to validate CI before merging.
 * [<mark style="color:blue;">Parallel mode</mark>](concepts/parallel-mode/) - CI builds are run optimistically in parallel in order to decrease time-to-merge for high output teams.
   * [<mark style="color:blue;">Fast Forwarding</mark>](how-to-guides/fast-forwarding.md) - This is an extension of Parallel mode and works similar to parallel mode, but keeps branch history linear and avoids creating extra commits.
-  * [Affected targets](concepts/affected-targets/) - This is also an extension to the parallel mode. This lets you use MergeQueue as a dynamic sub-queue based on the build targets.
+  * [<mark style="color:blue;">Affected targets</mark>](concepts/affected-targets/) - This is also an extension to the parallel mode. This lets you use MergeQueue as a dynamic sub-queue based on the build targets.
 * No-Queue mode - As the name suggests, there is no FIFO queue in this mode. Instead Aviator simply waits for CI to finish after the PR is tagged, and then merges them automatically. You can optionally configure every PR to be automatically updated once before Aviator verifies CI checks.
 * [<mark style="color:blue;">ChangeSets</mark>](concepts/changesets/) - PRs can be merged together in a user-defined set.
 
 ## Status Checks
 
-Aviator automatically captures both required and non-required the status checks from your repository. By default, Aviator will validate the required status checks configured in GitHub. To learn more about status checks, checkout customizing required checks section.
+Aviator automatically captures both required and non-required the status checks from your repository. By default, Aviator will validate the required status checks configured in GitHub. To learn more about status checks, checkout [<mark style="color:blue;">customizing required checks section</mark>](customizing-required-checks.md).
