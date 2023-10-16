@@ -53,7 +53,7 @@ Use the following settings to create the app:
 
 **Expire user authorization tokens**: YES
 
-**Request user oauth**: NO
+**Request user authorization (OAuth) during installation**: NO
 
 **Setup URL:** https://\<av\_hostname>/api/setup/complete
 
@@ -75,51 +75,40 @@ Use the following settings to create the app:
 _**Please review the following carefully, any mismatch here could result in unexpected behavior of the app.**_
 {% endhint %}
 
-**Administrator**:  Read only
+Repository permissions
 
-**Checks**: Read & Write
+| Name            | Access         |
+| --------------- | -------------- |
+| Administration  | Read-only      |
+| Checks          | Read and write |
+| Commit statuses | Read-only      |
+| Contents        | Read and write |
+| Issues          | Read and write |
+| Metadata        | Read-only      |
+| Pull requests   | Read and write |
+| Workflows       | Read and write |
 
-**Commit statuses**: Read & Write
+Organization permissions
 
-**Contents**: Read & Write
-
-**Issues**: Read & Write
-
-**Metadata**: Read only
-
-**Pull requests**: Read & Write
-
-**Workflows**: Read & Write
-
-**Members**: Read only
-
-
+| Name    | Access    |
+| ------- | --------- |
+| Members | Read-only |
 
 **Subscribe to events**:
 
-Branch Protection rules
-
-Check Run
-
-Check Suite
-
-Label
-
-Issue Comments
-
-Member
-
-Public
-
-Pull request
-
-Pull request review
-
-Pull request review comment
-
-Push
-
-Status
+* [ ] Branch Protection rules
+* [ ] Check Run
+* [ ] Check Suite
+* [ ] Issue Comment
+* [ ] Label
+* [ ] Member
+* [ ] Public
+* [ ] Pull request
+* [ ] Pull request review
+* [ ] Pull request review comment
+* [ ] Pull request review thread
+* [ ] Push
+* [ ] Status
 
 **Where can GitHub App be installed**: Any account
 

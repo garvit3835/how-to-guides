@@ -2,7 +2,7 @@
 description: Permissions & explanations
 ---
 
-# Github App Permissions
+# GitHub App Permissions
 
 The Aviator app requests a set of permissions on your GitHub repositories that you choose to connect with Aviator. While Aviator tries to request as few permissions as it needs to function, GitHub only allows us to request fairly broad groups of permissions. Weâ€™re committed to your privacy and security, so Aviator only uses the subset of permissions it needs to do its job.
 
@@ -20,7 +20,13 @@ This permission includes access to checks on code (such as GitHub actions and ot
 
 Aviator uses this permission to examine the status checks of your commits, branches, and pull requests. Aviator uses this information to determine when pull requests should be allowed to merge.
 
-### Code/contents (read & write)
+### Commit statuses (read only)
+
+This permission includes access to commit statuses.
+
+Aviator uses this permission to read the status information from individual commits or branches.
+
+### Contents (read & write)
 
 This permission includes access to repository contents, commits, branches, downloads, releases, and merges.
 
@@ -29,12 +35,6 @@ Aviator uses this permission to download the Aviator configuration file if youâ€
 Additionally, Aviator uses write permissions to update branches that are created and managed by Aviator as well and to perform actions explicitly requested by users (e.g., the `/aviator sync` command can be used to update a branch on demand).
 
 Aviator may also access temporarily source code references in order to perform certain operations that are not supported directly on GitHub (such as rebasing pull requests). These actions are not enabled by default.
-
-### Commit statuses (read only)
-
-This permission includes access to commit statuses.
-
-Aviator uses this permission to read the status information from individual commits or branches.
 
 ### Issues (read & write)
 
