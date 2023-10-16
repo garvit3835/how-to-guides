@@ -110,6 +110,7 @@
 * [On-premise Installation](manage/on-premise-installation/README.md)
   * [Use Helm](manage/on-premise-installation/use-helm.md)
   * [Use Docker Compose](manage/on-premise-installation/use-docker-compose.md)
+  * [Prometheus endpoint](manage/on-premise-installation/prometheus-endpoint.md)
   * [Slack Integration](manage/on-premise-installation/slack-integration.md)
   * [Google SSO Login](manage/on-premise-installation/google-sso-login.md)
 * [FAQs](manage/faqs/README.md)
