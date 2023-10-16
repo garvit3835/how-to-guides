@@ -1,20 +1,20 @@
 # Queue Modes
 
 MergeQueue can be configured to operate in one of three queue modes, each with
-different correctness and performance tradeoffs. The merge mode can be
+different feature and performance tradeoffs. The queue mode can be
 configured on a per-repository basis.
 
 ## Sequential Mode
 
-Sequential mode is the default merge mode for repositories and is suitable for
+Sequential mode is the default queue mode and is suitable for
 repositories that merge a relatively small number of pull requests per day.
 
-In this mode, when a pull request reaches the top of the queue, it will be
-automatically updated with the latest commit from the pull request's target
+In this mode, when a pull request reaches the top of the queue, it will
+automatically be updated with the latest commit from the pull request's target
 branch (typically `master` or `main`) and merged only if it passes all the
 required checks.
 
-Sequential mode can only merge on pull request in the time it takes to run the
+Sequential mode can only merge one pull request in the time it takes to run the
 full suite of checks. For example, if the full suite of checks takes 30 minutes
 to run, then only one pull request can be merged every 30 minutes (for a
 theoretical maximum of 48 pull requests per day).

@@ -5,18 +5,18 @@ merged (or closed without merging).
 
 ## Open
 
-A pull requests is _open_ when it has not been marked as _ready-to-merge_ and is
+A pull request is _open_ when it has not been marked as _ready-to-merge_ and is
 not closed on GitHub.
 
 Pull requests can be marked as _ready-to-merge_ by adding the
 [configured GitHub label](/mergequeue/reference/complete-reference-guide.md#labels),
 adding a [slash command](/mergequeue/slash-commands.md) comment to the pull
-request, or by using the [Aviator API](/api/README.md).
+request, or using the [Aviator API](/api/README.md).
 
 ## Pending
 
-A pull request is _pending_ when it has marked as _ready-to-merge_ and has not
-yet passed all the configured queue pre-conditions.
+A pull request is _pending_ when it has been marked as _ready-to-merge_ and has
+not yet passed all the configured queue pre-conditions.
 
 MergeQueue will validate all the necessary pre-conditions (such as passing all
 required checks, having no merge conflicts, and having sufficient approvals)
@@ -28,8 +28,8 @@ yet entered the queue on the
 
 ## Queued
 
-A pull request is _queued_ when it has been marked as _ready-to-merge_ passed
-all the necessary queue pre-conditions.
+A pull request is _queued_ when it has been marked as _ready-to-merge_ and has
+passed all the necessary queue pre-conditions.
 
 Once queued, MergeQueue will validate the changes in the pull request against
 the latest changes in the target branch (depending on the repository's
@@ -38,7 +38,7 @@ it passes all the required checks.
 
 ## Blocked
 
-A pull request is _blocked_ if it could not be merged for some reason.
+A pull request is _blocked_ if it cannot not be merged for some reason.
 
 Possible reasons for a pull request to be blocked include:
 
@@ -65,4 +65,4 @@ is using
 
 ## Closed
 
-A pull request is as _closed_ if it has been closed without merging its changes.
+A pull request is _closed_ if it has been closed without merging its changes.
