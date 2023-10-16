@@ -46,4 +46,4 @@ Aviator provides several merge modes that you can optimize for your team's repos
 
 ## Status Checks
 
-Aviator automatically captures both required and non-required the status checks from your repository. By default, Aviator will validate the required status checks configured in GitHub. To learn more about status checks, checkout [<mark style="color:blue;">customizing required checks section</mark>](customizing-required-checks.md).
+Aviator automatically captures both required and non-required the status checks from your repository. By default, Aviator will validate the required status checks configured in GitHub. To learn more about status checks, checkout [<mark style="color:blue;">customizing required checks section</mark>](broken-reference).
