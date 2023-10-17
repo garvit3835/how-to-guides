@@ -24,6 +24,8 @@
     * [Set Up SAML Configuration](mergequeue/how-to-guides/saml-configuration/README.md)
       * [Microsoft Active Directory](mergequeue/how-to-guides/saml-configuration/microsoft-active-directory.md)
   * [Concepts](mergequeue/concepts/README.md)
+    * [Queue Modes](mergequeue/concepts/queue-modes.md)
+    * [Pull Request Lifecycle](mergequeue/concepts/pull-request-lifecycle.md)
     * [Analytics](mergequeue/concepts/analytics.md)
     * [Parallel Mode](mergequeue/concepts/parallel-mode/README.md)
     * [Batching](mergequeue/concepts/parallel-mode/batching.md)
