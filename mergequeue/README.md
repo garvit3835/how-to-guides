@@ -1,49 +1,71 @@
 ---
-description: Automated merge workflow
+description: Automated merge workflows for GitHub repositories.
 ---
 
 # MergeQueue
 
-## Introduction <a href="#introduction" id="introduction"></a>
+## Introduction
 
-MergeQueue is a configurable queue that manages the merge workflow for your GitHub repository. The Aviator bot uses GitHub labels to identify pull requests (PRs) that are ready to be merged and queues them. Once a PR has been queued, the Aviator bot pulls the latest base branch for each PR, runs and verifies the required status checks, and then merges the changes once the checks pass.
+MergeQueue manages the merge workflow for pull requests in your GitHub
+repository and keeps your primary branch passing. When a developer marks a pull
+request as ready-to-merge, MergeQueue tests the pull request against the latest
+changes in the target branch and merges the pull request only if it passes all
+the required checks, ensuring no broken code can be merged into your primary
+branch.
 
 ![Dashboard view](<../.gitbook/assets/Screen Shot 2022-05-17 at 9.56.31 PM.png>)
 
-## **Why MergeQueue?**
+## Why use a merge queue?
 
-CI tools can run tests on every pull request when it's opened, as well as on every branch after it's pushed, but it may not be sufficient to avoid broken builds.
+CI tools can run tests on every pull request when it's opened, as well as on
+every branch after it's pushed, but it may not be sufficient to avoid broken
+builds.
 
-For example, if you have two pull requests that modify dependent code, the tests could pass on each pull request independently, but the build may still break after the merge.
+For example, if two pull requests modify dependent code, checks might pass on
+each pull request independently, but the build may still break after the merge
+(even if there's no Git merge conflict).
 
-You could configure GitHub to block pull requests that are not up-to-date with `master`/`main` to avoid this issue, but that is not a scalable solution as your team grows. This configuration means every individual engineer has to:
+These kinds of _semantic conflicts_ cause broken code to be merged into the
+repository's primary branch and negatively impact the productivity of
+engineering organizations since developers have to spend time fixing the build
+instead of working on new features (and no new code can be merged in the
+meantime).
 
-* Update current branch with master.
-* Wait for the test to pass again.
-* Merge the pull request when it's done.
-* In case another pull request is merged before that, repeat the steps above.
+Some organizations configure GitHub to require pull requests be up-to-date with
+the repository primary branch to avoid this issue, but this is not a scalable
+solution as teams grow. This configuration means every individual engineer has
+to:
+
+- Update their pull request to merge the changes from `main`
+- Wait for the required checks to pass (again)
+- Ideally, merge the pull request
+- Less ideally, if another pull request is merged in the meantime, repeat the
+  steps above
 
 ## How does it work?
 
-Aviator provides several merge modes that you can optimize for your team's repositories. All modes follow the same basic flow:
+MergeQueue provides several [queue modes](/mergequeue/concepts/queue-modes.md)
+that are optimized for different types of repositories. All modes follow the
+same basic flow:
 
 1. Aviator monitors all pull requests on your GitHub repository.
-2. Instead of manually merging pull requests, the engineers comment `/aviator merge` or add a GitHub label when they are ready to merge their PR.
-3. Based on your configurations, Aviator performs the required operations on ready-to-merge PRs.
-4. Aviator automatically merges the PR when all the merge criteria has been met.
-5. Aviator reports errors and dequeues the PRs that fail the criteria.
+2. Instead of manually merging pull requests (_e.g._, using the GitHub merge
+   button), developers add their pull requests to the queue when they are ready
+   to merge (usually by commenting `/aviator merge` or adding a configurable
+   GitHub label to the pull request).
+3. Depending on your [queue mode](/mergequeue/concepts/queue-modes.md),
+   MergeQueue will test the pull request against the latest changes in the
+   target branch as well as the changes from every other pull request in the
+   queue.
+4. When all the required checks pass, MergeQueue will merge the pull request
+   into the target branch without any additional effort from the developer.
+5. If something goes wrong (such as a failing required check), MergeQueue
+   reports the error back to the developer and removes the pull request from the
+   queue.
 
 ![MergeQueue automatically dequeues PRs and reports build failures.](<../.gitbook/assets/Screen Shot 2022-05-23 at 5.33.58 PM.png>)
 
-## Merge Modes
-
-* Default - The default mode uses a simple FIFO queue. PRs will be merged in the order they are queued. Aviator bot pulls latest changes from mainline to validate CI before merging.
-* [<mark style="color:blue;">Parallel mode</mark>](concepts/parallel-mode/) - CI builds are run optimistically in parallel in order to decrease time-to-merge for high output teams.
-  * [<mark style="color:blue;">Fast Forwarding</mark>](how-to-guides/fast-forwarding.md) - This is an extension of Parallel mode and works similar to parallel mode, but keeps branch history linear and avoids creating extra commits.
-  * [<mark style="color:blue;">Affected targets</mark>](concepts/affected-targets/) - This is also an extension to the parallel mode. This lets you use MergeQueue as a dynamic sub-queue based on the build targets.
-* No-Queue mode - As the name suggests, there is no FIFO queue in this mode. Instead Aviator simply waits for CI to finish after the PR is tagged, and then merges them automatically. You can optionally configure every PR to be automatically updated once before Aviator verifies CI checks.
-* [<mark style="color:blue;">ChangeSets</mark>](concepts/changesets/) - PRs can be merged together in a user-defined set.
-
-## Status Checks
-
-Aviator automatically captures both required and non-required the status checks from your repository. By default, Aviator will validate the required status checks configured in GitHub. To learn more about status checks, checkout [<mark style="color:blue;">customizing required checks section</mark>](broken-reference).
+Aviator automatically captures both required and non-required the status checks
+from your repository. By default, Aviator will validate the required status
+checks configured in GitHub. To learn more about status checks, checkout
+[<mark style="color:blue;">customizing required checks section</mark>](broken-reference).
