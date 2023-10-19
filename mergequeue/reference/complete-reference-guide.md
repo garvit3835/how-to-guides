@@ -62,7 +62,7 @@ merge_rules:
 {% endtab %}
 {% endtabs %}
 
-### Merge Modes
+### Queue Modes
 
 <table><thead><tr><th width="150">Name</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>type</strong></td><td>String</td><td>Determines the mode. Options are: default, parallel, no-queue.</td></tr></tbody></table>
 

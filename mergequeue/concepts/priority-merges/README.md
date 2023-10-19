@@ -1,10 +1,16 @@
 # Priority merges
 
-At times there are high priority changes that cannot wait for all the PRs ahead of this change in the queue. In Aviator, you can handle this by applying a skip\_line label. When this label is applied to a PR, Aviator will move this PR to the front of the queue to be merged first.
+At times there are high priority changes that cannot wait for all the pull
+requests ahead of this change in the queue. With Aviator, you can handle this by
+applying a `skip_line` label. When this label is applied to a pull request,
+Aviator will move this pull request to the front of the queue to be merged
+first.
 
 ## Customizing the label
 
-The default skip\_line label is called `mergequeue-priority`. This label can also be customized via the configuration file:
+The default `skip_line` label is `mergequeue-priority`. This label can also be
+customized via the
+[MergeQueue configuration](/mergequeue/reference/complete-reference-guide.md):
 
 ```
 merge_rules:
@@ -15,24 +21,43 @@ merge_rules:
 
 ## Priority in parallel mode
 
-When a skip\_line label is applied in parallel mode, all pending draft PRs are also closed and new draft PRs are constructed. Read more about this in our [<mark style="color:blue;">parallel mode documentation</mark>](https://docs.aviator.co/how-to-guides/parallel-mode). The behavior is also similar in fast forward mode or when using batching.
+When a `skip_line` label is applied in a repository using the
+[parallel queue mode](/mergequeue/concepts/queue-modes.md#parallel-mode), all
+pending bot pull requests are also closed and new bot pull requests are
+constructed. Read more about this in our
+[<mark style="color:blue;">parallel mode documentation</mark>](https://docs.aviator.co/how-to-guides/parallel-mode).
+The behavior is also similar when using fast-forwarding or when using batching.
 
 ## Priority when using affected targets
 
-When using affected targets, only the PRs that affect the same target as the skip\_line PR are deprioritized. All draft PRs associated with these deprioritized PRs will be closed, and the new skip\_line PR will be moved to the top of the queue. No other PRs in the queue are impacted.
+When using affected targets, only the pull requests that affect the same target
+as the `skip_line` pull request are de-prioritized. All bot pull requests
+associated with these de-prioritized pull requests will be closed, and the new
+`skip_line` pull request will be moved to the top of the queue. No other pull
+requests in the queue are impacted.
 
 ## Instant merge
 
-Instant merge is a merge method that Aviator merge the PR directly without waiting for the CI to finish. This requires elevated permissions for Aviator and can be configured using the Pilot workflow. Please see [the Pilot document](https://docs.aviator.co/pilot-automated-actions) on how to configure instant merge.
+Instant merge is a merge method that Aviator merge the pull request directly
+without waiting for the CI to finish. This requires elevated permissions for
+Aviator and can be configured using the Pilot workflow. See the
+[Pilot documentation](https://docs.aviator.co/pilot-automated-actions) to learn
+how to configure instant merges.
 
 ## FAQ
 
-#### What happens if there is more than one high priority merge?
+### What happens if there is more than one high priority merge?
 
-If there are additional high priority (skip\_line) PRs that are queued when one already exists, Aviator will queue the new high priority PRs right after the existing ones. This is similar to having a queue of high priority merges itself.
+Aviator will queue new `skip_line` pull requests after the existing ones (but
+before any non-`skip_line` pull requests).
 
-#### What happens if we remove the skip\_line label?
+### What happens if the `skip_line` label is removed?
 
-If the PR does not have the merge label, then the PR will be dequeued. Otherwise, if the PR is still queued the behavior varies. In default mode, the PR is moved back to the original position in the queue. For other modes, there is no change in the queue after removing the skip line label. This is to avoid unnecessary resets of existing CIs.
-
-\
+If the pull request does not have the merge label, then the pull request will be
+dequeued. Otherwise, if the pull request is still queued, the behavior varies.
+For repositories using the
+[sequential queue mode](/mergequeue/concepts/queue-modes.md#sequential-mode),
+the pull request is moved back to the original position in the queue. For other
+modes, there is no change in the queue after removing the skip line label. This
+prevents causing additional
+[queue resets](/mergequeue/concepts/parallel-mode/README.md#resets).
