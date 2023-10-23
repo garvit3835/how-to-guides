@@ -27,7 +27,7 @@
     * [Pull Request Lifecycle](mergequeue/concepts/pull-request-lifecycle.md)
     * [Analytics](mergequeue/concepts/analytics.md)
     * [Parallel Mode](mergequeue/concepts/parallel-mode/README.md)
-    * [Continuous Integration](mergequeue/concepts/continuous-integration.md)
+    * [CI Status Requirements](mergequeue/concepts/ci-status-requirements.md)
     * [MQ Created Branches](mergequeue/concepts/optimizing-ci-execution.md)
     * [Batching](mergequeue/concepts/parallel-mode/batching.md)
     * [Optimistic Validation](mergequeue/concepts/managing-flaky-tests-in-mergequeue.md)
