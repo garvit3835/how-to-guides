@@ -14,7 +14,7 @@ We create branches with `mq-tmp-` prefix for some purposes (e.g. checking if fas
 
 As explained above, CI should run on `mq-bot-` branches, but not on `mq-tmp-` branches. Here are some CI configuration examples to exclude `mq-tmp-` from CI execution triggers.
 
-#### GitHub Actions
+### GitHub Actions
 
 GitHub Actions can be configured to trigger based on the pull-request related events. Since we do not create a pull-request on `mq-tmp-` branches, using this pull-request trigger should suffice in most cases.
 
