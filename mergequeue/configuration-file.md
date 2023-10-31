@@ -6,7 +6,7 @@ Some of the Basic Configuration can be modified using the [<mark style="color:bl
 
 ### Managing YAML from the dashboard
 
-You can directly apply the config on the _YAML configuration_ tab on the[ <mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/validate-config) page. We also recommend validating this configuration before applying any changes.
+You can directly apply the config on the _YAML configuration_ tab on the [<mark style="color:blue;">Merge Rules</mark>](https://app.aviator.co/github/validate-config) page. We also recommend validating this configuration before applying any changes.
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-10-12 at 3.22.07 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -14,15 +14,13 @@ You can directly apply the config on the _YAML configuration_ tab on the[ <mark 
 
 You can also create a configuration file stored in `.aviator/config.yml`. The file will only be read once it is merged into the repository's default branch. It will also override any properties set in the Dashboard UI.
 
+### Config Schema
 
-
-To review the complete reference guide, go to [<mark style="color:blue;">Merge Rules Configuration page</mark>](reference/complete-reference-guide.md). Find below some common examples to get you started.
-
-{% content-ref url="reference/complete-reference-guide.md" %}
-[complete-reference-guide.md](reference/complete-reference-guide.md)
-{% endcontent-ref %}
+You can see [<mark style="color:blue;">the complete config schema</mark>](https://app.aviator.co/schema/index.html#aviator\_config\_yaml.json) as well as [<mark style="color:blue;">the JSON schema</mark>](https://app.aviator.co/schema/aviator\_config\_yaml.json) for autocompletion and validation purpose.
 
 ## Examples
+
+Find below some common examples to get you started.
 
 ### Minimalist config
 
@@ -110,7 +108,7 @@ On failure, the PRs will automatically requeue before giving up. Only available 
 
 ### Auto update
 
-Keep your PRs up to date. Every time a new. commit is added to the base branch, the PRs are automatically updated using rebase or merge commit. See the [<mark style="color:blue;">auto update section</mark>](reference/complete-reference-guide.md#auto-update) in the reference guide.
+Keep your PRs up to date. Every time a new. commit is added to the base branch, the PRs are automatically updated using rebase or merge commit. See `merge_rules.auto_update` in [the configuration schema reference](https://app.aviator.co/schema/index.html#aviator\_config\_yaml.json).
 
 ```yaml
  merge_rules:
