@@ -1,4 +1,4 @@
-# JSON API Reference
+# JSON API
 
 ## Repository
 
@@ -31,6 +31,38 @@ Whether to pause or unpause the queue
   "name": "testrepo",
   "paused": false
 }
+```
+{% endswagger-response %}
+{% endswagger %}
+
+##
+
+{% swagger method="get" path="/repo" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the list of repositories along with their pause and active status." %}
+{% swagger-description %}
+The results are paginated with maximum 10 results in every request.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="page" type="Integer" %}
+page number. Defaults to 1.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```
+[
+    {
+        "active": false,
+        "name": "public-test",
+        "org": "aviator-co",
+        "paused": false
+    },
+    {
+        "active": true,
+        "name": "testrepo",
+        "org": "aviator-co",
+        "paused": false
+    }
+]
+
 ```
 {% endswagger-response %}
 {% endswagger %}
@@ -69,7 +101,7 @@ Glob pattern representing the base branch. E.g. `master` or `release-*`
 Whether to pause or unpause the queue
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="paused_message" type="String" %}
+{% swagger-parameter in="body" name="paused_message" type="String" required="false" %}
 A customized message to post on the top PR when this branch is paused.
 {% endswagger-parameter %}
 
@@ -111,7 +143,7 @@ Organization associated with the repository
 Name of the repository
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="pattern" type="String" %}
+{% swagger-parameter in="query" name="pattern" type="String" required="false" %}
 Glob pattern representing the base branch. E.g. `master` or `release-*`
 {% endswagger-parameter %}
 
@@ -168,23 +200,23 @@ Name of the repository
 Organization associated with the repository
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="> head_commit_sha" %}
+{% swagger-parameter in="body" name="> head_commit_sha" required="false" %}
 Representing the commit SHA of the head of the PR.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="> affected_targets" type="List[String]" %}
+{% swagger-parameter in="body" name="> affected_targets" type="List[String]" required="false" %}
 Affected targets for the PR. Please see [<mark style="color:blue;">Affected Targets</mark>](mergequeue/affected-targets/) section for more details.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="> merge_commit_message" type="Object" %}
+{% swagger-parameter in="body" name="> merge_commit_message" type="Object" required="false" %}
 CommitMessage object
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="> > title" %}
+{% swagger-parameter in="body" name="> > title" required="false" %}
 Title of merge commit message
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="> > body" %}
+{% swagger-parameter in="body" name="> > body" required="false" %}
 Body of merge commit message
 {% endswagger-parameter %}
 
@@ -217,8 +249,6 @@ Example:
 `-H "Content-Type: application/json"`\
 `-d '{"target_branch": "release-v1", "`source\_pull`": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}}}'`\
 `https://api.aviator.co/api/v1/pull_request/backport`
-
-
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="target_branch" type="String" required="true" %}
@@ -241,7 +271,7 @@ GitHub repository associated with the PullRequest
 Organization associated with the repository
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="> > name" type="String" %}
+{% swagger-parameter in="body" name="> > name" type="String" required="false" %}
 Name of the repository
 {% endswagger-parameter %}
 
@@ -268,7 +298,7 @@ Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
-`https://api.aviator.co/api/v1/pull_request?org=orgname&repo=reponame&branch=branchname`&#x20;
+`https://api.aviator.co/api/v1/pull_request?org=orgname&repo=reponame&branch=branchname`
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="org" type="String" required="true" %}
@@ -310,13 +340,11 @@ PR number to fetch. One of `branch` or `number` must be present.
 
 {% swagger method="get" path="pull_request/queued" baseUrl="https://api.aviator.co/api/v1/" summary="Fetch information of PRs that are in the queued state" %}
 {% swagger-description %}
-Example:&#x20;
+Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
-`https://api.aviator.co/api/v1/pull_request/queued?org=orgname&repo=reponame&base_branch=master`&#x20;
-
-
+`https://api.aviator.co/api/v1/pull_request/queued?org=orgname&repo=reponame&base_branch=master`
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="org" type="String" required="true" %}
@@ -327,7 +355,7 @@ Organization associated with the repository
 Name of the repository
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="base_branch" type="String" %}
+{% swagger-parameter in="query" name="base_branch" type="String" required="false" %}
 Target branch to fetch queued PRs for
 {% endswagger-parameter %}
 
@@ -392,11 +420,11 @@ Target branch to fetch queued PRs for
 {% swagger-description %}
 A Bot PR is a draft PR created during parallel mode to validate the CI.
 
-Example:&#x20;
+Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
-`https://api.aviator.co/api/v1/bot_pull_request?org=orgname&repo=reponame&number=1234`&#x20;
+`https://api.aviator.co/api/v1/bot_pull_request?org=orgname&repo=reponame&number=1234`
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="org" type="String" required="true" %}
@@ -527,12 +555,16 @@ Organization associated with the repository
 Name of the repository
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="start" type="String" %}
+{% swagger-parameter in="query" name="start" type="String" required="false" %}
 UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="end" type="String" %}
+{% swagger-parameter in="query" name="end" type="String" required="false" %}
 UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="page" type="Integer" %}
+Page number. Defaults to 1.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Success" %}
@@ -574,8 +606,6 @@ Example:
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="start" required="false" type="String" %}
-
-
 UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
 {% endswagger-parameter %}
 
@@ -587,7 +617,7 @@ UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
 Name of the GitHub repo, in the format: _orgname/reponame_
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="timezone" type="String" %}
+{% swagger-parameter in="query" name="timezone" type="String" required="false" %}
 Standard tz format string. Defaults to account timezone. Example: America/Los\_Angeles
 {% endswagger-parameter %}
 
