@@ -4,7 +4,7 @@ There are cases where you want to pause the queue. For example, during the holid
 
 You can pause queues per repository or per base branch (e.g. `main`). This allows you to pause the queue for the `release` branch, while allowing devs to merge PRs into `main`. The control is on the Web UI and provided via API.
 
-When a queue is paused, MergeQueue works processes the PRs up to the merge timing. This includes creating a draft PR for [the parallel mode](parallel-mode/). The [instant merge action](priority-merges/instant-merges.md) also stops working when a queue is paused.
+When a queue is paused, MergeQueue works processes the PRs up to the merge timing. This includes creating a draft PR for [<mark style="color:blue;">the parallel mode</mark>](parallel-mode/). The [<mark style="color:blue;">instant merge action</mark>](priority-merges/instant-merges.md) also stops working when a queue is paused.
 
 ***
 

@@ -28,5 +28,5 @@ av - Aviator CLI
 
 ## FURTHER DOCUMENTATION
 
-See [Aviator documentation](https://docs.aviator.co) for the help document
+See [<mark style="color:blue;">Aviator documentation</mark>](https://docs.aviator.co) for the help document
 beyond Aviator CLI.

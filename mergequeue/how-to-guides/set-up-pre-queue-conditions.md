@@ -1,6 +1,6 @@
 # Set up Pre-Queue Conditions
 
-This guide describes how to setup [pre-queue conditions](../concepts/pre-queue-conditions.md).
+This guide describes how to setup [<mark style="color:blue;">pre-queue conditions</mark>](../concepts/pre-queue-conditions.md).
 
 ## RegExp PR Title and Body Validation
 

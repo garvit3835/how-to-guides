@@ -35,7 +35,7 @@ fails, a queue reset is triggered and all subsequent pull requests must be
 re-validated (potentially wasting the CI resources used for the now invalid bot
 pull requests).
 
-See the [parallel mode documentation](/mergequeue/concepts/parallel-mode) for
+See the [<mark style="color:blue;">parallel mode documentation</mark>](/mergequeue/concepts/parallel-mode) for
 more details.
 
 ## No Queue Mode

@@ -17,9 +17,9 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 3. Click **Create New App** and choose **SAML 2.0** as the Sign on method.
 4. Enter **General Settings** for the application:
    * App name: **Aviator**
-   * **App logo** (optional). You can download the application logo for the application, you can download one from [here](https://api.aviator.co/static/img/aviator\_long.png).
+   * **App logo** (optional). You can download the application logo for the application, you can download one from [<mark style="color:blue;">here</mark>](https://api.aviator.co/static/img/aviator\_long.png).
 5. Log into Aviator and go to SAML configuration page: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)
-6. Copy the unique **Single Sign on url**, of format: [**https://app.aviator.co/saml/sso/**](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
+6. Copy the unique **Single Sign on url**, of format: [<mark style="color:blue;">**https://app.aviator.co/saml/sso/**</mark>](https://aviator.yourdomain.com/saml/sso/)**\<sso-key>**
 
 ![identity provider setup](<../../../.gitbook/assets/Screen Shot 2023-02-09 at 10.25.39 AM.png>)
 
@@ -48,10 +48,10 @@ Please replace _app.aviator.co_ with with **aviator.yourdomain.com** in the inst
 
 13\. Go to the **Assignments** tab, and assign the app to the appropriate groups / users to access.
 
-14\. Go back to the SAML configuration page and update the following properties: [https://app.aviator.co/saml/okta/configure](https://app.aviator.co/saml/okta/configure)
+14\. Go back to the SAML configuration page and update the following properties: [<mark style="color:blue;">https://app.aviator.co/saml/okta/configure</mark>](https://app.aviator.co/saml/okta/configure)
 
 * **Metadata url**: Paste the Metadata URL copied from step 11
-* **Email domains to allow**: enter your company email domain, e.g. [**example.com**](http://example.com)
+* **Email domains to allow**: enter your company email domain, e.g. [<mark style="color:blue;">**example.com**</mark>](http://example.com)
 * **Click Save and Activate**
 
 This should enable the Okta configuration for your organization. Please verify this by logging out and logging in directly from Okta portal.

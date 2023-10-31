@@ -1,6 +1,6 @@
 # Require an Aviator Status Check
 
-Aviator provides a [GitHub status check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) that you can enable for your PRs. You can also add this status check as a required check in [branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) to prevent developers from bypassing the merge queue. In the branch protection settings, you can find this check with the name: `aviator/checks`.
+Aviator provides a [<mark style="color:blue;">GitHub status check</mark>](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) that you can enable for your PRs. You can also add this status check as a required check in [<mark style="color:blue;">branch protection rules</mark>](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) to prevent developers from bypassing the merge queue. In the branch protection settings, you can find this check with the name: `aviator/checks`.
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2023-04-20 at 9.51.52 AM.png" alt=""><figcaption><p>aviator/checks as a GitHub status check</p></figcaption></figure>
 

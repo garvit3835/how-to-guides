@@ -1,7 +1,7 @@
 # FAQs and Troubleshooting
 
 {% hint style="info" %}
-If you have a question or issue that's not answered below, feel free to reach out to us at [support@aviator.co](mailto:support@aviator.co).&#x20;
+If you have a question or issue that's not answered below, feel free to reach out to us at [<mark style="color:blue;">support@aviator.co</mark>](mailto:support@aviator.co).&#x20;
 {% endhint %}
 
 ### Aviator reports an pending status check with state "unknown"

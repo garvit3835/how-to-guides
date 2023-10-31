@@ -10,5 +10,5 @@ On the Personal Integrations page, each user can connect their GitHub account.
 
 </div>
 
-Once connected, your team can write [custom Pilot workflows ](../../../pilot-automated-actions.md#slack)for specific GitHub users.
+Once connected, your team can write [<mark style="color:blue;">custom Pilot workflows </mark>](../../../pilot-automated-actions.md#slack)for specific GitHub users.
 

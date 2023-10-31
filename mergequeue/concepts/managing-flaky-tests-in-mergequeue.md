@@ -1,6 +1,6 @@
 # Optimistic Validation
 
-Optimistic validation is a feature to mitigate the queue reset caused by flaky tests in [parallel mode](parallel-mode/). When a test fails in a batch, it waits for other batches to see if a test passes.
+Optimistic validation is a feature to mitigate the queue reset caused by flaky tests in [<mark style="color:blue;">parallel mode</mark>](parallel-mode/). When a test fails in a batch, it waits for other batches to see if a test passes.
 
 ## Flaky test problem in parallel mode
 

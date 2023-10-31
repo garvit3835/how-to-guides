@@ -50,4 +50,4 @@ That’s it, you should be up and running at this point. Give it a go and reach 
 
 ## Learn more
 
-* [Fast-Forwarding conceptual overview](/mergequeue/concepts/parallel-mode/fast-forwarding.md)
+* [<mark style="color:blue;">Fast-Forwarding conceptual overview</mark>](/mergequeue/concepts/parallel-mode/fast-forwarding.md)

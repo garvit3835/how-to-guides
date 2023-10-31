@@ -24,7 +24,7 @@ Once completed, you'll receive DMs about your own PR activity. Notifications abo
 
 With Pilot's Direct Message Action, you can send a DM to a specific user or group based on a trigger. Each user can further customize which DMs to receive based on the Action's labels.
 
-1. Make sure that you have connected both [GitHub](https://app.aviator.co/integrations/personal) and [Slack](personal-integrations.md#dm-notifications) accounts.
+1. Make sure that you have connected both [<mark style="color:blue;">GitHub</mark>](https://app.aviator.co/integrations/personal) and [<mark style="color:blue;">Slack</mark>](personal-integrations.md#dm-notifications) accounts.
 2. Configure a Pilot scenario that uses the Slack Direct Message action. See below for both opt-out and opt-in examples.
 
 ```yaml

@@ -4,7 +4,7 @@ Using the Aviator Pilot framework, you can set up rules to trigger actions on a 
 
 ## Configuring schedule
 
-Schedule configuration accepts a [unix cron format](https://www.ibm.com/docs/en/db2/11.5?topic=task-unix-cron-format) that provides enough configurability to set up automated rules. Here’s a quick example that will pause the queue at 11pm UTC.
+Schedule configuration accepts a [<mark style="color:blue;">unix cron format</mark>](https://www.ibm.com/docs/en/db2/11.5?topic=task-unix-cron-format) that provides enough configurability to set up automated rules. Here’s a quick example that will pause the queue at 11pm UTC.
 
 ```
 scenarios:

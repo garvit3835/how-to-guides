@@ -1,10 +1,10 @@
 # Chrome Extension
 
-You can use [Aviator's Chrome Extension](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif) to enqueue your pull-request from GitHub.
+You can use [<mark style="color:blue;">Aviator's Chrome Extension</mark>](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif) to enqueue your pull-request from GitHub.
 
 ## Installation
 
-Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif). After the installation, open your pull-request, and you can find a log-in button instead of the GitHub merge button.
+Install from [<mark style="color:blue;">Chrome Web Store</mark>](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif). After the installation, open your pull-request, and you can find a log-in button instead of the GitHub merge button.
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 

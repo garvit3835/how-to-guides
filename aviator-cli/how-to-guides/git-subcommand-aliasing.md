@@ -14,4 +14,4 @@ You can map Aviator CLI command as `git` subcommand. In your `.gitconfig`, you c
 
 With the config above, `git sync` will execute `av stack sync`.
 
-This utilizes a feature that `git` provides. You can see the details in [git-config(1)](https://git-scm.com/docs/git-config#Documentation/git-config.txt-alias).
+This utilizes a feature that `git` provides. You can see the details in [<mark style="color:blue;">git-config(1)</mark>](https://git-scm.com/docs/git-config#Documentation/git-config.txt-alias).

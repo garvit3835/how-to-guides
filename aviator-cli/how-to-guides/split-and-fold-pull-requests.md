@@ -13,7 +13,7 @@ By using [<mark style="color:blue;">Split a Commit feature</mark>](splitting-a-c
 
 ## Setup
 
-Let's use [Hello-World](https://github.com/octocat/hello-world) repository as an example.
+Let's use [<mark style="color:blue;">Hello-World</mark>](https://github.com/octocat/hello-world) repository as an example.
 
 ```bash
 $ git clone https://github.com/octocat/hello-world hello-world

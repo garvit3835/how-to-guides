@@ -2,7 +2,7 @@
 
 User Access Tokens are used to authenticate with the Aviator REST API and Aviator GraphQL API.
 
-1. Navigate to [https://app.aviator.co/account/apitoken](https://app.aviator.co/account/apitoken).
+1. Navigate to [<mark style="color:blue;">https://app.aviator.co/account/apitoken</mark>](https://app.aviator.co/account/apitoken).
 2. Create a name and expiration for your token.
    1. The token should be in the format `av_uat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`. Add it to your Aviator configuration file `~/.av/config.yaml` as shown below.
 

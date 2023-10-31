@@ -158,9 +158,9 @@ trigger:
 
 #### schedule
 
-Used to trigger scheduled events. Please read [scheduled-events.md](pilot-automated-actions/scheduled-events.md "mention") for examples.
+Used to trigger scheduled events. Please read [<mark style="color:blue;">scheduled-events.md</mark>](pilot-automated-actions/scheduled-events.md "mention") for examples.
 
-* **cron\_utc** - required string parameter. Accepts a [<mark style="color:blue;">unix cron format</mark>](https://www.ibm.com/docs/en/db2/11.5?topic=task-unix-cron-format). You can use a cron visual tool like [crontab.guru](https://crontab.guru/) for building your cron string.&#x20;
+* **cron\_utc** - required string parameter. Accepts a [<mark style="color:blue;">unix cron format</mark>](https://www.ibm.com/docs/en/db2/11.5?topic=task-unix-cron-format). You can use a cron visual tool like [<mark style="color:blue;">crontab.guru</mark>](https://crontab.guru/) for building your cron string.&#x20;
 
 ### Actions
 
@@ -214,14 +214,14 @@ actions:
 
 #### slack
 
-Send a Slack notification to the connected Slack account. Note that this requires [Slack integration](https://docs.aviator.co/reference/slack-integration) to be active.&#x20;
+Send a Slack notification to the connected Slack account. Note that this requires [<mark style="color:blue;">Slack integration</mark>](https://docs.aviator.co/reference/slack-integration) to be active.&#x20;
 
 * **channel**: Send notification to a Slack channel.
   * **text**: The text to send in the notification.
   * **hook\_url \[optional]**: The webhook URL for a Slack channel. If not provided, the default channel set up with the Slack integration will be used.
 * **direct**: Send a Slack DM to a user directly.
   * **text**: The text to send in the notification.
-  * **blocks \[optional]**: Customized Slack blocks to send in the notification. [See Slack's block building kit](https://api.slack.com/block-kit/building).
+  * **blocks \[optional]**: Customized Slack blocks to send in the notification. [<mark style="color:blue;">See Slack's block building kit</mark>](https://api.slack.com/block-kit/building).
   * **github\_users \[optional]**: The GitHub users to notify (must be the GitHub username associated with the user). If not specified, the notification will be sent to the author of the PR.
   * **github\_group \[optional]**: The GitHub group whose members will be notified.&#x20;
   * **labels \[optional]**: Labels associated with this Slack DM that users can utilize to personalize DMs. By default, all specified users (either `github_users`, `github_group`, or the author of the PR will be notified). If you want to opt-out, see Personal Integrations.

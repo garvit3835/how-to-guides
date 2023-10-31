@@ -8,7 +8,7 @@ By making an editor recognize `.av.md` as a special Markdown file, you can get a
 
 #### Vim
 
-Install [https://github.com/aviator-co/av-vim-plugin](https://github.com/aviator-co/av-vim-plugin) as a Vim plugin. This plugin detects `.av.md` as `av-markdown` syntax, and it does a proper syntax highlighting as well as setting a line comment prefix. Use a Vim plugin manager to install this. For example, if you use [vim-plug](https://github.com/junegunn/vim-plug):
+Install [<mark style="color:blue;">https://github.com/aviator-co/av-vim-plugin</mark>](https://github.com/aviator-co/av-vim-plugin) as a Vim plugin. This plugin detects `.av.md` as `av-markdown` syntax, and it does a proper syntax highlighting as well as setting a line comment prefix. Use a Vim plugin manager to install this. For example, if you use [<mark style="color:blue;">vim-plug</mark>](https://github.com/junegunn/vim-plug):
 
 ```
 Plug 'aviator-co/av-vim-plugin'

@@ -11,7 +11,7 @@ Having a sticky comment makes it easy for developers to find the status of the P
 
 
 {% hint style="info" %}
-You can also [customize these sticky comments](../how-to-guides/customize-sticky-comments.md).
+You can also [<mark style="color:blue;">customize these sticky comments</mark>](../how-to-guides/customize-sticky-comments.md).
 {% endhint %}
 
 

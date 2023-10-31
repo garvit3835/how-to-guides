@@ -44,7 +44,7 @@ to:
 
 ## How does it work?
 
-MergeQueue provides several [queue modes](/mergequeue/concepts/queue-modes.md)
+MergeQueue provides several [<mark style="color:blue;">queue modes</mark>](/mergequeue/concepts/queue-modes.md)
 that are optimized for different types of repositories. All modes follow the
 same basic flow:
 
@@ -53,7 +53,7 @@ same basic flow:
    button), developers add their pull requests to the queue when they are ready
    to merge (usually by commenting `/aviator merge` or adding a configurable
    GitHub label to the pull request).
-3. Depending on your [queue mode](/mergequeue/concepts/queue-modes.md),
+3. Depending on your [<mark style="color:blue;">queue mode</mark>](/mergequeue/concepts/queue-modes.md),
    MergeQueue will test the pull request against the latest changes in the
    target branch as well as the changes from every other pull request in the
    queue.

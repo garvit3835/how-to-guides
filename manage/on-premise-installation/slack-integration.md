@@ -4,7 +4,7 @@ description: Slack Notifications for On-prem Installations
 
 # Slack Integration
 
-There are extra steps for the on-prem installations in order to use [Slack Integration](../../mergequeue/how-to-guides/custom-integrations/personal-integrations.md).
+There are extra steps for the on-prem installations in order to use [<mark style="color:blue;">Slack Integration</mark>](../../mergequeue/how-to-guides/custom-integrations/personal-integrations.md).
 
 ## Create your Slack App
 
@@ -67,4 +67,4 @@ Create the following slash command, it will link a user’s Slack account with t
 
 ## Connect the App
 
-Follow the instructions here to connect the app to your account and get notifications: [Slack Integration](../../mergequeue/how-to-guides/custom-integrations/slack-integration.md).
+Follow the instructions here to connect the app to your account and get notifications: [<mark style="color:blue;">Slack Integration</mark>](../../mergequeue/how-to-guides/custom-integrations/slack-integration.md).

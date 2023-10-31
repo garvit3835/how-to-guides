@@ -1,10 +1,10 @@
 # Pause / Unpause Queues via API
 
-[Pausing a queue](../concepts/paused-queues.md) allows you to control whether PRs should be merged to a certain branches.
+[<mark style="color:blue;">Pausing a queue</mark>](../concepts/paused-queues.md) allows you to control whether PRs should be merged to a certain branches.
 
 ### Pausing all queues in a repository
 
-You can prevent all PRs from merging in a repository. A repository can be paused from the [repositories page](https://app.aviator.co/github/repos) or using the API:
+You can prevent all PRs from merging in a repository. A repository can be paused from the [<mark style="color:blue;">repositories page</mark>](https://app.aviator.co/github/repos) or using the API:
 
 ```bash
 curl -X POST \

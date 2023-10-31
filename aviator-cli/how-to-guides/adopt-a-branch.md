@@ -4,7 +4,7 @@ Aviator CLI needs to maintain the metadata for branches so that it can remember 
 
 ## Create a repository
 
-We will use an example repository from [https://github.com/octocat/hello-world](https://github.com/octocat/hello-world). Clone it and initialize the Aviator CLI.
+We will use an example repository from [<mark style="color:blue;">https://github.com/octocat/hello-world</mark>](https://github.com/octocat/hello-world). Clone it and initialize the Aviator CLI.
 
 ```
 $ git clone https://github.com/octocat/hello-world

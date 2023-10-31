@@ -56,7 +56,7 @@ workflows:
 
 ### Buildkite
 
-Buildkit supports ignoring specific branch prefixes. You can add `!mq-tmp-*` to the configuration to exclude those branches. See [Branch configuration](https://buildkite.com/docs/pipelines/branch-configuration) for details.
+Buildkit supports ignoring specific branch prefixes. You can add `!mq-tmp-*` to the configuration to exclude those branches. See [<mark style="color:blue;">Branch configuration</mark>](https://buildkite.com/docs/pipelines/branch-configuration) for details.
 
 ### Others
 

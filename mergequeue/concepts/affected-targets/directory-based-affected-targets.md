@@ -41,14 +41,13 @@ jobs:
               "affected_targets": '"$TARGETS"'
           }
         }' https://api.aviator.co/api/v1/pull_request/
-      
 ```
 
 A few things to note:
 
-* We use [path-filters action](https://github.com/dorny/paths-filter) to capture all the file path changes in the given PR.
-* You may also want to store the API access token as `AVIATOR_API_KEY` in [GitHub secrets.](https://docs.github.com/en/actions/security-guides/encrypted-secrets) or replace the secrets above
-* `filters` are the various directory packages that you can define as various affected targets. It accepts glob format and you can define more than 1 path per affected target. You may also optionally specify this in a separate file. Read more on the path-filters action [documentation](https://github.com/dorny/paths-filter).
+* We use [<mark style="color:blue;">path-filters action</mark>](https://github.com/dorny/paths-filter) to capture all the file path changes in the given PR.
+* You may also want to store the API access token as `AVIATOR_API_KEY` in [<mark style="color:blue;">GitHub secrets.</mark>](https://docs.github.com/en/actions/security-guides/encrypted-secrets) or replace the secrets above
+* `filters` are the various directory packages that you can define as various affected targets. It accepts glob format and you can define more than 1 path per affected target. You may also optionally specify this in a separate file. Read more on the path-filters action [<mark style="color:blue;">documentation</mark>](https://github.com/dorny/paths-filter).
 * This will queue the PR in Aviator. You can also want to setup a similar GH action to dequeue when the label is removed.
 * This label `av-ready` should be separate from the label defined in Aviator’s configuration.
 

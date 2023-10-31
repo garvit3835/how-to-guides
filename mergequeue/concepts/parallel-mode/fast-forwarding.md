@@ -24,4 +24,4 @@ If the CI for PR #1 fails, Aviator will not discard `branch A`, and will recreat
 
 ## Learn more
 
-* [How to Set Up Fast-Forwarding](/mergequeue/how-to-guides/fast-forwarding.md)
+* [<mark style="color:blue;">How to Set Up Fast-Forwarding</mark>](/mergequeue/how-to-guides/fast-forwarding.md)

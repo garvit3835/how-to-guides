@@ -47,7 +47,7 @@ Use the following settings to create the app:
 
 **Description:** Automate merge workflows for GitHub, manage queues in teams and improve code quality.
 
-**Homepage URL:** [https://aviator.co/](https://aviator.co/)
+**Homepage URL:** [<mark style="color:blue;">https://aviator.co/</mark>](https://aviator.co/)
 
 **User authorization callback URL:** https://\<av\_hostname>/api/setup/complete
 

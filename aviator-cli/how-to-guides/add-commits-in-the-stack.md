@@ -4,7 +4,7 @@ You can create stacked PRs with Aviator CLI and send them for review. Your revie
 
 ## Setup
 
-Let's use [Hello-World](https://github.com/octocat/hello-world) repository as an example.
+Let's use [<mark style="color:blue;">Hello-World</mark>](https://github.com/octocat/hello-world) repository as an example.
 
 ```bash
 $ git clone https://github.com/octocat/hello-world hello-world

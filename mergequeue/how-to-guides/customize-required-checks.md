@@ -76,7 +76,7 @@ With this wildcard, Aviator will validate all checks with names matching this ex
 
 ## Override checks (for parallel mode)
 
-You can customize the required checks for [<mark style="color:blue;">parallel mode</mark>](concepts/parallel-mode/) using the Merge Rules UI or via the config file. You can read more [here](concepts/parallel-mode/#separate-ci-validations-for-draft-pr).
+You can customize the required checks for [<mark style="color:blue;">parallel mode</mark>](concepts/parallel-mode/) using the Merge Rules UI or via the config file. You can read more [<mark style="color:blue;">here</mark>](concepts/parallel-mode/#separate-ci-validations-for-draft-pr).
 
 Here’s an example to do this in the config file:
 

@@ -21,7 +21,7 @@ We run `av split commit`. It prompts you whether you want to add the presented d
 <figure><img src="../../.gitbook/assets/Screenshot 2023-04-13 at 1.26.07 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Under the hood, this runs `git add --patch`. Please see [Interactive Staging](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging) for the detailed usage.
+Under the hood, this runs `git add --patch`. Please see [<mark style="color:blue;">Interactive Staging</mark>](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging) for the detailed usage.
 {% endhint %}
 
 After choosing which parts should go to the first commit, it prompts you to enter a commit message. The commit message is pre-populated with the original commit's message that you want to split.

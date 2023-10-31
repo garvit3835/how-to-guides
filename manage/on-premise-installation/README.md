@@ -4,7 +4,7 @@ In addition to the hosted version of Aviator (https://app.aviator.co), we provid
 
 We support two ways to deploy:
 
-* Helm: Using [Helm](https://helm.sh/) to deploy Aviator servers on your Kubernetes cluster.
-* Docker Compose: Using [Docker Compose](https://docs.docker.com/compose/) to deploy Aviator servers on your on-premise machine.
+* Helm: Using [<mark style="color:blue;">Helm</mark>](https://helm.sh/) to deploy Aviator servers on your Kubernetes cluster.
+* Docker Compose: Using [<mark style="color:blue;">Docker Compose</mark>](https://docs.docker.com/compose/) to deploy Aviator servers on your on-premise machine.
 
 Both setups require you to bring your own PostgreSQL server and Redis server. For details, contact  info@aviator.co for details.
