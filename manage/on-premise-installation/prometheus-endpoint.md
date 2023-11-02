@@ -7,8 +7,10 @@ The web application server and the background worker server can serve the Promet
 By default, the web application server won’t serve the metrics endpoint. You can enable it by updating `values.yaml`:
 
 ```bash
-web:
-  servePrometheusEndpoint: true
+common:
+  env:
+    - name: "SERVE_PROMETHEUS_ENDPOINT"
+      value: "true"
 ```
 
 This makes the `web` Pod to expose `/debug/metrics` along with other endpoints on the main HTTP port. If the server is exposed to the Internet, we highly recommend changing the load balancer / reverse proxy config in front of the app to hide the `/debug/*` path from public.
@@ -40,3 +42,5 @@ Practically speaking, we assume that the following metrics would be used by you,
 * flask\_http\_request\_total
 * github\_api\_call\_latency
 * github\_webhook\_latency
+* sqlalchemy\_query\_latency\_seconds
+  * This is enabled when `ENABLE_DB_METRICS` environment variable is set to `true`
