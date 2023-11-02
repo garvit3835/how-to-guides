@@ -97,6 +97,7 @@
 * [Chrome Extension](mergequeue/aviator-chrome-extension.md)
 * [Pilot Automated Actions](pilot-automated-actions.md)
   * [Scheduled Events](pilot-automated-actions/scheduled-events.md)
+  * [Action Reference](pilot-automated-actions/reference/github-actions.md)
 * [Aviator API](api/README.md)
   * [Tutorials](api/tutorials/README.md)
     * [GraphQL API Quickstart](api/tutorial/graphql-api-quickstart.md)
