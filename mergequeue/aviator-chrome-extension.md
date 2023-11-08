@@ -12,9 +12,17 @@ Click the login button, and you'll redirected to the Aviator login page. If you 
 
 ## How to use
 
-If the repository is configured with Aviator MergeQueue, it shows a button to enqueue a pull request.
+If the repository is configured with Aviator MergeQueue, it shows a button to enqueue a pull request. This will work properly with stacked PRs as well.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-11-07 at 3.22.42 PM.png" alt=""><figcaption><p>Enqueue an open PR</p></figcaption></figure>
+
+Once the PR has entered the queue, the extension will show information about the bot pull request, and a timeline of the PR's activity. If the queue is currently paused, the extension will notify the user, regardless of the PR's status.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-11-03 at 5.03.32 PM.png" alt=""><figcaption><p>PR in the merge queue</p></figcaption></figure>
+
+The extension will show updated information if the PR is blocked.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-11-07 at 3.31.41 PM.png" alt=""><figcaption><p>Blocked PR</p></figcaption></figure>
 
 If you need, there is an option to show the original GitHub merge button.
 
