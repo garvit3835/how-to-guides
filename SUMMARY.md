@@ -48,6 +48,7 @@
     * [Ready Hook](mergequeue/concepts/ready-hook.md)
   * [Reference](mergequeue/reference/README.md)
     * [Configuration Schema](https://app.aviator.co/schema/index.html#aviator\_config\_yaml.json)
+    * [Configuration Reference](mergequeue/reference/complete-reference-guide.md)
     * [GitHub Slash Commands](mergequeue/slash-commands.md)
     * [Status Codes](mergequeue/reference/comments-and-status-codes.md)
 * [TestDeck (Beta)](testdeck-beta/README.md)
