@@ -503,6 +503,12 @@ merge_rules:
 {% swagger method="post" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Change the YAML config associated with the given GitHub repository." %}
 {% swagger-description %}
 The request accepts the payload as the raw string YAML format, and returns back response in a JSON format.
+
+
+
+Example:
+
+`curl -X POST --data-raw "$(cat /Users/aviator-demo/config.text)" -H "Authorization: Bearer <API_TOKEN>" "https://api.aviator.co/api/v1/config?repo=repo_name&org=org_name"`
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="org" required="true" %}
