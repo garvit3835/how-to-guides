@@ -46,6 +46,7 @@
     * [Merge Rules Audit Trail](mergequeue/concepts/audit-trail.md)
     * [Timeline](mergequeue/concepts/timeline.md)
     * [Ready Hook](mergequeue/concepts/ready-hook.md)
+    * [Reducing queue failures due to staleness](mergequeue/concepts/reducing-queue-failures-due-to-staleness.md)
   * [Reference](mergequeue/reference/README.md)
     * [Configuration Schema](https://app.aviator.co/schema/index.html#aviator\_config\_yaml.json)
     * [Configuration Reference](mergequeue/reference/complete-reference-guide.md)
