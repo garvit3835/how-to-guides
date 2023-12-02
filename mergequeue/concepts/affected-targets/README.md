@@ -2,19 +2,43 @@
 
 ## Overview
 
-The objective of this dynamic queue feature is to provide the benefits of both a multi-queue and parallel processing approach for merging PRs. This is useful for mono-repos where CI runs are long compared to the rate of merge requests. In such cases, basic FIFO queues will never catch up, and a single parallel-mode queue would still force each newly-queued PR to “line up” behind other PRs, even when the PRs ahead of it are entirely orthogonal to it.
+In large monorepos, managing a single track queue could slow down the merging workflow. Even if you use [<mark style="color:blue;">parallel mode</mark>](../parallel-mode/), the queue resets can impact performance of the entire queue. With affected targets, Aviator can create dynamic queues to provide the benefits of both a multi-queue and parallel processing approach for merging PRs.
 
-### Affected targets in Bazel
+This is useful for monorepos where CI runs are long compared to the rate of merge requests. In such cases, basic FIFO queues will never catch up, and a single parallel-mode queue would still force each newly-queued PR to “line up” behind other PRs, even when the PRs ahead of it are entirely orthogonal to it.
 
-This is extremely powerful for build systems like Bazel and Buck, where affected targets invalidated by a change can be computed. For example see [<mark style="color:blue;">bazel-diff</mark>](https://github.com/Tinder/bazel-diff)<mark style="color:blue;">.</mark>
+<figure><img src="../../../.gitbook/assets/monorepo.png" alt=""><figcaption><p>affected targets based multi-queue</p></figcaption></figure>
+
+### Using Monorepo build systems
+
+This is extremely powerful for build systems like Bazel, nx, Turborepo, where affected targets invalidated by a change can be computed.
+
+### Bazel
+
+When using [Bazel](https://bazel.build/), you can use an out-of-the-box tool like [<mark style="color:blue;">bazel-diff</mark>](https://github.com/Tinder/bazel-diff) to calculate the affected targets and publish that to the Aviator API.
+
+### Nx
+
+Similarly using Nx, the targets can be calculating with their native CLI:
+
+```
+nx show projects --affected --base master --head feature_branch --json
+```
+
+{% content-ref url="nx-based-affected-targets.md" %}
+[nx-based-affected-targets.md](nx-based-affected-targets.md)
+{% endcontent-ref %}
 
 ### Other build systems
 
 In other cases, if products are divided by top-level folders, the targets can be the set of top-level folders that cover a change.
 
+{% content-ref url="directory-based-affected-targets.md" %}
+[directory-based-affected-targets.md](directory-based-affected-targets.md)
+{% endcontent-ref %}
+
 ## How it works
 
-In this configuration, the mono-repo is separated into logically independent queues. Users signal information to Aviator about which targets are affected by PRs, which allows Aviator merge PRs more aggressively but safely. Namely, when the user indicates that two PRs have no overlapping affected targets, Aviator knows it can test and merge them independently in any order. When targets of multiple PRs do overlap, Aviator optimistically stacks overlapping PRs and tests them together, like it does in parallel mode.
+In this configuration, the monorepo is separated into logically independent queues. Users signal information to Aviator about which targets are affected by PRs, which allows Aviator merge PRs more aggressively but safely. Namely, when the user indicates that two PRs have no overlapping affected targets, Aviator knows it can test and merge them independently in any order. When targets of multiple PRs do overlap, Aviator optimistically stacks overlapping PRs and tests them together, like it does in parallel mode.
 
 ### Implementation
 
@@ -46,6 +70,14 @@ Since this approach needs additional information associated with each merge requ
 ```
 
 The maximum number of unique “affectedTargets” supported is 1,000,000 per account.
+
+There are two separate `action` for this API: `update` and `queue`. If you use `update` action, these affected targets information is sent to Aviator without changing the PR status. A developer can then queue the PR asynchronously.&#x20;
+
+Alternatively, you can submit this as a `queue` action when the PR is ready to be queued. In that case, the information is submitted to the Aviator MergeQueue while queueing the PR in the same step.
+
+{% hint style="info" %}
+If using the `update` API, you should call this GitHub action every time a new commit is added to the PR.
+{% endhint %}
 
 ### Example
 

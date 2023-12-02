@@ -38,6 +38,7 @@
     * [Paused Queues](mergequeue/concepts/paused-queues.md)
     * [Affected Targets](mergequeue/concepts/affected-targets/README.md)
       * [Directory-Based Affected Targets](mergequeue/concepts/affected-targets/directory-based-affected-targets.md)
+      * [nx based affected targets](mergequeue/concepts/affected-targets/nx-based-affected-targets.md)
     * [ChangeSets](mergequeue/concepts/changesets/README.md)
       * [Global CI Validation](mergequeue/concepts/changesets/global-ci-validation.md)
       * [FAQs](mergequeue/concepts/changesets/faqs.md)
