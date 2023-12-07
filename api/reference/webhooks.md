@@ -12,20 +12,22 @@ Each event corresponds to a certain set of actions that can happen on your organ
 
 Each PullRequest webhook event payload contains the following properties.
 
-| Key                    | Description                                                                                                                                                                                                          |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **action**             | All webhook payloads contain an action property that contains the specific activity that triggered the event.                                                                                                        |
-| **repository**         | Name of GitHub repository associated with the action.                                                                                                                                                                |
-| **organization**       | Name of the GitHub organization associated with the action.                                                                                                                                                          |
-| **pr\_number**         | _Integer_. PR Number associated with the action.                                                                                                                                                                     |
-| **author**             | GitHub handle of the author of the PR.                                                                                                                                                                               |
-| **status**             | Current status of the PR. Valid options: open, pending, queued, blocked, merged                                                                                                                                      |
-| **skip\_line**         | _Boolean_. Represents whether the skip line label is present for the PR.                                                                                                                                             |
-| **status\_code**       | _Integer_. Represents the reason for failure, if there was a failure. See [<mark style="color:blue;">Status Codes</mark>](../../mergequeue/reference/comments-and-status-codes.md) section for all possible options. |
-| **status\_code\_text** | _String_. Represents the reason for failure, if there was a failure. See [<mark style="color:blue;">Status Codes</mark>](../../mergequeue/reference/comments-and-status-codes.md) section for all possible options.  |
-| **message**            | _Optional_. Present if there is an additional message provided by GitHub on the reason for failure.                                                                                                                  |
-| **failed\_ci\_list**   | _Optional_. _List_. List of CI names that failed in case of CI failure.                                                                                                                                              |
-| **pr\_reset\_count**   | _Optional. Integer_. Number of PRs that were reset due to a reset. This property only exists during a `reset` action.                                                                                                |
+| Key                        | Description                                                                                                                                                                                                          |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **action**                 | All webhook payloads contain an action property that contains the specific activity that triggered the event.                                                                                                        |
+| **repository**             | Name of GitHub repository associated with the action.                                                                                                                                                                |
+| **organization**           | Name of the GitHub organization associated with the action.                                                                                                                                                          |
+| **pr\_number**             | _Integer_. PR Number associated with the action.                                                                                                                                                                     |
+| **author**                 | GitHub handle of the author of the PR.                                                                                                                                                                               |
+| **status**                 | Current status of the PR. Valid options: open, pending, queued, blocked, merged                                                                                                                                      |
+| **skip\_line**             | _Boolean_. Represents whether the skip line label is present for the PR.                                                                                                                                             |
+| **status\_code**           | _Integer_. Represents the reason for failure, if there was a failure. See [<mark style="color:blue;">Status Codes</mark>](../../mergequeue/reference/comments-and-status-codes.md) section for all possible options. |
+| **status\_code\_text**     | _String_. Represents the reason for failure, if there was a failure. See [<mark style="color:blue;">Status Codes</mark>](../../mergequeue/reference/comments-and-status-codes.md) section for all possible options.  |
+| **message**                | _Optional_. Present if there is an additional message provided by GitHub on the reason for failure.                                                                                                                  |
+| **failed\_ci\_list**       | _Optional_. _List_. List of CI names that failed in case of CI failure.                                                                                                                                              |
+| **pr\_reset\_count**       | _Optional. Integer_. Number of PRs that were reset due to a reset. This property only exists in a `reset` action.                                                                                                    |
+| **closed\_bot\_pr\_count** | _Optional. Integer._ Number of Bot PRs that  were closed due to a reset. This property only exists in a `reset` action.                                                                                              |
+| **bot\_pull\_request**     | _Optional. BotPR._ This property only exists in a `reset` action that is caused by a test failure of a Bot PR.                                                                                                       |
 
 ### Actions
 
@@ -42,6 +44,16 @@ Below is the list of actions that can be configured in the MQ UI to receive webh
 | **blocked**        | When the PR fails to merge and is blocked. The typical reason for failures can be retrieved from `status_code`, including CI failure or merge conflict. |
 | **stuck**          | _(Parallel mode only)_ When a PR is stuck if the original PR is still running the checks after the specified timeout.                                   |
 | **reset**          | _(Parallel mode only)_ When a parallel PR queue is reset.                                                                                               |
+
+### BotPR
+
+Below is the BotPR schema embedded in the payload.
+
+| Key                   | Description                              |
+| --------------------- | ---------------------------------------- |
+| **github\_url**       | _String._ The GitHub URL to the Bot PR.  |
+| **number**            | _Integer_. PR Number of the Bot PR.      |
+| **head\_branch\_oid** | _String._ The commit hash of the Bot PR. |
 
 ## Batch events
 
