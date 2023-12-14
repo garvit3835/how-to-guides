@@ -109,12 +109,12 @@
 * [Aviator API](api/README.md)
   * [Tutorials](api/tutorials/README.md)
     * [GraphQL API Quickstart](api/tutorial/graphql-api-quickstart.md)
-    * [How to Collect Prometheus Metrics in GCP](api/tutorials/how-to-collect-prometheus-metrics-in-gcp.md)
+    * [How to Collect Monitoring Metrics in GCP Prometheus](api/tutorials/how-to-collect-monitoring-metrics-in-gcp-prometheus.md)
   * [Reference](api/reference/README.md)
     * [JSON API](api/reference/json-api.md)
     * [GraphQL](api/reference/graphql.md)
     * [Webhooks](api/reference/webhooks.md)
-    * [Prometheus Metrics](api/reference/prometheus-metrics.md)
+    * [Monitoring Metrics](api/reference/monitoring-metrics.md)
 
 ## Manage
 

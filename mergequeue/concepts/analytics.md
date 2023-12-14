@@ -25,3 +25,7 @@ This metric captures how many times the bot pulls the latest base branch into th
 ## Learn More
 
 * [<mark style="color:blue;">Analytics API documentation</mark>](../../api/)
+
+## See Also
+
+* [Monitoring Metrics](../../api/reference/monitoring-metrics.md) for Prometheus metrics

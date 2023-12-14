@@ -1,6 +1,6 @@
-# Prometheus Metrics
+# Monitoring Metrics
 
-Aviator provides some system metrics for Prometheus. You can monitor your queue length and GitHub API usage with this.
+Aviator provides some monitoring metrics for Prometheus. You can monitor your queue length and GitHub API usage with this.
 
 ## Endpoint
 
@@ -33,6 +33,6 @@ This endpoint exports following metrics.
 
 <table><thead><tr><th>Name</th><th width="84">Type</th><th width="79">Labels</th><th>Description</th></tr></thead><tbody><tr><td>mergequeue_queued_pr_count</td><td>Gauge</td><td>repo</td><td>Number of queued pull requests</td></tr><tr><td>mergequeue_github_rest_api_quota_remaining_count</td><td>Gauge</td><td></td><td>Remaining quota for GitHub REST API</td></tr><tr><td>mergequeue_github_rest_api_quota_limit_count</td><td>Gauge</td><td></td><td>Max quota limit for GitHub REST API</td></tr><tr><td>mergequeue_github_graphql_api_quota_remaining_count</td><td>Gauge</td><td></td><td>Remaining quota for GitHub GraphQL API</td></tr><tr><td>mergequeue_github_graphql_api_quota_limit_count</td><td>Gauge</td><td></td><td>Max quota limit for GitHub GraphQL API</td></tr></tbody></table>
 
-## See also
+## See Also
 
-* [How to Collect Prometheus Metrics in GCP](../tutorials/how-to-collect-prometheus-metrics-in-gcp.md)
+* [How to Collect Prometheus Metrics in GCP](../tutorials/how-to-collect-monitoring-metrics-in-gcp-prometheus.md)
