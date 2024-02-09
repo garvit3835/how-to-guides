@@ -9,6 +9,7 @@
     * [Approval Requirements](flexreview/concepts/approval-requirements.md)
     * [SLO Management](flexreview/concepts/slo-management.md)
   * [How-to guides](flexreview/how-to-guides/README.md)
+    * [Get a reviewer suggestion](flexreview/how-to-guides/get-reviewer-suggestion.md)
     * [Mandate an expert approval](flexreview/how-to-guides/mandate-an-expert-approval.md)
     * [Enable in a sub-repository](flexreview/how-to-guides/enable-in-a-sub-repository.md)
   * [Reference](flexreview/reference/README.md)
