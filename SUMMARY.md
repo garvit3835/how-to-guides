@@ -13,6 +13,7 @@
     * [Get a reviewer suggestion](flexreview/how-to-guides/get-reviewer-suggestion.md)
     * [Mandate an expert approval](flexreview/how-to-guides/mandate-an-expert-approval.md)
     * [Enable in a sub-repository](flexreview/how-to-guides/enable-in-a-sub-repository.md)
+    * [Excluding reviewers](flexreview/how-to-guides/excluding-reviewers.md)
   * [Reference](flexreview/reference/README.md)
     * [FlexReview - Slash commands](flexreview/reference/flexreview-slash-commands.md)
     * [Expert scoring algorithms](flexreview/reference/expert-scoring-algorithms.md)
