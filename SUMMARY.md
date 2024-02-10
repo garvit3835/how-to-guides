@@ -15,6 +15,7 @@
     * [Enable in a sub-repository](flexreview/how-to-guides/enable-in-a-sub-repository.md)
     * [Excluding reviewers](flexreview/how-to-guides/excluding-reviewers.md)
   * [Reference](flexreview/reference/README.md)
+    * [Configuration](flexreview/reference/configuration.md)
     * [FlexReview - Slash commands](flexreview/reference/flexreview-slash-commands.md)
     * [Expert scoring algorithms](flexreview/reference/expert-scoring-algorithms.md)
 * [MergeQueue](mergequeue/README.md)

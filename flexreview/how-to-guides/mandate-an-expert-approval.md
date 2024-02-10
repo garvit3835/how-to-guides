@@ -4,6 +4,8 @@ In order to mandate expert approvals on PRs, you can use FlexReview’s Approval
 
 In the FlexReview configuration, set up the file paths under `Approval Check`. You can use the same file paths as the reviewer suggestion file paths, or specify something else. This will add an `aviator/flexreview` GitHub status check.
 
+<figure><img src="../../.gitbook/assets/Screenshot 2024-02-10 at 3.30.28 PM.png" alt=""><figcaption><p>Details of the GitHub status check</p></figcaption></figure>
+
 #### Set up MergeQueue required status checks
 
 If your repo is set up to use Aviator’s MergeQueue, navigate to the MergeQueue config. Make sure to set `aviator/flexreview` as a required check. This requires the PR to have an expert approval before Aviator will merge the PR.
