@@ -17,7 +17,7 @@ To ease the transition and familiarize your team with FlexReview, we recommend s
 
 #### Read-only mode
 
-When you install the Aviator app for FlexReview, it starts in the **read-only mode**, that is, it won’t take any actions or post any comments on the PRs automatically.
+When you install the Aviator app for FlexReview, it starts in the [**read-only mode**](concepts/read-only-mode.md), that is, it won’t take any actions or post any comments on the PRs automatically.
 
 At this stage, you can use slash command on any PR to get the suggestion from FlexReview:
 
@@ -25,15 +25,7 @@ At this stage, you can use slash command on any PR to get the suggestion from Fl
 /aviator flexreview suggest
 ```
 
-This will suggest reviewers and post a message giving list of suggested reviewers. This will display the list of files and corresponding need for experts based along with suggested reviewers.
-
-These suggestions would still take into consideration the existing `CODEOWNERS` file and who can officially approve the PR based on that. To test the suggestions without gating it on codeowners, add a param: `--no-codeowners`:
-
-```markdown
-/aviator flexreview suggest --no-codeowners
-```
-
-This will suggest reviewers assuming that there is no codeowners file.
+This will suggest reviewers and post a message giving list of suggested reviewers. This will display the list of files and corresponding need for experts based along with suggested reviewers. If you already use `CODEOWNERS` file, it will suggest reviewers based that also satisfies the Codeowners requirement.
 
 None of these commands change the PR merging capability and no status check is reported.
 

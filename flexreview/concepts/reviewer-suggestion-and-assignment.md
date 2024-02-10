@@ -10,7 +10,7 @@ The ultimate goal with reviewer suggestion is to reduce the code review response
 
 ## Analyzing past data
 
-When you enable FlexReview on a repository, it starts in read-only mode and indexes the past pull requests data to calculate the domain expertise score of each author and reviewer for various code paths. It also captures the teams memberships of the developers, and reads the existing `CODEOWNERS` file.
+When you enable FlexReview on a repository, it starts in [<mark style="color:blue;">read-only mode</mark>](read-only-mode.md) and indexes the past pull requests data to calculate the domain expertise score of each author and reviewer for various code paths. It also captures the teams memberships of the developers, and reads the existing `CODEOWNERS` file.
 
 ## Calculating the suggestions
 
