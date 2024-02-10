@@ -14,7 +14,7 @@ When you enable FlexReview on a repository, it starts in [<mark style="color:blu
 
 ## Calculating the suggestions
 
-For detailed understanding of the calculations, please refer to the calculations algorithm. FlexReview takes into account a few factors to identify the right reviewers:
+For detailed understanding of the calculations, please refer to the [<mark style="color:blue;">calculations algorithm</mark>](../reference/expert-scoring-algorithms.md). FlexReview takes into account a few factors to identify the right reviewers:
 
 * complexity of the code change - the complexity is calculated separately for each path in the given PR
 * domain expertise score - this is calculated based on the past data of the code reviews. A user can gain domain expertise both by authoring the code as as well reviewing it. Read the algorithm for detailed explanation of this calculation. Domain expertise score is calculated both for the author and the reviewer.

@@ -4,7 +4,7 @@ One of the main advantages of using FlexReview is the ability to expand the pool
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2023-11-14 at 2.59.54 PM (1).png" alt=""><figcaption></figcaption></figure>
 
-Read the how-to-guides to learn how to customize the status check when using sub-repository configuration.
+Read the [<mark style="color:blue;">mandating an expert approval</mark>](../how-to-guides/mandate-an-expert-approval.md) to learn how to customize the status check when using sub-repository configuration.
 
 ## Understanding approval requirements
 
