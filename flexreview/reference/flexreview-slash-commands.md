@@ -1,8 +1,8 @@
-# FlexReview - Slash commands
+# Slash commands
 
 ### Suggest
 
-The suggest command gets a summary of the suggested reviewers for you PR. Additional information such as the author’s expertise score and alternate reviewers is also provided. The results will be posted as a GitHub comment.
+The suggest command gets a summary of the suggested reviewers for your PR. Additional information such as the author’s expertise score and alternate reviewers is also provided. The results will be posted as a GitHub comment.
 
 If you are using a `CODEOWNERS` file, FlexReview will automatically suggest reviewers from within the `CODEOWNERS` scope. If you want to check the suggested reviewers without the `CODEOWNERS` restriction, you can add the `--no-codeowners` parameter to the command.
 

@@ -16,7 +16,7 @@
     * [Excluding reviewers](flexreview/how-to-guides/excluding-reviewers.md)
   * [Reference](flexreview/reference/README.md)
     * [Configuration](flexreview/reference/configuration.md)
-    * [FlexReview - Slash commands](flexreview/reference/flexreview-slash-commands.md)
+    * [Slash commands](flexreview/reference/flexreview-slash-commands.md)
     * [Expert scoring algorithms](flexreview/reference/expert-scoring-algorithms.md)
 * [MergeQueue](mergequeue/README.md)
   * [Getting Started](mergequeue/quick-setup.md)
