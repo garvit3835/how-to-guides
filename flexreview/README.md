@@ -6,6 +6,8 @@ An alternative to CODEOWNERS for faster code review cycles.
 
 FlexReview introduces flexibility to your code review process by understanding the nuances of every code change and every reviewer. Instead of defining a static `CODEOWNERS` file, it analyses the history of code review patterns in your repository to calculate an expert score for every file and every developer. It uses this score along with reviewer availability, reviewer workloads, and the complexity of code changes to determine the right reviewers.
 
+{% embed url="https://www.youtube.com/watch?v=jFkKZUSrEvA" %}
+
 ## Why FlexReview
 
 As the team grows, reviews can be become slow and unyielding, and occasionally turn into mere rubber-stamping. FlexReview is separating out the concepts of code ownership and review cycles to streamline the development cycle.
