@@ -18,6 +18,7 @@
     * [Configuration](flexreview/reference/configuration.md)
     * [Slash commands](flexreview/reference/flexreview-slash-commands.md)
     * [Expert scoring algorithms](flexreview/reference/expert-scoring-algorithms.md)
+  * [Roadmap](flexreview/roadmap.md)
 * [MergeQueue](mergequeue/README.md)
   * [Getting Started](mergequeue/quick-setup.md)
   * [Merge Rules](mergequeue/configuration-file.md)
