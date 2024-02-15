@@ -2,7 +2,7 @@
 
 ## FlexReview Roadmap
 
-There’s a lot to that goes to build an end-to-end code review experience from ground up. With that in mind, we would love to share our near-term roadmap for FlexReview. If you are excited about any of these features, please submit your request in this [<mark style="color:blue;">Google form</mark>](https://forms.gle/x1imtLv64LQ9mewN8). We are prioritizing features based on the interest.
+There’s a lot to that goes into building an end-to-end code review experience from ground up. With that in mind, we would love to share our near-term roadmap for FlexReview. If you are excited about any of these features, please submit your request in this [<mark style="color:blue;">Google form</mark>](https://forms.gle/x1imtLv64LQ9mewN8). We are prioritizing features based on the interest.
 
 The list below is in the order of priority.
 
@@ -27,13 +27,13 @@ The actions could be one of:
 
 ## SLO timezone tracking
 
-Track author’s and reviewer’s timezones for accurate calcuation of SLO requirements.
+Track author’s and reviewers’ timezones for accurate calculation of SLO requirements.
 
 ## Teams
 
 GitHub teams based rules that lets the team configure:
 
-* different methods of selecting a reviewer
+* different methods for selecting a reviewer
   * e.g. - expertise based, oncall, round robin, etc
 * set up team Slack notification behavior
 * set up notification for unattended PRs for the team members
@@ -42,9 +42,9 @@ GitHub teams based rules that lets the team configure:
 
 ## Multiple reviewers
 
-Certain changes / files may need to be reviewed by multiple reviewers before these can be merged. For example, some changes may require the feature team and security teams to both sign off.
+Certain changes / files may need to be reviewed by multiple reviewers before these can be merged. For example, some changes may require the feature team and security team to both sign off.
 
-With this config you can specify multiple teams for specific file(s) where two or more reviewers must approve for the changes to merge.
+With multiple reviewers feature you can configure specific file(s) where two or more reviewers must approve for the changes to merge.
 
 ## Coaching mode
 
@@ -52,7 +52,7 @@ Prioritize the new members in the team for review assignment when the changes ar
 
 ## Oncall schedules
 
-Configure code review oncall schedules for teams.
+Configure code review oncall schedules at the team level.
 
 ## Distributed config
 
