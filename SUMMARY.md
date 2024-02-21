@@ -14,6 +14,7 @@
     * [Mandate an expert approval](flexreview/how-to-guides/mandate-an-expert-approval.md)
     * [Enable in a sub-repository](flexreview/how-to-guides/enable-in-a-sub-repository.md)
     * [Excluding reviewers](flexreview/how-to-guides/excluding-reviewers.md)
+    * [Set up alternate CODEOWNERS](flexreview/how-to-guides/set-up-alternate-codeowners.md)
   * [Reference](flexreview/reference/README.md)
     * [Configuration](flexreview/reference/configuration.md)
     * [Slash commands](flexreview/reference/flexreview-slash-commands.md)
