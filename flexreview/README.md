@@ -62,4 +62,4 @@ Inspired by [<mark style="color:blue;">Gerrit</mark>](https://gerrit-review.goog
 
 ## Future work
 
-FlexReview is starting from a low-config mode to remove some of the assumptions for how code reviews are managed. As it evolves, it will naturally introduce some level of configurability and policies to service specialized scenarios. Check out our roadmap for further details.
+FlexReview is starting from a low-config mode to remove some of the assumptions for how code reviews are managed. As it evolves, it will naturally introduce some level of configurability and policies to service specialized scenarios. [<mark style="color:blue;">Check out our roadmap</mark>](roadmap.md) for further details.
