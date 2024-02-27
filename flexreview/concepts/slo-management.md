@@ -52,4 +52,4 @@ SLO analytics helps you monitor the last 30 days of PR activity for each reposit
 
 ### Actions
 
-Automated actions are still under development and will be launched shortly as part of our roadmap.
+Automated actions are still under development and will be launched shortly as part of [<mark style="color:blue;">our roadmap</mark>](../roadmap.md).
