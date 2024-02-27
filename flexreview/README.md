@@ -1,5 +1,9 @@
 # FlexReview
 
+{% hint style="success" %}
+Read our launch post about why we built FlexReview: [https://www.aviator.co/blog/flexreview-a-flexible-code-review-framework/](https://www.aviator.co/blog/flexreview-a-flexible-code-review-framework/)
+{% endhint %}
+
 ## What is FlexReview
 
 An alternative to CODEOWNERS for faster code review cycles.
