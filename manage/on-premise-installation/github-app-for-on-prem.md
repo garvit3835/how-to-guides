@@ -37,7 +37,7 @@ Use the following settings to create the app:
 
 **Homepage URL:** [<mark style="color:blue;">https://aviator.co/</mark>](https://aviator.co/)
 
-**Callback URL:** `https://$AV_HOSTNAME/api/setup/complete`
+**Callback URL:** `https://$AV_HOSTNAME/login/oauth/callback/github`
 
 **Expire user authorization tokens**: YES
 
