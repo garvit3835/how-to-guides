@@ -1,4 +1,4 @@
-# Customize required checks
+# Customize Required Checks
 
 You can configure required checks in a few different ways.
 
@@ -53,11 +53,13 @@ required_checks:
   - "golang-*"  # matches golang-test, golang-lint, etc.
 ```
 
+With this wildcard, Aviator will validate all checks with names matching this expression. This validation requires at least one matching check to be present.
+
 ## Conditional checks
 
 You can set custom acceptable statuses in the required check to support additional check statuses other than the default success.
 
-In the below example, Aviator will only consider the check unit-test as passing if we receive a success status. But for the check named conditional\_build, Aviator will also consider a skipped status as passing. Likewise, you can specify any acceptable status defined [<mark style="color:blue;">here</mark>](https://docs.github.com/en/rest/checks/runs#get-a-check-run).
+In the below example, Aviator will only consider the check unit-test as passing if we receive a success status. But for the check named _conditional\_build_, Aviator will also consider a skipped status as passing. You can see all possible `acceptable_statuses` in the [<mark style="color:blue;">reference doc</mark>](../reference/complete-reference-guide.md#acceptable\_statuses). These map to the statuses defined by GitHub [<mark style="color:blue;">here</mark>](https://docs.github.com/en/rest/checks/runs#get-a-check-run).
 
 ```
 merge_rules:
@@ -72,7 +74,21 @@ merge_rules:
           - skipped
 ```
 
-With this wildcard, Aviator will validate all checks with names matching this expression. This validation requires at least one matching check to be present.
+## Optional checks
+
+There are scenarios where a check is only run in certain conditions. In such cases, you would want to validate the check when it runs, but also accept the state when the check is not run at all. For this particular scenario, you can define the acceptable\_statuses as success and missing:
+
+```
+merge_rules:
+  labels:
+    trigger: mq
+  preconditions:
+    required_checks:
+      - name: conditional_build
+        acceptable_statuses:
+          - success
+          - missing
+```
 
 ## Override checks (for parallel mode)
 

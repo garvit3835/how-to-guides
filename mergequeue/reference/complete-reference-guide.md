@@ -1,4 +1,4 @@
-# Merge Rules Configuration
+# Configuration Reference
 
 MergeQueue communicates with pull request using GitHub labels, GitHub comments and the [<mark style="color:blue;">Aviator CLI</mark>](../../aviator-cli/). To learn about how to apply the rules, read the [<mark style="color:blue;">intro guide to Merge Rules</mark>](../configuration-file.md).
 
@@ -61,6 +61,26 @@ merge_rules:
 <table><thead><tr><th>Name</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>number_of_approvals</strong></td><td>Integer</td><td>Minimum number of reviewers that should approve the PullRequest before it can qualify to be merged. Defaults to 1.</td></tr><tr><td><strong>required_checks</strong></td><td>List[Union[String, ConditionalCheck]]</td><td>Checks that need to pass before Aviator bot will merge the PR. Supports shell wildcard (glob) patterns. Also supports other acceptable CI statuses if your repo uses conditional status checks. See the Example tab.</td></tr><tr><td><strong>use_github_mergeability</strong></td><td>Boolean</td><td>Determines whether to use the default required checks specified in branch protection rules on GitHub. When this setting is enabled, Aviator bot will ignore <code>required_checks</code>. Defaults to <code>true</code>.</td></tr><tr><td><strong>conversation_resolution_required</strong></td><td>Boolean</td><td>Determines whether Aviator bot will queue the PR only after all conversations are resolved. Defaults to <code>false</code>.</td></tr><tr><td><strong>validations</strong></td><td>List[Validation]</td><td>Custom validation rules using regexes for the PR body or title. See the Example tab for more details.</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
+
+#### acceptable\_statuses
+
+By default a required status check has to be in `success` or `skipped` state for the check to be considered valid. When `acceptable_statuses` are provided for a check, Aviator will modify that behavior. The possible values of the status are:
+
+* `success`
+* `pending`
+* `failure`
+* `cancelled`
+* `timed_out`
+* `skipped`
+* `neutral`
+* `action_required`
+* `stale`
+* `unknown`
+* `error`
+* `blocked`
+* `missing`
+
+Note that `missing` is a special status that represents that the status check has not been reported at all in GitHub by the CI provider.
 
 ### Queue Modes
 
