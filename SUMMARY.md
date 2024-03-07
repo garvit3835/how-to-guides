@@ -1,6 +1,12 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [AttentionSet](attentionset/README.md)
+  * [Best practices](attentionset/best-practices.md)
+  * [View AttentionSet for others](attentionset/view-attentionset-for-others.md)
+  * [Manually change attention](attentionset/manually-change-attention.md)
+  * [AttentionSet Chrome extension](attentionset/attentionset-chrome-extension.md)
+  * [Attention reasons](attentionset/attention-reasons.md)
 * [FlexReview](flexreview/README.md)
   * [Getting started](flexreview/getting-started.md)
   * [Onboarding a large org](flexreview/onboarding-a-large-org.md)
@@ -28,7 +34,6 @@
     * [Customize Required Checks](mergequeue/how-to-guides/customize-required-checks.md)
     * [Set Up Fast-Forwarding](mergequeue/how-to-guides/fast-forwarding.md)
     * [Set up Pre-Queue Conditions](mergequeue/how-to-guides/set-up-pre-queue-conditions.md)
-    * [Use AttentionSet](mergequeue/how-to-guides/using-attention-set.md)
     * [Queue / Dequeue via API](mergequeue/queue-dequeue-via-api.md)
     * [Pause / Unpause Queues via API](mergequeue/how-to-guides/pause-unpause-queues-via-api.md)
     * [Slash Commands Using GitHub Comments](mergequeue/how-to-guides/slash-commands.md)
@@ -63,7 +68,6 @@
     * [ChangeSets](mergequeue/concepts/changesets/README.md)
       * [Global CI Validation](mergequeue/concepts/changesets/global-ci-validation.md)
       * [FAQs](mergequeue/concepts/changesets/faqs.md)
-    * [AttentionSet](mergequeue/concepts/attention-set.md)
     * [Priority Merges](mergequeue/concepts/priority-merges/README.md)
       * [Instant Merges](mergequeue/concepts/priority-merges/instant-merges.md)
     * [Merge Rules Audit Trail](mergequeue/concepts/audit-trail.md)
