@@ -1,5 +1,5 @@
 ---
-description: A dashboard to track GitHub pull requests that needs your attentions.
+description: A dashboard to track GitHub pull requests that need your attention.
 ---
 
 # AttentionSet
