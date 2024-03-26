@@ -99,6 +99,13 @@ trigger:
 
 Associated events:
 
+* **ready:** A user requested a PR to be queued. This is triggered at the same time as the `pullrequest.labeled` action if the PR was queued using a GitHub label.&#x20;
+
+```
+trigger:
+  mergequeue: ready
+```
+
 * **queued:** A PR was added to the queue.
   * **skip\_line \[optional]**: A PR marked to skip the line was added to the queue.
 
@@ -119,6 +126,13 @@ trigger:
 ```
 trigger:
   mergequeue: dequeued
+```
+
+* **added\_to\_batch:** A PR was added to batch for validation. This is applicable only for parallel mode. This will still be called even if the draft PR was skipped due to `skip_draft_when_up_to_date` config setting in the parallel mode.
+
+```
+trigger:
+  mergequeue: added_to_batch
 ```
 
 * **top\_of\_queue**: A new PR reached the top of the queue.
