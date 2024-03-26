@@ -149,6 +149,7 @@
 * [Security](manage/security.md)
 * [On-premise Installation](manage/on-premise-installation/README.md)
   * [GitHub App for On-Prem](manage/on-premise-installation/github-app-for-on-prem.md)
+  * [Connecting GitHub OAuth in On-Prem](manage/on-premise-installation/connecting-github-oauth-in-on-prem.md)
   * [Use Helm](manage/on-premise-installation/use-helm.md)
   * [Use Docker Compose](manage/on-premise-installation/use-docker-compose.md)
   * [Prometheus endpoint](manage/on-premise-installation/prometheus-endpoint.md)
