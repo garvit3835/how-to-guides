@@ -1,29 +1,24 @@
-# API and webhooks
+# API and Webhooks
 
 ## API
 
-{% swagger method="get" path="/flaky" baseUrl="https://api.aviator.co/api/v1/testdeck" summary="Get flaky tests in the last 30 days." expanded="true" %}
-{% swagger-description %}
+## Get flaky tests in the last 30 days.
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/testdeck/flaky`
+
 The flaky test API can be used to fetch the results of all flaky tests in the last 30 days. The results are paginated with maximum of 100 results returned in the response. The results are in the order of the most recent flaky, based on `first_occurrence`.
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="org" type="String" required="true" %}
-Organization name for the repo.
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="repo" type="String" required="true" %}
-Repository name.
-{% endswagger-parameter %}
+| Name                                                  | Type    | Description                     |
+| ----------------------------------------------------- | ------- | ------------------------------- |
+| org<mark style="color:red;">\*</mark>                 | String  | Organization name for the repo. |
+| repo<mark style="color:red;">\*</mark>                | String  | Repository name.                |
+| page                                                  | Integer | Page number                     |
+| github\_check\_name<mark style="color:red;">\*</mark> | String  | Name of the GitHub check        |
 
-{% swagger-parameter in="body" name="github_check_name" type="String" required="true" %}
-Name of the GitHub check
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="page" type="Integer" %}
-Page number
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```json
 {
   "repository": {
@@ -52,8 +47,8 @@ Page number
   ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Webhooks
 
