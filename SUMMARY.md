@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Introduction](index.md)
 * [AttentionSet](attentionset/README.md)
   * [Best practices](attentionset/best-practices.md)
   * [View AttentionSet for others](attentionset/view-attentionset-for-others.md)
