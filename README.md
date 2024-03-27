@@ -10,4 +10,4 @@ There are 4 key components of Aviator:
 
 ## How Aviator works
 
-Aviator connects as a GitHub app that can be installed on any repository. The CLI can be installed using HomeBrew and configured using your GitHub personal access token. Aviator also has CI plugins that collect test results to monitor test reliability.
+Aviator connects as a GitHub app that can be installed on any repository. The CLI can be installed using HomeBrew and configured using your GitHub personal access token. Aviator also has a Chrome Extension that gives live status updates within the GitHub UI.
