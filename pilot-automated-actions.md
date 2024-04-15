@@ -136,6 +136,12 @@ trigger:
 ```
 
 * **removed\_from\_batch:** A PR was removed from the validation batch. This is applicable only for parallel mode. This will still be called even if the draft PR was skipped due to `skip_draft_when_up_to_date` config setting in the parallel mode.
+
+```
+trigger:
+  mergequeue: removed_from_batch
+```
+
 * **top\_of\_queue**: A new PR reached the top of the queue.
 
 ```
