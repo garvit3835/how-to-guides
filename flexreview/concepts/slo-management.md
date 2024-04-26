@@ -1,4 +1,4 @@
-# SLO Management
+# Teams and SLO Management
 
 With the objective of making code reviews faster, FlexReview SLO (Service Level Objective) standardizes the code review process for teams. With SLO:
 
@@ -50,6 +50,28 @@ SLO analytics helps you monitor the last 30 days of PR activity for each reposit
 * P50, P90, P99 for response times by team breakdown
 * Non-eligible PRs - the PRs that exceed maximum modified lines specified in the SLO config
 
-### Actions
+## Teams
 
-Automated actions are still under development and will be launched shortly as part of [<mark style="color:blue;">our roadmap</mark>](../roadmap.md).
+FlexReview Teams can be configured to support large engineering organizations with many sub-teams. Since processes and workflows vary across teams, we allow rules to be configured based on GitHub teams.
+
+Teams can:
+
+* Define different methods for selecting a reviewer - based on expertise, round robin, etc.
+* Set up automated Slack notifications - for missing reviewers, unattended PRs, etc.
+* Automatically reassign reviewers.
+
+### Automated actions
+
+Configure automated actions for your team based on the SLO window to improve code review response times. The rules can be set as default for the org and overridden at team level.
+
+The triggers can be one of:
+
+* When a new reviewer is assigned to a PR
+* When there is no review activity after X hours
+
+The actions could be one of:
+
+* Send a Slack notification to a team channel
+* Send a Slack DM to the reviewer
+* Reassign PR review to someone else
+

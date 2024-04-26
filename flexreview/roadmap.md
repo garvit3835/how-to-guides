@@ -12,33 +12,9 @@ The list below is in the order of priority.
 * See suggested reviewers in GitHub UI
 * Track who can review what files in a PR
 
-## SLO automated actions
-
-Configure automated actions based on the SLO window to improve code review response times. The rules can be set as default for the org and overridden at team level.
-
-* X hours before SLO hit do Y if no review response
-* X hours after SLO hit do Z if no review response
-
-The actions could be one of:
-
-* Relax the FlexReview approval requirement (does not need expert approval anymore)
-* Notify the reviewer (Slack, AttentionSet, GH comments)
-* Reassign review to someone else
-
 ## SLO timezone tracking
 
 Track author’s and reviewers’ timezones for accurate calculation of SLO requirements.
-
-## Teams
-
-GitHub teams based rules that lets the team configure:
-
-* different methods for selecting a reviewer
-  * e.g. - expertise based, oncall, round robin, etc
-* set up team Slack notification behavior
-* set up notification for unattended PRs for the team members
-* set up notifications for missing review SLO
-* reassigning reviewer on missing review SLO
 
 ## Multiple reviewers
 
