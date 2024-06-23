@@ -48,6 +48,7 @@
     * [Create Personal Access Tokens](mergequeue/how-to-guides/personal-access-tokens.md)
     * [Set Up SAML Configuration](mergequeue/how-to-guides/saml-configuration/README.md)
       * [Microsoft Active Directory](mergequeue/how-to-guides/saml-configuration/microsoft-active-directory.md)
+    * [Merging stacked PRs](mergequeue/how-to-guides/merging-stacked-prs.md)
   * [Concepts](mergequeue/concepts/README.md)
     * [Queue Modes](mergequeue/concepts/queue-modes.md)
     * [Pull Request Lifecycle](mergequeue/concepts/pull-request-lifecycle.md)

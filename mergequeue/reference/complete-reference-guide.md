@@ -175,9 +175,10 @@ merge_rules:
 
 ### Merge Strategy
 
-| Name     | Type   | Description                                                                                                                                                                                                                                                                        |
-| -------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **name** | String | Defines the merge strategy to use, the options are "squash", "merge", and "rebase". See the [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github) for more info. |
+| Name                                   | Type    | Description                                                                                                                                                                                                                                                                        |
+| -------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **name**                               | String  | Defines the merge strategy to use, the options are "squash", "merge", and "rebase". See the [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github) for more info. |
+| **use\_separate\_commits\_for\_stack** | Boolean | <p>If enabled, uses independent commits for stacked PRs. This requires setting up</p><p>Rulesets in GitHub and allow Aviator to bypass branch protection rules. Otherwise GitHub blocks commits from merging without approval and CI completion</p>                                |
 
 #### Override Labels
 
