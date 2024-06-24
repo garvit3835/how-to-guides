@@ -88,7 +88,7 @@ This capability of bypassing the CI requirement is now available using GitHub’
 
 Once migrated to Ruleset, you can add Aviator app in the bypass list.
 
-<figure><img src="https://docs.aviator.co/~gitbook/image?url=https%3A%2F%2F273246003-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FOAPqUQVbLbsfI5YESl32%252Fuploads%252FaJuErbNsCyiHn4gDFzl6%252FScreen%2520Shot%25202023-05-26%2520at%252011.26.05%2520AM.png%3Falt%3Dmedia%26token%3Ddcefadad-7f19-43f6-9d49-fe4b7b6eb3b8&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=6486a905e69abfe0e24c9c128d4ee3d2b1265b3ef620c88efd29ad2cfa525c4a" alt=""><figcaption><p>Add Aviator GitHub app to Bypass list</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/rulesets.avif" alt=""><figcaption><p>Add Aviator GitHub app to Bypass list</p></figcaption></figure>
 
 ### **Configuring separate commits**
 
