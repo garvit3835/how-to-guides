@@ -1,4 +1,4 @@
-# Aviator CLI
+# Stacked PRs CLI
 
 {% embed url="https://youtu.be/TWwnekxFehA" %}
 Managing stacked PRs using Aviator CLI
@@ -24,13 +24,7 @@ brew install aviator-co/tap/av
 
 For installation on other platforms or step by step guide, please checkout [<mark style="color:blue;">installation instructions</mark>](https://docs.aviator.co/aviator-cli/installation).
 
-The CLI uses a GitHub personal access token (PAT) to connect with GitHub. Generate the token on GitHub with repo scope and set that in `~/.av/config.yaml`.
-
-<pre class="language-yaml" data-title="~/.av/config.yaml" data-line-numbers><code class="lang-yaml"><strong>github:
-</strong>    # Replace this value with the token you created in the step above
-    token: "ghp_abcdefghijklmnop"
-
-</code></pre>
+av CLI needs a GitHub credential for creating and updating PRs. Install [GitHub CLI](https://cli.github.com/), and av CLI will use the same credential for interacting with GitHub. Alternatively, you can use a GitHub Personal Access Token. See [create-a-user-access-token.md](how-to-guides/create-a-user-access-token.md "mention").
 
 Finally, initialize the repository so that CLI can start tracking your active branches.
 
@@ -70,7 +64,7 @@ And when it comes time to submit our work as PR, we use the `av pr create` comma
 
 When creating this PR, the CLI again automatically sets the base branch in GitHub as `bookstore-backend` rather than `main` to ensure that GitHub shows the diff between `bookstore-frontend` and `bookstore-backend`. Otherwise, it would show all the changes from `bookstore-backend` in the PR for `bookstore-frontend` which would make code review much harder.
 
-Already have git branches created? Take a look at [<mark style="color:blue;">how-to adopt a branch.</mark>](https://docs.aviator.co/aviator-cli/how-to-guides/adopt-a-branch)
+Already have git branches created? Take a look at [adopt-a-branch.md](how-to-guides/adopt-a-branch.md "mention")[<mark style="color:blue;">.</mark>](https://docs.aviator.co/aviator-cli/how-to-guides/adopt-a-branch)
 
 ## Updating the stack
 
@@ -94,12 +88,6 @@ Finally, we can run `av stack sync` to propagate the changes to all children bra
 
 ```
 av stack sync
-```
-
-If you want to also update the entire stack from the remote, you can pass `--trunk` param to the command. With `--trunk` option, it fetches the latest `main` from the remote, rebase the other branches on top of it.
-
-```
-av stack sync --trunk
 ```
 
 ## Merging the stack
@@ -146,13 +134,23 @@ In addition, all commands also provide in-line help:
 Usage:
   av stack [command]
 
+Aliases:
+  stack, st
+
 Available Commands:
+  adopt         Adopt branches
   branch        create a new stacked branch
   branch-commit create a new stacked branch and commit staged changes to it
   diff          generate diff between working tree and the parent branch
+  for-each      execute a command for each branch in the current stack
   next          checkout the next branch in the stack
+  orphan        Current branch and the child branches will be orphaned
   prev          checkout the previous branch in the stack
+  reorder       reorder the stack
+  reparent      Reparent branches
+  restack       Restack branches
   submit        Create pull requests for every branch in the stack
+  switch        switch to a different branch
   sync          Synchronize stacked branches
   tidy          Tidy stacked branches
   tree          show the tree of stacked branches
@@ -178,4 +176,4 @@ This is just a quick preview of things you can do with the Aviator CLI. Check ou
 * [<mark style="color:blue;">Setting up auto-complete</mark>](how-to-guides/setup-auto-completion.md)
 
 \
-\
+\\

@@ -85,22 +85,25 @@ We want to make `stack-2` to be on top of the new commit 1c. To do this, run `av
 
 ```
 $ av stack sync
-Synchronizing branch stack-1...
-  - fetching latest pull request information for stack-1
-      - this branch does not have an open pull request (create one with av pr create or av stack submit)
-  - branch is a stack root, nothing to do (run av stack sync --trunk to sync against the latest commit in master)
+
+  ✓ GitHub fetch is done
+  ⣽ Restacking stack-2...
+
+    * ⣽ stack-2 bca00e0
+    │
+    * ✓ stack-1 88e3595
+    │
+    * master 7fd1a60
+
+  Rebase conflict while rebasing  stack-2
+  Failed to rebase "refs/heads/stack-2" onto "refs/heads/stack-1" (merge base is "dd85e55")
+  could not apply 8bf865c... 2a
+  error: could not apply 8bf865c... 2a
+  Recorded preimage for 'myfile'
+  Could not apply 8bf865c... 2a
 
 
-Synchronizing branch stack-2...
-  - fetching latest pull request information for stack-2
-      - this branch does not have an open pull request (create one with av pr create or av stack submit)
-  - synching branch stack-2 on latest commit 6945c77 of parent branch stack-1
-  - rebase conflict: could not apply 1b31f3f... 2a
-        error: could not apply 1b31f3f... 2a
-        Recorded preimage for 'myfile'
-        Could not apply 1b31f3f... 2a
-  - resolve the conflicts and continue the sync with av stack sync --continue
-      - NOTE: do not use the git rebase command directly: use av stack sync instead
+  Resolve the conflicts and continue the restack with av stack sync --continue
 ```
 
 The file has a rebase conflict. Open `myfile` and resolve the conflict, and continue.
@@ -110,8 +113,23 @@ $ vim myfile
 ... Resolving conflict ...
 $ git add .
 $ av stack sync --continue
-Synchronizing branch stack-2...
-  - rebased without conflicts
+
+  ✓ Restack is done
+
+    * ✓ stack-2 0be8a6e
+    │
+    * ✓ stack-1 88e3595
+    │
+    * master 7fd1a60
+
+  ✓ Nothing to push to GitHub
+
+    Following branches do not need a push.
+
+      stack-1: No remote branch yet.
+      stack-2: No remote branch yet.
+
+  ✓ No merged branches to delete
 ```
 
 Now the `stack-2` is rebased on top of the new commit 1c.

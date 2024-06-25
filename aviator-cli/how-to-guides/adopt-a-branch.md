@@ -32,7 +32,6 @@ As we can see, the newly created branch `mytopic` is not tracked in `av stack tr
 
 ```
 $ av stack tree
-master
 $ git branch -vv
   master  7fd1a60 [origin/master] Merge pull request #6 from Spaceghost/patch-1
 * mytopic d384683 New commit
@@ -40,17 +39,13 @@ $ git branch -vv
 
 ## Adopting a branch with av stack sync
 
-By running `av stack sync` specifying the parent branch (in this case `master`) adds metadata for the current branch `mytopic`. Now, if you run `av stack tree`, you can see that `mytopic` is correctly recognized as a child of `master`.
+By running `av stack adopt` specifying the parent branch (in this case `master`) adds metadata for the current branch `mytopic`. Now, if you run `av stack tree`, you can see that `mytopic` is correctly recognized as a child of `master`.
 
 ```
-$ av stack sync --parent master
-  - Adopting a branch mytopic to Av
-  - Re-parenting branch mytopic onto master
-Synchronizing branch mytopic...
-  - fetching latest pull request information for mytopic
-      - this branch does not have an open pull request (create one with av pr create or av stack submit)
-  - branch is a stack root, nothing to do (run av stack sync --trunk to sync against the latest commit in master)
-$ av stack tree
-master
-    * mytopic (not pushed)
+$ av stack adopt
+Choose which branches to adopt (Use space to select / deselect).
+  * mytopic (HEAD, chosen for adoption)
+  │   New commit
+  │
+  * master
 ```

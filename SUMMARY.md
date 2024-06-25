@@ -100,7 +100,7 @@
     * [Rename a Branch](aviator-cli/how-to-guides/rename-a-branch.md)
     * [Adopt a Branch](aviator-cli/how-to-guides/adopt-a-branch.md)
     * [Git Subcommand Aliasing](aviator-cli/how-to-guides/git-subcommand-aliasing.md)
-    * [Create a User Access Token](aviator-cli/how-to-guides/create-a-user-access-token.md)
+    * [Create an Access Token](aviator-cli/how-to-guides/create-a-user-access-token.md)
     * [Setup Auto Completion](aviator-cli/how-to-guides/setup-auto-completion.md)
     * [Use Editor Plugins](aviator-cli/how-to-guides/use-editor-plugins.md)
   * [Concepts](aviator-cli/concepts.md)

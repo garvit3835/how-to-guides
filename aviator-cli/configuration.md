@@ -42,13 +42,30 @@ pullRequest:
     # If true, open a web browser to the pull request page whenever a pull
     # request is created for the first time.
     openBrowser: true
+    
+    # By default, when the pull request title contains "WIP", it automatically sets
+    # the PR as a draft PR. Setting this to true suppresses this behavior.
+    noWipDetection: false
+    
+    # Branch prefix to use for creating new branches.
+    branchNamePrefix: "alice/"
+    
+    # If true, the CLI will automatically add/update a comment to all PRs linking
+    # other PRs in teh stack. False by default.
+    writeStack: false
+
+aviator:
+    # The base URL for the Aviator API to use. The default is https://api.aviator.co.
+    # This can be changed if you use on-prem installation.
+    apiHost: "https://api.aviator.co"
+    # API token to use for authenticating to the Aviator API.
+    apiToken: "..."
+
+# Additional trunk branch names. By default, av CLI uses the branch pointed by HEAD.
+additionalTrunkBranches:
+    - dev
+
+# The remote name. By default av CLI uses "origin".
+remote: "origin"
 ```
 {% endcode %}
-
-### GitHub Personal Access Token
-
-The `av` tool uses a personal access token (PAT) to authenticate with GitHub on your behalf. This is required to create and inspect PRs (e.g., when using the `av pr create` command).
-
-The generated token should have the `repo` scope (all other scopes can be left un-checked).
-
-![Required permissions for the GitHub personal access token that you will use with av](<../../.gitbook/assets/Screen Shot 2022-05-26 at 11.20.35 AM.png>)

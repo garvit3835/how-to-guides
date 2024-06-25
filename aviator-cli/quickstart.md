@@ -68,9 +68,13 @@ You can see the stack with `av stack tree`.
 
 ```
 $ av stack tree
-main
-    mytopic https://github.com/yourname/yourrepo/pull/16 
-        * another_topic (not pushed)
+  * another_topic (HEAD, need sync)
+  │ No pull request
+  │
+  * mytopic
+  │ https://github.com/yourname/yourrepo/pull/16
+  │
+  * main
 ```
 
 Add more changes to the branch.
@@ -111,9 +115,13 @@ You can see the pull-request URLs with `av stack tree`.
 
 ```
 $ av stack tree
-main
-    mytopic https://github.com/yourname/yourrepo/pull/16 
-        * another_topic https://github.com/yourname/yourrepo/pull/17 
+  * another_topic (HEAD)
+  │ https://github.com/yourname/yourrepo/pull/17
+  │
+  * mytopic
+  │ https://github.com/yourname/yourrepo/pull/16
+  │
+  * main
 ```
 
 The first pull-request is targeting the `main` branch. And the second pull-request is targeting the first pull-request branch.
@@ -138,57 +146,90 @@ gitGraph
     merge mytopic
 ```
 
-After this, we want to make the second one to be rebased on top of the newly updated `main` branch. To do this, we run `av stack sync --trunk`.
+After this, we want to make the second one to be rebased on top of the newly updated `main` branch. To do this, we run `av stack sync`.
 
 ```
-$ av stack sync --trunk
-Synchronizing branch mytopic...
-  - fetching latest pull request information for mytopic
-  - skipping sync for merged branch (merged in commit e216f2a)
+$ av stack sync
 
+  ✓ GitHub fetch is done
+  ✓ Restack is done
 
-Synchronizing branch another_topic...
-  - fetching latest pull request information for another_topic
-  - fetching latest commit from origin/main
-  - rebased without conflicts
-  - this branch is now a stack root based on trunk branch main
-  - pushing another_topic... okay
+    * ✓ another_topic e808923
+    │
+    │ * mytopic (merged) 6d19ed1
+    ├─┘
+    * main ba8eefe
+
+  Confirming the push to GitHub
+
+    Following branches do not need a push.
+
+      mytopic: PR is already merged.
+
+    Following branches need to be pushed.
+
+      another_topic
+        Remote: cb51296 Add another file 2024-06-25 13:01:45 -0700 -0700 (1 minute ago)
+        Local:  e808923 Add another file 2024-06-25 13:03:07 -0700 -0700 (10 seconds ago)
+        PR:     https://github.com/yourname/yourrepo/pull/17
+
+  Are you OK with pushing these branches to remote?
+    ▸ Yes. Push the branches to GitHub.
+      No. Do not push the branches to GitHub.
+  ↑/k move up • ↓/j move down • space/enter select • ctrl+c cancel
 
 ```
 
-With `--trunk` option, it fetches the latest `main` from the remote, rebase the second branch on top of it. If you run `av stack tree`, you can see that the second branch now has `main` as the parent.
+It fetches the latest `main` from the remote, rebase the second branch on top of it. Choose to push to the remote.
+
+```
+$ av stack sync
+
+  ✓ GitHub fetch is done
+  ✓ Restack is done
+
+    * ✓ another_topic e808923
+    │
+    │ * mytopic (merged) 6d19ed1
+    ├─┘
+    * main ba8eefe
+
+  ✓ Pushed to GitHub
+
+    Following branches do not need a push.
+
+      mytopic: PR is already merged.
+
+    Following branches are pushed.
+
+      another_topic
+        Remote: cb51296 Add another file 2024-06-25 13:01:45 -0700 -0700 (2 minutes ago)
+        Local:  e808923 Add another file 2024-06-25 13:03:07 -0700 -0700 (1 minute ago)
+        PR:     https://github.com/yourname/yourrepo/pull/17
+
+  Confirming the deletion of merged branches
+
+    Following merged branches can be deleted.
+
+      mytopic: 6d19ed1f0019d0f59b65177ef7a4f358c278baec
+
+  Are you OK with deleting these merged branches?
+    ▸ Yes. Delete these merged branches.
+      No. Do not delete the merged branches.
+  ↑/k move up • ↓/j move down • space/enter select • ctrl+c cancel
+
+```
+
+Since the first branch is already merged, it asks you if you want to delete the local branch. Choose yes to delete the merged branch.
+
+&#x20;If you run `av stack tree`, you can see that the second branch now has `main` as the parent.
 
 ```
 $ av stack tree
-main
-    * another_topic https://github.com/yourname/yourrepo/pull/17 
-    mytopic https://github.com/yourname/yourrepo/pull/16
-```
-
-```mermaid
-gitGraph
-    commit id: "1"
-    commit id: "2"
-    branch mytopic
-    checkout mytopic
-    commit id: "b420345"
-    checkout main
-    merge mytopic
-    branch another_branch
-    checkout another_branch
-    commit id: "..."
-```
-
-We can remove the local branch `mytopic` and remove the metadata from `av`.
-
-```
-$ git branch --delete mytopic
-Deleted branch mytopic (was b420345).
-$ av stack tidy
-Tidied 1 branch.
-$ av stack tree
-main
-    * another_topic https://github.com/yourname/yourrepo/pull/17
+  * another_topic
+  │ https://github.com/yourname/yourrepo/pull/17
+  │
+  * main (HEAD)
 ```
 
 ## What's next

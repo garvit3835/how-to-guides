@@ -12,7 +12,9 @@ to print out a visualization of the current PR stack.
 
 ### Navigating a stack
 
-Since a stack is (conceptually) a sequence of commits, navigating between different parts of the stack is as simple as running `git checkout <branch name>`.
+Since a stack is (conceptually) a sequence of commits, navigating between different parts of the stack is as simple as running `git switch <branch name>`.
+
+You can also use `av stack switch` to interactively switch the branches.
 
 ### Adding a commit to a branch within a stack
 
