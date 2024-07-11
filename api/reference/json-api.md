@@ -2,29 +2,27 @@
 
 ## Repository
 
-{% swagger method="post" path="/repo" baseUrl="https://api.aviator.co/api/v1" summary="Pause / unpause the merging of PRs on a repository." %}
-{% swagger-description %}
+## Pause / unpause the merging of PRs on a repository.
+
+<mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/repo`
+
 Example:
 
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `-d '{"org": "org_name", "name": "repo_name", "paused": true }'`\
 `https://api.aviator.co/api/v1/repo/`
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="org" type="String" required="true" %}
-Name of the GitHub organization.
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="name" type="String" required="true" %}
-Name of the repository in the GitHub organization.
-{% endswagger-parameter %}
+| Name                                     | Type    | Description                                        |
+| ---------------------------------------- | ------- | -------------------------------------------------- |
+| org<mark style="color:red;">\*</mark>    | String  | Name of the GitHub organization.                   |
+| name<mark style="color:red;">\*</mark>   | String  | Name of the repository in the GitHub organization. |
+| paused<mark style="color:red;">\*</mark> | Boolean | Whether to pause or unpause the queue              |
 
-{% swagger-parameter in="body" name="paused" type="Boolean" required="true" %}
-Whether to pause or unpause the queue
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```javascript
 {
   "org": "ankitjaindce",
@@ -32,21 +30,25 @@ Whether to pause or unpause the queue
   "paused": false
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-##
 
-{% swagger method="get" path="/repo" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the list of repositories along with their pause and active status." %}
-{% swagger-description %}
+
+## Fetch the list of repositories along with their pause and active status.
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/repo`
+
 The results are paginated with maximum 10 results in every request.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="page" type="Integer" %}
-page number. Defaults to 1.
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-response status="200: OK" description="" %}
+| Name | Type    | Description                 |
+| ---- | ------- | --------------------------- |
+| page | Integer | page number. Defaults to 1. |
+
+{% tabs %}
+{% tab title="200: OK " %}
 ```
 [
     {
@@ -64,13 +66,15 @@ page number. Defaults to 1.
 ]
 
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Branches
 
-{% swagger method="post" path="/branches" baseUrl="https://api.aviator.co/api/v1" summary="Pause / unpause the merging of PRs for specific base branches." %}
-{% swagger-description %}
+## Pause / unpause the merging of PRs for specific base branches.
+
+<mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/branches`
+
 You can specify a glob pattern of base branches to pause or activate the Aviator queue. This ensures that you can continue merging branches to other base branches. You can override to pause / unpause all branches by using the Repository endpoint described above.
 
 Example:
@@ -79,33 +83,20 @@ Example:
 `-H "Content-Type: application/json"`\
 `-d '{ "pattern": "release-*", "repository": {"org": "aviator", "name": "`av-demo-release`"}, "paused": true, "paused_message": "This release branch has been paused."}'`\
 `https://api.aviator.co/api/v1/branches`
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="repository" type="Object" required="true" %}
-Repository object associated with the branch
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="> org" type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
+| Name                                         | Type    | Description                                                             |
+| -------------------------------------------- | ------- | ----------------------------------------------------------------------- |
+| repository<mark style="color:red;">\*</mark> | Object  | Repository object associated with the branch                            |
+| > org<mark style="color:red;">\*</mark>      | String  | Organization associated with the repository                             |
+| > name<mark style="color:red;">\*</mark>     | String  | Name of the repository                                                  |
+| pattern<mark style="color:red;">\*</mark>    | String  | Glob pattern representing the base branch. E.g. `master` or `release-*` |
+| paused<mark style="color:red;">\*</mark>     | Boolean | Whether to pause or unpause the queue                                   |
+| paused\_message                              | String  | A customized message to post on the top PR when this branch is paused.  |
 
-{% swagger-parameter in="body" name="> name" type="String" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="pattern" type="String" required="true" %}
-Glob pattern representing the base branch. E.g. `master` or `release-*`
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="paused" type="Boolean" required="true" %}
-Whether to pause or unpause the queue
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="paused_message" type="String" required="false" %}
-A customized message to post on the top PR when this branch is paused.
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```json
 {
     "pattern": "release-*",
@@ -116,11 +107,13 @@ A customized message to post on the top PR when this branch is paused.
     "paused": true
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/branches" baseUrl="https://api.aviator.co/api/v1" summary="Get base branches and their statuses (paused / unpaused)" %}
-{% swagger-description %}
+## Get base branches and their statuses (paused / unpaused)
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/branches`
+
 You can specify a glob pattern of base branches to fetch the status of. If not provided, it will fetch the status of all base branches for a specific repository.\
 \
 Example:
@@ -129,25 +122,18 @@ Example:
 `-H "Content-Type: application/json"`\
 `-d '{ "repository": {"org": "aviator", "name": "`av-demo-release`"}, "pattern": "release-*"}'`\
 `https://api.aviator.co/api/v1/branches`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="repository" type="Object" required="true" %}
-Repository object associated with the branch
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="> org " type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
+| Name                                         | Type   | Description                                                             |
+| -------------------------------------------- | ------ | ----------------------------------------------------------------------- |
+| repository<mark style="color:red;">\*</mark> | Object | Repository object associated with the branch                            |
+| > org <mark style="color:red;">\*</mark>     | String | Organization associated with the repository                             |
+| > name<mark style="color:red;">\*</mark>     | String | Name of the repository                                                  |
+| pattern                                      | String | Glob pattern representing the base branch. E.g. `master` or `release-*` |
 
-{% swagger-parameter in="query" name="> name" type="String" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="pattern" type="String" required="false" %}
-Glob pattern representing the base branch. E.g. `master` or `release-*`
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```json
 {
     "branches": [
@@ -163,64 +149,38 @@ Glob pattern representing the base branch. E.g. `master` or `release-*`
     }
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## PullRequest
 
-{% swagger method="post" path="/pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Queue or Dequeue a Pull Request" %}
-{% swagger-description %}
+## Queue or Dequeue a Pull Request
+
+<mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/pull_request`
+
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `-d '{"action": "queue", "pull_request": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}, "head_commit_sha":" "`69f4404fda48aa2932abfbcb6956a9ccd473b17d`", "affected_targets": ["targetA", "targetB"], "merge_commit_message": {"title": "This is where title goes", "body": "This is where body goes"}}}'`\
 `https://api.aviator.co/api/v1/pull_request/`
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="action" required="true" %}
-Action taken. Valid options: `update`, `queue` or `dequeue`
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="pull_request" type="Object" required="true" %}
-PullRequest object representing the PR that is queued.
-{% endswagger-parameter %}
+| Name                                            | Type          | Description                                                                                                                                         |
+| ----------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| action<mark style="color:red;">\*</mark>        | String        | Action taken. Valid options: `update`, `queue` or `dequeue`                                                                                         |
+| pull\_request<mark style="color:red;">\*</mark> | Object        | PullRequest object representing the PR that is queued.                                                                                              |
+| > number<mark style="color:red;">\*</mark>      | String        |                                                                                                                                                     |
+| > repository<mark style="color:red;">\*</mark>  | Object        | Repository object associated with the PR                                                                                                            |
+| > > name<mark style="color:red;">\*</mark>      | String        | Name of the repository                                                                                                                              |
+| > > org<mark style="color:red;">\*</mark>       | String        | Organization associated with the repository                                                                                                         |
+| > head\_commit\_sha                             | String        | Representing the commit SHA of the head of the PR.                                                                                                  |
+| > affected\_targets                             | List\[String] | Affected targets for the PR. Please see [<mark style="color:blue;">Affected Targets</mark>](mergequeue/affected-targets/) section for more details. |
+| > merge\_commit\_message                        | Object        | CommitMessage object                                                                                                                                |
+| > > title                                       | String        | Title of merge commit message                                                                                                                       |
+| > > body                                        | String        | Body of merge commit message                                                                                                                        |
 
-{% swagger-parameter in="body" name="> number" required="true" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> repository" type="Object" required="true" %}
-Repository object associated with the PR
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> > name" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> > org" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> head_commit_sha" required="false" %}
-Representing the commit SHA of the head of the PR.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> affected_targets" type="List[String]" required="false" %}
-Affected targets for the PR. Please see [<mark style="color:blue;">Affected Targets</mark>](mergequeue/affected-targets/) section for more details.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> merge_commit_message" type="Object" required="false" %}
-CommitMessage object
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> > title" required="false" %}
-Title of merge commit message
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> > body" required="false" %}
-Body of merge commit message
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```javascript
 {
   "pull_request": {
@@ -238,44 +198,33 @@ Body of merge commit message
   }
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="post" path="/pull_request/backport" baseUrl="https://api.aviator.co/api/v1" summary="Request to backport a PR on the specified target branch." %}
-{% swagger-description %}
+## Request to backport a PR on the specified target branch.
+
+<mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/pull_request/backport`
+
 Example:
 
 `curl -X POST -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `-d '{"target_branch": "release-v1", "`source\_pull`": {"number": 1234, "repository": {"name": "repo_name", "org": "org_name"}}}'`\
 `https://api.aviator.co/api/v1/pull_request/backport`
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="target_branch" type="String" required="true" %}
-Name of the base branch to backport this PR to
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="source_pull" type="Object" required="true" %}
-PullRequest object for the current branch
-{% endswagger-parameter %}
+| Name                                             | Type    | Description                                       |
+| ------------------------------------------------ | ------- | ------------------------------------------------- |
+| target\_branch<mark style="color:red;">\*</mark> | String  | Name of the base branch to backport this PR to    |
+| source\_pull<mark style="color:red;">\*</mark>   | Object  | PullRequest object for the current branch         |
+| > number<mark style="color:red;">\*</mark>       | Integer | PullRequest number                                |
+| > repository<mark style="color:red;">\*</mark>   | Object  | GitHub repository associated with the PullRequest |
+| > > org<mark style="color:red;">\*</mark>        | String  | Organization associated with the repository       |
+| > > name                                         | String  | Name of the repository                            |
 
-{% swagger-parameter in="body" name="> number" type="Integer" required="true" %}
-PullRequest number
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> repository" type="Object" required="true" %}
-GitHub repository associated with the PullRequest
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> > org" type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="> > name" type="String" required="false" %}
-Name of the repository
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```json
 {
     "source_pull": {
@@ -289,35 +238,30 @@ Name of the repository
     "message": "Backporting initiated for 1234 to release-v1. Check comments in the PR #1234 for the status"
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="/pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Fetch information of a PR based on the branch name or number" %}
-{% swagger-description %}
+## Fetch information of a PR based on the branch name or number
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/pull_request`
+
 Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `https://api.aviator.co/api/v1/pull_request?org=orgname&repo=reponame&branch=branchname`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" type="String" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
+| Name                                     | Type    | Description                                                                     |
+| ---------------------------------------- | ------- | ------------------------------------------------------------------------------- |
+| org<mark style="color:red;">\*</mark>    | String  | Organization associated with the repository                                     |
+| repo<mark style="color:red;">\*</mark>   | String  | Name of the repository                                                          |
+| branch<mark style="color:red;">\*</mark> | String  | Feature branch associated with PR. One of `branch` or `number` must be present. |
+| number<mark style="color:red;">\*</mark> | Integer | PR number to fetch. One of `branch` or `number` must be present.                |
 
-{% swagger-parameter in="query" name="branch" type="String" required="true" %}
-Feature branch associated with PR. One of `branch` or `number` must be present.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="number" type="Integer" required="true" %}
-PR number to fetch. One of `branch` or `number` must be present.
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```javascript
 {
     "author": "author-name",
@@ -335,31 +279,29 @@ PR number to fetch. One of `branch` or `number` must be present.
     "title": "mq-qa-8440-1"
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="get" path="pull_request/queued" baseUrl="https://api.aviator.co/api/v1/" summary="Fetch information of PRs that are in the queued state" %}
-{% swagger-description %}
+## Fetch information of PRs that are in the queued state
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/pull_request/queued`
+
 Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `https://api.aviator.co/api/v1/pull_request/queued?org=orgname&repo=reponame&base_branch=master`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" type="String" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                                 |
+| -------------------------------------- | ------ | ------------------------------------------- |
+| org<mark style="color:red;">\*</mark>  | String | Organization associated with the repository |
+| repo<mark style="color:red;">\*</mark> | String | Name of the repository                      |
+| base\_branch                           | String | Target branch to fetch queued PRs for       |
 
-{% swagger-parameter in="query" name="base_branch" type="String" required="false" %}
-Target branch to fetch queued PRs for
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```javascript
 {
     "pull_requests": [
@@ -411,13 +353,15 @@ Target branch to fetch queued PRs for
     ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## BotPullRequest
 
-{% swagger method="get" path="/bot_pull_request" baseUrl="https://api.aviator.co/api/v1" summary="Fetch information of PRs associated with a provided Bot PullRequest" %}
-{% swagger-description %}
+## Fetch information of PRs associated with a provided Bot PullRequest
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/bot_pull_request`
+
 A Bot PR is a draft PR created during parallel mode to validate the CI.
 
 Example:
@@ -425,21 +369,17 @@ Example:
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `https://api.aviator.co/api/v1/bot_pull_request?org=orgname&repo=reponame&number=1234`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" type="String" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
+| Name                                     | Type    | Description                                 |
+| ---------------------------------------- | ------- | ------------------------------------------- |
+| org<mark style="color:red;">\*</mark>    | String  | Organization associated with the repository |
+| repo<mark style="color:red;">\*</mark>   | String  | Name of the repository                      |
+| number<mark style="color:red;">\*</mark> | Integer | PR number associated with the Bot PR        |
 
-{% swagger-parameter in="query" name="number" type="Integer" required="true" %}
-PR number associated with the Bot PR
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```
 {
   "head_commit_sha": "acffa575c02f2cf000aabe69f44e8905bc04c25d",
@@ -462,29 +402,30 @@ PR number associated with the Bot PR
   ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Config
 
-{% swagger method="get" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the current YAML config associated with the given GitHub repository." %}
-{% swagger-description %}
+## Fetch the current YAML config associated with the given GitHub repository.
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/config`
+
 Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `https://api.aviator.co/api/v1/config?org=orgname&repo=reponame`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" required="true" %}
-Organization associated with the GitHub repository.
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" required="true" %}
-Name of the GitHub repository.
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                                         |
+| -------------------------------------- | ------ | --------------------------------------------------- |
+| org<mark style="color:red;">\*</mark>  | String | Organization associated with the GitHub repository. |
+| repo<mark style="color:red;">\*</mark> | String | Name of the GitHub repository.                      |
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```
 merge_rules:
    labels:
@@ -497,11 +438,13 @@ merge_rules:
         - build_and_test
         - 'ci/circleci: build'
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="post" path="/config" baseUrl="https://api.aviator.co/api/v1" summary="Change the YAML config associated with the given GitHub repository." %}
-{% swagger-description %}
+## Change the YAML config associated with the given GitHub repository.
+
+<mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/config`
+
 The request accepts the payload as the raw string YAML format, and returns back response in a JSON format.
 
 
@@ -509,25 +452,24 @@ The request accepts the payload as the raw string YAML format, and returns back 
 Example:
 
 `curl -X POST --data-raw "$(cat /Users/aviator-demo/config.text)" -H "Authorization: Bearer <API_TOKEN>" "https://api.aviator.co/api/v1/config?repo=repo_name&org=org_name"`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" required="true" %}
-Organization associated with a GitHub repository
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" required="true" %}
-Name of the GitHub repository.
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                                      |
+| -------------------------------------- | ------ | ------------------------------------------------ |
+| org<mark style="color:red;">\*</mark>  | String | Organization associated with a GitHub repository |
+| repo<mark style="color:red;">\*</mark> | String | Name of the GitHub repository.                   |
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 ```
 {
   "success": true
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="400: Bad Request " %}
 ```
 {
     "errors": [
@@ -537,13 +479,15 @@ Name of the GitHub repository.
     "success": false
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Config Change
 
-{% swagger method="get" path="/config/history" baseUrl="https://api.aviator.co/api/v1" summary="Fetch the history of config changes associated with a given repository." %}
-{% swagger-description %}
+## Fetch the history of config changes associated with a given repository.
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/config/history`
+
 Returns a list of config history events as diffs of changes. `repo` and `org` must be provided.
 
 Example:
@@ -551,29 +495,19 @@ Example:
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `https://api.aviator.co/api/v1/config/history?org=orgname&repo=reponame`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" type="String" required="true" %}
-Organization associated with the repository
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" type="String" required="true" %}
-Name of the repository
-{% endswagger-parameter %}
+| Name                                   | Type    | Description                                                |
+| -------------------------------------- | ------- | ---------------------------------------------------------- |
+| org<mark style="color:red;">\*</mark>  | String  | Organization associated with the repository                |
+| repo<mark style="color:red;">\*</mark> | String  | Name of the repository                                     |
+| start                                  | String  | UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21 |
+| end                                    | String  | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21   |
+| page                                   | Integer | Page number. Defaults to 1.                                |
 
-{% swagger-parameter in="query" name="start" type="String" required="false" %}
-UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="end" type="String" required="false" %}
-UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="page" type="Integer" %}
-Page number. Defaults to 1.
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```
 {
   "repository": {
@@ -595,39 +529,34 @@ Page number. Defaults to 1.
   ]
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 The `modified_by` property contains email and gh\_username. If the config was modified from the Dashboard, `email` of the user would be present, and if the config was modified from the GitHub repo change, a `gh_username` would be present. `commit_sha` property may also be only present if the change was made from the GitHub repository.
 
 ## Analytics
 
-{% swagger method="get" path="/v1/analytics" baseUrl="https://api.aviator.co/api" summary="Get list of analytics objects representing statistics on a daily basis." %}
-{% swagger-description %}
+## Get list of analytics objects representing statistics on a daily basis.
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/analytics`
+
 Example:
 
 `curl -H "Authorization: Bearer <aviator_token>"`\
 `-H "Content-Type: application/json"`\
 `https://api.aviator.co/api/v1/analytics/?start=2021-07-14&end=2021-07-21&timezone=America/Los_Angeles&repo=orgname/reponame`
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="start" required="false" type="String" %}
-UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="end" required="false" type="String" %}
-UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                                                                            |
+| -------------------------------------- | ------ | -------------------------------------------------------------------------------------- |
+| start                                  | String | UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21                             |
+| end                                    | String | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21                               |
+| repo<mark style="color:red;">\*</mark> | String | Name of the GitHub repo, in the format: _orgname/reponame_                             |
+| timezone                               | String | Standard tz format string. Defaults to account timezone. Example: America/Los\_Angeles |
 
-{% swagger-parameter in="query" name="repo" required="true" type="String" %}
-Name of the GitHub repo, in the format: _orgname/reponame_
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="timezone" type="String" required="false" %}
-Standard tz format string. Defaults to account timezone. Example: America/Los\_Angeles
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 {% tabs %}
 {% tab title="Parameters" %}
 <table><thead><tr><th width="201.5919403422235">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><strong>time_in_queue</strong></td><td>List of objects representing time spent by PRs in queue</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>min</strong></td><td>Minimum time in seconds</td></tr><tr><td><strong>>avg</strong></td><td>Average time in seconds</td></tr><tr><td><strong>>p50</strong></td><td>50th percentile in seconds</td></tr><tr><td><strong>>p75</strong></td><td>75th percentile in seconds</td></tr><tr><td><strong>>p90</strong></td><td>90th percentile in seconds</td></tr><tr><td><strong>>p100</strong></td><td>100th percentile in seconds</td></tr><tr><td><strong>mergequeue_usage</strong></td><td>List of objects representing the Aviator bot usage compared to total PRs merged.</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>total</strong></td><td>Total number of PRs merged</td></tr><tr><td><strong>>merged_by_bot</strong></td><td>Total number of PRs merged by Aviator bot</td></tr><tr><td><strong>blocked_reason</strong></td><td>List of objects representing the blocked reasons identified by the Aviator bot while processing queued PRs.</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>merge_conflict</strong></td><td>Failed due to merge conflict</td></tr><tr><td><strong>>ci_failure</strong></td><td>Failed due to CI status check failure. This only accounts for required check failures.</td></tr><tr><td><strong>>manual_dequeue</strong></td><td>A PR was manually removed from the queue</td></tr><tr><td><strong>>ci_timeout</strong></td><td>CI timed out based on the configuration in MergeQueue rules</td></tr><tr><td><strong>>other</strong></td><td>Failed due to any other reason</td></tr><tr><td><strong>sync_frequency</strong></td><td>List of objects representing how many times a PR fetched a base branch on an aggregate basis.</td></tr><tr><td><strong>>date</strong></td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-14</td></tr><tr><td><strong>>min</strong></td><td>Minimum sync times</td></tr><tr><td><strong>>avg</strong></td><td>Average sync times</td></tr><tr><td><strong>>p50</strong></td><td>50th percentile of number of sync times</td></tr><tr><td><strong>>p75</strong></td><td>75th percentile of number of sync times</td></tr><tr><td><strong>>p90</strong></td><td>90th percentile of number of sync times</td></tr><tr><td><strong>>p100</strong></td><td>100th percentile of number of sync times</td></tr></tbody></table>
@@ -718,25 +647,26 @@ Standard tz format string. Defaults to account timezone. Example: America/Los\_A
 ```
 {% endtab %}
 {% endtabs %}
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Queue
 
-{% swagger method="get" path="/v1/queue/stats" baseUrl="https://api.aviator.co/api" summary="Get live statistics about the state of the merge queue" %}
-{% swagger-description %}
+## Get live statistics about the state of the merge queue
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/queue/stats`
+
 Currently this endpoint only reports statistics about the depth of the queue.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="org" type="String" required="true" %}
-The GitHub organization that the repo belongs to.
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="repo" type="String" required="true" %}
-The name of the GitHub repo.
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                                       |
+| -------------------------------------- | ------ | ------------------------------------------------- |
+| org<mark style="color:red;">\*</mark>  | String | The GitHub organization that the repo belongs to. |
+| repo<mark style="color:red;">\*</mark> | String | The name of the GitHub repo.                      |
 
-{% swagger-response status="200: OK" description="Success" %}
+{% tabs %}
+{% tab title="200: OK Success" %}
 ```javascript
 {
   // Stats about the current depth of the queue.
@@ -757,5 +687,5 @@ The name of the GitHub repo.
   }
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}

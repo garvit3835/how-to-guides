@@ -4,7 +4,7 @@ This document guides you to the set up for setting up [<mark style="color:blue;"
 
 ## Prerequisite
 
-* This guide requires using GitHub Action for your build and deploy workflows. [<mark style="color:blue;">Look up your CI / CD guide</mark>](how-to-guides/working-with-your-ci-cd/) If you using other tool.
+* This guide requires using GitHub Action for your build and deploy workflows. [<mark style="color:blue;">Look up your CI / CD guide</mark>](how-to-guides/working-with-your-ci-cd/) If you are using other tool.
 * <mark style="background-color:yellow;">\[For existing MergeQueue users only]</mark> If you have set up Aviator for MergeQueue before, make sure you have approved the new permission request for `Actions`, so that Aviator is able to fetch and trigger the GitHub actions for you.
 
 ### Separate Build and Deploy Steps

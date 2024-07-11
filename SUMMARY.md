@@ -22,6 +22,7 @@
     * [Working with your CI / CD](releases-beta/how-to-guides/working-with-your-ci-cd/README.md)
       * [GitHub Actions workflow](releases-beta/how-to-guides/working-with-your-ci-cd/github-actions-workflow.md)
       * [Buildkite workflow](releases-beta/how-to-guides/working-with-your-ci-cd/buildkite-workflow.md)
+  * [API Reference](releases-beta/api-reference.md)
 * [FlexReview (Beta)](flexreview/README.md)
   * [Getting started](flexreview/getting-started.md)
   * [Onboarding a large org](flexreview/onboarding-a-large-org.md)
