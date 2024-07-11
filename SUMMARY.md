@@ -19,6 +19,7 @@
   * [How-to guides](releases-beta/how-to-guides/README.md)
     * [Creating a Release Project](releases-beta/how-to-guides/creating-a-release-project.md)
     * [Configuring Environments](releases-beta/how-to-guides/configuring-environments.md)
+    * [Create a scheduled release](releases-beta/how-to-guides/create-a-scheduled-release.md)
     * [Working with your CI / CD](releases-beta/how-to-guides/working-with-your-ci-cd/README.md)
       * [GitHub Actions workflow](releases-beta/how-to-guides/working-with-your-ci-cd/github-actions-workflow.md)
       * [Buildkite workflow](releases-beta/how-to-guides/working-with-your-ci-cd/buildkite-workflow.md)
