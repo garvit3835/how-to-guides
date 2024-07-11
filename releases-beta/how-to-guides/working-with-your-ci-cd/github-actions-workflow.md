@@ -1,6 +1,6 @@
 # GitHub Actions workflow
 
-Use this guide to configure GitHub actions build and deploy steps to manage releases in Aviator. To use Aviator Releases, we recommend have separate steps for the build and deploy workflows. You may still use it as a single step, in which case the creation of Release (the build part) will be a no-op.
+Use this guide to configure GitHub actions build and deploy steps to manage releases in Aviator. To use Aviator Releases, we recommend have separate steps for the [<mark style="color:blue;">build and deploy workflows</mark>](../../concepts/two-step-delivery.md). You may still use it as a single step, in which case the creation of Release (the build part) will be a no-op.
 
 ## Authentication
 

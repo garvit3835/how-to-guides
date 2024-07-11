@@ -1,6 +1,6 @@
 # Buildkite workflow
 
-Use this guide to configure Buildkite build and deploy steps to manage releases in Aviator. To use Aviator Releases, we recommend having separate steps for the build and deploy workflows. You may still use it as a single step, in which case the creation of Release (the build part) will be a no-op.
+Use this guide to configure Buildkite build and deploy steps to manage releases in Aviator. To use Aviator Releases, we recommend having [<mark style="color:blue;">separate steps</mark>](../../concepts/two-step-delivery.md) for the build and deploy workflows. You may still use it as a single step, in which case the creation of Release (the build part) will be a no-op.
 
 ## Authentication
 
@@ -102,9 +102,9 @@ Similar to the Build step, copy the Organization Slug and Pipeline slug in the D
 
 Aviator sends the following parameters to Buildkite as environment variables when triggering the workflow:
 
-`AVIATOR_DEPLOYMENT_ID` - Aviator’s internal database ID associated with the Deployment.
+`AVIATOR_DEPLOYMENT_ID` - Aviator’s internal database ID associated with the [<mark style="color:blue;">Deployment</mark>](../../concepts/terminology.md#deployment).
 
-`AVIATOR_RELEASE_CANDIDATE_VERSION` - A unique version string tied to the Release Candidate. This can be used to tag the built artifacts.
+`AVIATOR_RELEASE_CANDIDATE_VERSION` - A unique version string tied to the [<mark style="color:blue;">Release Candidate</mark>](../../concepts/terminology.md#release-candidate). This can be used to tag the built artifacts.
 
 `AVIATOR_RELEASE_CUT_COMMIT_HASH` - commit SHA associated with the release candidate version. You should checkout this commit SHA in the build pipeline to trigger the workflow.
 

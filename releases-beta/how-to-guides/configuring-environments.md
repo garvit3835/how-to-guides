@@ -1,6 +1,6 @@
 # Configuring Environments
 
-[<mark style="color:blue;">Environments</mark>](../concepts/terminology.md#environment) in Aviator Releases is tied to a Release Project, and there is no correlation of same Environments across different release projects. Set up a separate environment for anything that can be uniquely deployed. Common examples of envinroments are `production`, `staging`, or `development` but it can vary depending on how you manage your environments. For instance, even dogfood, canary or rollouts should be configured separately.
+[<mark style="color:blue;">Environments</mark>](../concepts/terminology.md#environment) in Aviator Releases is tied to a Release Project, and there is no correlation of same Environments across different release projects. Set up a separate environment for anything that can be uniquely deployed. Common examples of envinroments are `production`, `staging`, or `development` but it can vary depending on how you manage your environments. For instance, even [<mark style="color:blue;">dogfood, canary or rollouts</mark>](../concepts/dogfood-canary-and-rollout.md) should be configured separately.
 
 To create an environment, go to the configuration page for the Release Project, and click on “Add Environment” button at the bottom right of the page.
 
@@ -26,7 +26,7 @@ If enabled, the authors of the PRs whose changes are in the current release will
 
 ## Deployment configuration
 
-The deployment configuration is similar to the build configuration in the Release Project.
+The deployment configuration is similar to the [<mark style="color:blue;">build configuration</mark>](creating-a-release-project.md#build-configuration) in the Release Project.
 
 ### Not configured
 
@@ -40,12 +40,14 @@ Since GitHub authorization already provides Aviator access to the GitHub workflo
 
 If you do not see your workflow in the dropdown, click on “Fetch workflows” to async fetch the workflow names. Additional workflow parameters can be provided as key-value pairs. These parameters are then passed as is to the GitHub workflow.
 
-Note: Please read the full GitHub Actions guide to configure the GitHub workflow parameters and callbacks to ensure your build and deploy workflows can be tracked in Aviator.
+{% hint style="info" %}
+Note: Please read the full [<mark style="color:blue;">GitHub Actions guide</mark>](working-with-your-ci-cd/github-actions-workflow.md) to configure the GitHub workflow parameters and callbacks to ensure your build and deploy workflows can be tracked in Aviator.
+{% endhint %}
 
 ### Buildkite
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-07-07 at 10.40.25 AM.png" alt=""><figcaption><p>Deployment with Buildkite</p></figcaption></figure>
 
-Aviator uses Buildkite [<mark style="color:blue;">API access tokens</mark>](https://buildkite.com/docs/apis/managing-api-tokens) to trigger the Buildkite workflows. Please read the Buildkite setup guide to understand how to configure the access tokens with the right permissions.
+Aviator uses Buildkite [<mark style="color:blue;">API access tokens</mark>](https://buildkite.com/docs/apis/managing-api-tokens) to trigger the Buildkite workflows. Please read the [<mark style="color:blue;">Buildkite setup guide</mark>](working-with-your-ci-cd/buildkite-workflow.md) to understand how to configure the access tokens with the right permissions.
 
 On the Deployment configuration, set the Organization slug and Pipeline slug that will be used to trigger and track the Buildkite pipelines. Please note that these slugs are case sensitive. No callbacks are necessary to track the workflows in Aviator with Buildkite.

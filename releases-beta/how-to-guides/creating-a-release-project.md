@@ -1,6 +1,6 @@
 # Creating a Release Project
 
-A Release Project is a top-level entity that needs to be built an deployed simultaneously.
+A [<mark style="color:blue;">Release Project</mark>](../concepts/terminology.md#release-project) is a top-level entity that needs to be built an deployed simultaneously.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-07-07 at 7.56.08 AM.png" alt=""><figcaption></figcaption></figure>
 
@@ -40,7 +40,7 @@ This is an optional field, can be left blank. When left blank, all code changes 
 
 ## Build Configuration
 
-If you are using a two-step delivery workflow, the build step should be configured here. A more detailed explanation of each supported CI is explained in the CI specific pages.
+If you are using a [<mark style="color:blue;">two-step delivery</mark>](../concepts/two-step-delivery.md) workflow, the build step should be configured here. A more detailed explanation of each supported CI is explained in the [<mark style="color:blue;">CI specific pages</mark>](working-with-your-ci-cd/).
 
 ### Not configured
 
@@ -54,13 +54,13 @@ Since GitHub authorization already provides Aviator access to the GitHub workflo
 
 If you do not see your workflow in the dropdown, click on “Fetch workflows” to async fetch the workflow names.
 
-Note: Please read the full GitHub Actions guide to configure the GitHub workflow parameters and callbacks to ensure your build and deploy workflows can be tracked in Aviator.
+Note: Please read the full [<mark style="color:blue;">GitHub Actions guide</mark>](working-with-your-ci-cd/github-actions-workflow.md) to configure the GitHub workflow parameters and callbacks to ensure your build and deploy workflows can be tracked in Aviator.
 
 ### Buildkite
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-07-07 at 9.16.53 AM.png" alt=""><figcaption><p>Build step with Buildkite</p></figcaption></figure>
 
-Aviator uses Buildkite [API access tokens](https://buildkite.com/docs/apis/managing-api-tokens) to trigger the Buildkite workflows. Please read the Buildkite setup guide to understand how to configure the access tokens with the right permissions.
+Aviator uses Buildkite [API access tokens](https://buildkite.com/docs/apis/managing-api-tokens) to trigger the Buildkite workflows. Please read the [<mark style="color:blue;">Buildkite setup guide</mark>](working-with-your-ci-cd/buildkite-workflow.md) to understand how to configure the access tokens with the right permissions.
 
 On the Release Project page, configure the Organization slug and Pipeline slug to be able to trigger and track the Buildkite pipelines. Please note that these slugs are case sensitive. No callbacks are necessary to track the workflows in Aviator with Buildkite.
 
@@ -70,4 +70,4 @@ Once a Release Project is created, you can edit all the project configuration ot
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-07-07 at 9.21.49 AM.png" alt=""><figcaption></figcaption></figure>
 
-Once the Release Project is created, next step is to set up the environments.
+Once the Release Project is created, next step is to [<mark style="color:blue;">set up the environments</mark>](configuring-environments.md).
