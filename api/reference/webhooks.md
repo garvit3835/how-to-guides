@@ -28,22 +28,24 @@ Each PullRequest webhook event payload contains the following properties.
 | **pr\_reset\_count**       | _Optional. Integer_. Number of PRs that were reset due to a reset. This property only exists in a `reset` action.                                                                                       |
 | **closed\_bot\_pr\_count** | _Optional. Integer._ Number of Bot PRs that were closed due to a reset. This property only exists in a `reset` action.                                                                                  |
 | **bot\_pull\_request**     | _Optional. BotPR._ This property only exists in a `reset` action that is caused by a test failure of a Bot PR.                                                                                          |
+| **blocking\_pr\_numbers**  | Optional. List of PR numbers that are blocking the current PR. Only available in `added_to_batch` event.                                                                                                |
 
 ### Actions
 
 Below is the list of actions that can be configured in the MQ UI to receive webhook events.
 
-| Name               | When it is triggered                                                                                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **opened**         | When the PR is opened.                                                                                                                                  |
-| **labeled**        | When the Aviator trigger label was added to a PR.                                                                                                       |
-| **queued**         | When the PR is queued. This typically happens when the PR is in an approved state and the Aviator trigger label is associated with the PR.              |
-| **dequeued**       | When the Aviator label is manually removed from the PR. It is not reported in case of PR failing to merge.                                              |
-| **top\_of\_queue** | When the PR reaches the top of the queue for processing.                                                                                                |
-| **merged**         | When the PR is successfully merged.                                                                                                                     |
-| **blocked**        | When the PR fails to merge and is blocked. The typical reason for failures can be retrieved from `status_code`, including CI failure or merge conflict. |
-| **stuck**          | _(Parallel mode only)_ When a PR is stuck if the original PR is still running the checks after the specified timeout.                                   |
-| **reset**          | _(Parallel mode only)_ When a parallel PR queue is reset.                                                                                               |
+| Name                 | When it is triggered                                                                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **opened**           | When the PR is opened.                                                                                                                                  |
+| **labeled**          | When the Aviator trigger label was added to a PR.                                                                                                       |
+| **queued**           | When the PR is queued. This typically happens when the PR is in an approved state and the Aviator trigger label is associated with the PR.              |
+| **dequeued**         | When the Aviator label is manually removed from the PR. It is not reported in case of PR failing to merge.                                              |
+| **added\_to\_batch** | (Parallel mode only) A PR is added to a batch for validation.                                                                                           |
+| **top\_of\_queue**   | When the PR reaches the top of the queue for processing.                                                                                                |
+| **merged**           | When the PR is successfully merged.                                                                                                                     |
+| **blocked**          | When the PR fails to merge and is blocked. The typical reason for failures can be retrieved from `status_code`, including CI failure or merge conflict. |
+| **stuck**            | _(Parallel mode only)_ When a PR is stuck if the original PR is still running the checks after the specified timeout.                                   |
+| **reset**            | _(Parallel mode only)_ When a parallel PR queue is reset.                                                                                               |
 
 ### BotPR
 
