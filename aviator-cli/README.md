@@ -1,10 +1,14 @@
 # Stacked PRs CLI
 
+Aviator is a suite of productivity tools purpose-built to reduce friction in development workflows. `av` is an [<mark style="color:blue;">open-source CLI</mark>](https://github.com/aviator-co/av) built and managed by Aviator to interact with GitHub and Aviator service. The primary use case is creating and managing Stacked PRs.
+
 {% embed url="https://youtu.be/TWwnekxFehA" %}
 Managing stacked PRs using Aviator CLI
 {% endembed %}
 
-Aviator is a suite of productivity tools purpose-built to reduce friction in development workflows. `av` is an [<mark style="color:blue;">open-source CLI</mark>](https://github.com/aviator-co/av) built and managed by Aviator to interact with GitHub and Aviator service. The primary use case is creating and managing Stacked PRs.
+{% hint style="info" %}
+The Stacked PRs CLI does not require creating an Aviator account and can be [<mark style="color:blue;">installed directly</mark>](installation.md).
+{% endhint %}
 
 ## Why stacked PRs
 

@@ -48,7 +48,10 @@ Download the latest `av` executable from the [<mark style="color:blue;">GitHub r
 
 ### 2. Connect av to GitHub
 
-av CLI interacts with GitHub to create and update PRs. To authenticate with GitHub, it can automatically use [GitHub CLI credential](https://cli.github.com/) if it's available. Alternatively, you can create a Personal Access Token to authenticate with it. See [create-a-user-access-token.md](how-to-guides/create-a-user-access-token.md "mention").
+av CLI interacts with GitHub to fetch and push branches as well as create PRs. There are two ways to to authenticate with GitHub:
+
+* **GitHub CLI** - The av CLI can automatically use [GitHub CLI credential](https://cli.github.com/) if it's available. Simply install the GitHub CLI and run [`gh auth login`](https://cli.github.com/manual/gh\_auth\_login)
+* **Personal access token** - Alternatively create a Personal Access Token to authenticate with the CLI. See [create-a-user-access-token.md](how-to-guides/create-a-user-access-token.md "mention").
 
 ### 3. Initialize your repository
 
@@ -70,4 +73,4 @@ brew upgrade av
 
 #### Download executable
 
-Follow the [<mark style="color:blue;">installation instructions above</mark>](installation.md#download-executable-advanced-all-operating-systems) and overwrite the previous `av` binary with the newly downloaded binary.
+For other platforms, follow the [<mark style="color:blue;">installation instructions above</mark>](installation.md#download-executable-advanced-all-operating-systems) and overwrite the previous `av` binary with the newly downloaded binary.

@@ -5,7 +5,7 @@ This page explains how to use Aviator CLI to drive day-to-day development.
 ## Before you begin
 
 1. [<mark style="color:blue;">Install Aviator CLI</mark>](installation.md)
-2. [<mark style="color:blue;">Set up GitHub Personal Access Token</mark>](configuration.md#github-personal-access-token)
+2. [<mark style="color:blue;">Set up GitHub Personal Access Token</mark>](how-to-guides/create-a-user-access-token.md#github-personal-access-token)
 3. Clone your repository locally
 
 ## Initialize your repository with Aviator CLI
@@ -234,5 +234,6 @@ $ av stack tree
 
 ## What's next
 
+* [Review the How-to guides for common CLI commands](how-to-guides/).
 * [<mark style="color:blue;">Learn how to add Aviator CLI commands as a Git subcommand</mark>](how-to-guides/git-subcommand-aliasing.md)
 * [<mark style="color:blue;">Learn how to adopt a branch created from Git command</mark>](how-to-guides/adopt-a-branch.md)
