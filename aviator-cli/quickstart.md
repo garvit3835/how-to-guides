@@ -234,6 +234,6 @@ $ av stack tree
 
 ## What's next
 
-* [Review the How-to guides for common CLI commands](how-to-guides/).
+* [<mark style="color:blue;">Review the How-to guides for common CLI commands</mark>](how-to-guides/).
 * [<mark style="color:blue;">Learn how to add Aviator CLI commands as a Git subcommand</mark>](how-to-guides/git-subcommand-aliasing.md)
 * [<mark style="color:blue;">Learn how to adopt a branch created from Git command</mark>](how-to-guides/adopt-a-branch.md)
