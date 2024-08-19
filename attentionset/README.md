@@ -1,5 +1,6 @@
 ---
 description: A dashboard to track GitHub pull requests that need your attention.
+icon: bell
 ---
 
 # AttentionSet

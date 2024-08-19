@@ -1,4 +1,8 @@
-# TestDeck (Beta)
+---
+icon: vial
+---
+
+# TestDeck
 
 ## Overview
 

@@ -1,4 +1,8 @@
-# FlexReview
+---
+icon: code-merge
+---
+
+# FlexReview (Beta)
 
 {% hint style="success" %}
 Read our launch post about why we built FlexReview: [https://www.aviator.co/blog/flexreview-a-flexible-code-review-framework/](https://www.aviator.co/blog/flexreview-a-flexible-code-review-framework/)

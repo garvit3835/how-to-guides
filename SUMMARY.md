@@ -98,7 +98,7 @@
     * [Configuration Reference](mergequeue/reference/complete-reference-guide.md)
     * [GitHub Slash Commands](mergequeue/reference/slash-commands.md)
     * [Status Codes](mergequeue/reference/status-codes.md)
-* [TestDeck (Beta)](testdeck-beta/README.md)
+* [TestDeck](testdeck-beta/README.md)
   * [Getting started](testdeck-beta/getting-started.md)
   * [TestDeck Dashboard](testdeck-beta/testdeck-dashboard.md)
   * [API and Webhooks](testdeck-beta/api-and-webhooks.md)

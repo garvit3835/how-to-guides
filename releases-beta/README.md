@@ -1,3 +1,7 @@
+---
+icon: rocket-launch
+---
+
 # Releases (Beta)
 
 ## Introduction

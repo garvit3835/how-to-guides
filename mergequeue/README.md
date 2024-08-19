@@ -1,5 +1,6 @@
 ---
 description: Automated merge workflows for GitHub repositories.
+icon: list-radio
 ---
 
 # MergeQueue
