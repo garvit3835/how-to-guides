@@ -1,3 +1,7 @@
+---
+icon: robot
+---
+
 # Pilot Automated Actions
 
 Aviator offers automated actions that can be configured via the configuration file to perform specific actions depending on a particular event or scenario. You can write your own custom scenarios and corresponding actions in the configuration file.

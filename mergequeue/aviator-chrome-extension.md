@@ -1,3 +1,7 @@
+---
+icon: puzzle-piece
+---
+
 # Chrome Extension
 
 You can use [<mark style="color:blue;">Aviator's Chrome Extension</mark>](https://chrome.google.com/webstore/detail/aviator-chrome-extension/inoabloekooadaolcncfmpgafkgbgnif) to enqueue your pull-request from GitHub.

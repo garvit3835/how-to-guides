@@ -1,3 +1,7 @@
+---
+icon: square-terminal
+---
+
 # Stacked PRs CLI
 
 Aviator is a suite of productivity tools purpose-built to reduce friction in development workflows. `av` is an [<mark style="color:blue;">open-source CLI</mark>](https://github.com/aviator-co/av) built and managed by Aviator to interact with GitHub and Aviator service. The primary use case is creating and managing Stacked PRs.

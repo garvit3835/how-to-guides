@@ -1,3 +1,7 @@
+---
+icon: webhook
+---
+
 # API and Webhooks
 
 Aviator supports two callable APIs to query and mutate the state of resources within Aviator:
