@@ -121,6 +121,7 @@
     * [Setup Auto Completion](aviator-cli/how-to-guides/setup-auto-completion.md)
     * [Use Editor Plugins](aviator-cli/how-to-guides/use-editor-plugins.md)
   * [Concepts](aviator-cli/concepts.md)
+  * [Rebasing and Syncing with GitHub](aviator-cli/rebasing-and-syncing-with-github.md)
   * [Configuration](aviator-cli/configuration.md)
   * [FAQs and Troubleshooting](aviator-cli/faqs-and-troubleshooting.md)
   * [Manpages](aviator-cli/manpages/README.md)
