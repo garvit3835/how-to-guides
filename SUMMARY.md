@@ -124,6 +124,7 @@
   * [Rebasing and Syncing with GitHub](aviator-cli/rebasing-and-syncing-with-github.md)
   * [Configuration](aviator-cli/configuration.md)
   * [FAQs and Troubleshooting](aviator-cli/faqs-and-troubleshooting/README.md)
+    * [Working with Aviator](aviator-cli/faqs-and-troubleshooting/working-with-aviator.md)
     * [Updating default branch from master to main](aviator-cli/faqs-and-troubleshooting/updating-default-branch-from-master-to-main.md)
   * [Manpages](aviator-cli/manpages/README.md)
     * [av(1)](aviator-cli/manpages/av.1.md)

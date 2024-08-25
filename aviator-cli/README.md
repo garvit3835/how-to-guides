@@ -13,7 +13,7 @@ Managing stacked PRs using Aviator CLI
 {% endembed %}
 
 {% hint style="info" %}
-The Stacked PRs CLI does not require creating an Aviator account and can be [<mark style="color:blue;">installed directly</mark>](installation.md).
+The Stacked PRs CLI [<mark style="color:blue;">does not require creating an Aviator account</mark>](faqs-and-troubleshooting/working-with-aviator.md) and can be [<mark style="color:blue;">installed directly</mark>](installation.md).
 {% endhint %}
 
 ## Why stacked PRs
