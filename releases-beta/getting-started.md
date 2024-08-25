@@ -13,8 +13,12 @@ To use Aviator Releases, we recommend [<mark style="color:blue;">separating out 
 
 ## Set up instructions
 
-1. Set up an Aviator account, and walk through the initial onboarding to connect your GitHub repository. Select any of FlexReview or MergeQueue as the capability.
-   1. For now, you will have to also enable FlexReview, as this enables fetching all the PRs history for building the Changelog. To do so, at the end of the onboarding, go to [<mark style="color:blue;">FlexReview page</mark>](https://app.aviator.co/flexreview) and enable the repository that would be used for Releases.
+1. Set up an Aviator account, and walk through the initial onboarding to connect your GitHub repository. Select Releases as the capability.
+
+{% hint style="info" %}
+If you have trouble connecting the GitHub app, please read the [<mark style="color:blue;">troubleshooting doc</mark>](../manage/faqs/troubleshooting-github-app-connection.md).&#x20;
+{% endhint %}
+
 2. Now, click on [<mark style="color:blue;">Releases</mark>](https://app.aviator.co/releases) tab in the menu and navigate to creating your first project.
 3. In this release project, create new deploy environments and specify the workflows to be triggered
    1. The dropdown for workflows should auto-populate with your GitHub actions workflows.
