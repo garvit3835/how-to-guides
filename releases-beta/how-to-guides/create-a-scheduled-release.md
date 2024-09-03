@@ -1,34 +1,31 @@
-# Create a scheduled release
+# Create a Scheduled Release
 
-Aviator Releases currently works with GitHub Actions and Buildkite and the build and deploy workflows are triggered manually. In order to support scheduled releases to specific environments, the following APIs can be used.
+Scheduling a release means setting up an automated process that triggers the creation of a new version of your software at specific times or intervals. Instead of manually deciding when to create a new version (release), you just define a cron expression of the schedule, and Aviator handles it automatically.
 
-The expectation is that you can run a scheduled job that calls [<mark style="color:blue;">Release APIs</mark>](../api-reference.md) to create releases and run the deploy workflows.
+## Enable Scheduled Release Cut and Define the Schedule
 
-## APIs for Release Pipeline
+1. Go to the **Project Config** to enable scheduling for the release project.
 
-A software release process would look like this:
+![](../../.gitbook/assets/project-config.png)
 
-1. A cron job is managed by the user, this job is triggered on a period cadence.
-2. This cron job generates a new release candidate version name (e.g. `v2024.05.07-rc1`), and calls the API to create a new release candidate.
-3. Aviator will verify the parameters and generate a new release object.
-4. Once the release object is generated, a second API can create a deployment using this release version and the provided environment.
+2. Scroll down to find the **Enable scheduled release cut** option.
+3. Toggle the button to enable scheduling if it’s not already enabled.
+4. Add a cron expression to specify when the release cuts should occur.  
+**Note:** This is a standard Unix cron expression that operates in the UTC timezone. You can refer to the cron expression format [here](https://crontab.guru/).
+5. Save the configuration after adding the cron expression.
 
-In the real world, you may add more steps in the pipeline, but they will have something similar to above steps in it.
+![](../../.gitbook/assets/enable-scheduling.png)
 
-***
+## Verify the Release Cut
 
-To adopt Aviator Release, we need your pipeline to call our API twice.
+1. Ensure that the release cut occurs successfully at the scheduled time.
+2. Check the release details to confirm that the release was created as expected.
+3. If configured, an automated deployment of an environment will also be triggered after the successful build.
 
-1. To create a Release Candidate.
-2. To start a Deployment.
+![](../../.gitbook/assets/release-cut-verify.png)
 
-To support this we provide the following two API endpoints:
+## FAQ
 
-* `POST /api/releases/$name/releases/$version`
-  * POST body: `{ repo: "mycompany/myrepo", commit: "1a2b3c..." }`
-  * This creates a new release with the specified version name. Note that the version name is the release candidate version and should end with `-rcX` where `X` is a number.
-* `POST /api/releases/$name/environments/$envname/deployments`
-  * POST body: `{ release_candidate_version: "v2024.05.07-rc1" }`
-  * This triggers a new deploy workflow for the provided environment.
+### What happens if there are no new commits since the last release cut version?
 
-Read the [<mark style="color:blue;">full API reference guide</mark>](../api-reference.md) to learn more about these APIs.
+If there are no new commits since the last release cut version, the release cut will be skipped. This ensures that only meaningful changes trigger a new release, avoiding unnecessary builds and deployments.
