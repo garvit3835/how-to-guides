@@ -1,7 +1,7 @@
 # Pilot JavaScript Execution Environment
 
 Aviator has support for executing custom JavaScript code using
-[Pilot automated actions](/pilot-automated-actions) or the
+[Pilot automated actions](/pilot-automated-actions.md) or the
 [MergeQueue ready hook](/mergequeue/concepts/ready-hook.md).
 
 For security and sandboxing purposes, The Pilot JavaScript execution does not
