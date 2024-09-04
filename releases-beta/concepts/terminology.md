@@ -24,7 +24,7 @@ There is no limit to the number of Environments for a Release Project. Each Rele
 
 Changelog is one of the core utilities of Aviator Releases. The Release dashboard records of all the changes as pull requests in a linear history. This way it’s easy to understand which code changes (PRs) are deployed with which [<mark style="color:blue;">Release</mark>](terminology.md#release) and on which [<mark style="color:blue;">Environments</mark>](terminology.md#environment). Each Release project has a it’s own
 
-Changelog makes it easier for any engineer to track and understand when their changes were deployed. The Changelog also represents the [<mark style="color:blue;">Cherry-picks</mark>](terminology.md#cherry-pick), and tie them to the corresponding Release and [Deployments](https://www.notion.so/Terminology-7ab412602121458cbeb8eeb2f0db7afa?pvs=21).
+Changelog makes it easier for any engineer to track and understand when their changes were deployed. The Changelog also represents the [<mark style="color:blue;">Cherry-picks</mark>](terminology.md#cherry-pick), and tie them to the corresponding Release and [Deployments](terminology.md#deployment).
 
 Changelogs help users and developers track the progression of the software, understand what has changed from one version to another, and ensure compatibility with other systems or components.
 
