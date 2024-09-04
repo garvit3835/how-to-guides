@@ -6,7 +6,7 @@ When you work on a stack of branches, the state of the stack can be out of sync 
 
 ## Normal Sync
 
-Running `av stack sync` without any option does the followings:
+Running `av stack sync` without any option does the following:
 
 * Handle the merged branches
   * If a branch is merged, its children branches are reparented to the trunk branch.
