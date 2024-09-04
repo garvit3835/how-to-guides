@@ -75,7 +75,7 @@ Organization permissions
 
 **Subscribe to events**:
 
-Check the followings
+Check the following
 
 * Branch Protection rules
 * Check Run

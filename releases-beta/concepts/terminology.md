@@ -48,7 +48,7 @@ Release Candidate version is a full string that uniquely identifies both a Relea
 
 ## Build
 
-To effectively use Aviator Releases we recommend [<mark style="color:blue;">separating out the build and deployment process</mark>](two-step-delivery.md). A build process is where the artifacts are built. A common example of this would be building one or more docker images. To manage the Build process via Aviator Releases, you will have to confiugre Aviator to trigger your build CI workflow. When triggering this pipeline, Aviator passes the [<mark style="color:blue;">Release Candidate version</mark>](terminology.md#release-candidate-version) as a parameter along with the git commit SHA to your build CI workflow. This helps uniquely tie the build to a given Release Candidate to generate the artifacts.
+To effectively use Aviator Releases we recommend [<mark style="color:blue;">separating out the build and deployment process</mark>](two-step-delivery.md). A build process is where the artifacts are built. A common example of this would be building one or more docker images. To manage the Build process via Aviator Releases, you will have to configure Aviator to trigger your build CI workflow. When triggering this pipeline, Aviator passes the [<mark style="color:blue;">Release Candidate version</mark>](terminology.md#release-candidate-version) as a parameter along with the git commit SHA to your build CI workflow. This helps uniquely tie the build to a given Release Candidate to generate the artifacts.
 
 ## Deployment
 
