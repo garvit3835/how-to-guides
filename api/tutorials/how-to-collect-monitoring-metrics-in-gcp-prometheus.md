@@ -16,7 +16,7 @@ On the service account permission, give Kubernetes Service Account to use that G
 
 ## Step 2: Create a Kubernetes secret for otel-collector
 
-Open Telemetry collector requires a config where to scrape the metics and where to send the metrics. Create the following Kubernetes Secret for the configuration.
+Open Telemetry collector requires a config where to scrape the metrics and where to send the metrics. Create the following Kubernetes Secret for the configuration.
 
 ```yaml
 apiVersion: v1

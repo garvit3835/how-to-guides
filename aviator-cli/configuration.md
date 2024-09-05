@@ -51,7 +51,7 @@ pullRequest:
     branchNamePrefix: "alice/"
     
     # If true, the CLI will automatically add/update a comment to all PRs linking
-    # other PRs in teh stack. False by default.
+    # other PRs in the stack. False by default.
     writeStack: false
 
 aviator:

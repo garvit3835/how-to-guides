@@ -28,7 +28,7 @@ Usually this is only necessary if GitHub fails to deliver an event to MergeQueue
 
 ## Backport
 
-The `/aviator backport` command can be used to backport a given PR to the specified target branch. This opens a new PR that has the cherry-picked changes from the current PR but targetting the specified base branch.
+The `/aviator backport` command can be used to backport a given PR to the specified target branch. This opens a new PR that has the cherry-picked changes from the current PR but targeting the specified base branch.
 
 ```
 /aviator backport <target_branch>

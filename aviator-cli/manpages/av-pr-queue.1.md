@@ -2,7 +2,7 @@
 
 ## NAME
 
-av-pr-queue - Queue an existng pull request for the current branch
+av-pr-queue - Queue an existing pull request for the current branch
 
 ## DESCRIPTION
 

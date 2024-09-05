@@ -45,7 +45,7 @@ scenarios:
 
 If you only need instant merge to merge PRs while bypassing creating a draft PR in parallel mode, you do not need to provide any elevated permissions.
 
-GitHub does not allow thirdparty bots to bypass branch protection when using the classic branch protection rules.
+GitHub does not allow third-party bots to bypass branch protection when using the classic branch protection rules.
 
 #### Using Rulesets (recommended)
 
