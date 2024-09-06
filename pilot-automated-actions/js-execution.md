@@ -73,7 +73,7 @@ Associated with a `pull_request_review` trigger. It has the following properties
 * `event.action` - string representing the action on the pull request.
 * `event.sender` - a `GitHubUser` object representing the user who took the action on the pull request
 * `event.repository` - a `GitHubRepository` object
-* [`event.review`](http://event.review) - a `Review` object
+* `event.review` - a `Review` object
 
 ### `MergeQueueEvent`
 
@@ -94,6 +94,12 @@ Associated with a `merge_queue` trigger. It has the following properties:
 * `skipLine` - boolean. True when the PR is a skip-line label (associated with MergeQueue)
 * `skipLineReason` - string (optional). If skip line reason was provided
 * `id` - representing a unique identifier for a pull request. e.g. `aviator-co/mergeit#6301`
+* `base` - a `PullRequestRef` object representing the base branch of this PR.
+* `head` - a `PullRequestRef` object representing the head branch of this PR.
+
+#### PullRequestRef
+
+* `ref` - string representing a branch, e.g. `master`
 
 #### GitHubUser
 
