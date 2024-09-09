@@ -45,7 +45,7 @@ Select the following:
 
 #### Redirect URL
 
-Set up a redirect URL: `https://<your_domain>/api/slack/oauth/finish`
+Set up a redirect URL: `https://<your_domain>/internal/api/slack/oauth/finish`
 
 #### Scopes
 
