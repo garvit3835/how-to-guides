@@ -14,9 +14,12 @@ scrape_configs:
     metrics_path: "/api/metrics"
     scheme: "https"
     params:
+      # REQUIRED: repository names to expose
       repos:
         - "octocat/Hello-World"
         - "octocat/Spoon-Knife"
+      # OPTIONAL: target branch names of the PRs (the merge destination).
+      # If it's not specified, grab all PRs.
       branches:
         - "main"
     authorization:
