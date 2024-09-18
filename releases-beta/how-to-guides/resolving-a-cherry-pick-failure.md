@@ -35,7 +35,7 @@ You will see a red tag attached to the release "Failed to cherry-pick" because o
 ![](../../.gitbook/assets/release-conflict-action.png)
 2. follow the steps provided by Aviator-app bot to resolve the conflict, ensure you pick modify2 as the final result.
 ![](../../.gitbook/assets/release-conflict-resolve.png)
-3. After pushing the changes, you should be able to merge it successfully after reviewing the PR again.
+3. After pushing the changes to this branch, you should be able to merge the PR successfully. You may optionally also get this reviewed by a coworker for correctness.
 ![](../../.gitbook/assets/release-conflict-resolve-merge.png)
 4. Once you've resolved the conflict and merged the PR, the Release Candidate (RC) should show the correct version of the file with modify2. The release should be created successfully, reflecting the conflict resolution.
 ![](../../.gitbook/assets/release-conflict-resolve-ui.png)
