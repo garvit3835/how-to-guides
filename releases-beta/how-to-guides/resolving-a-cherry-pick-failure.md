@@ -31,7 +31,7 @@ You will see a red tag attached to the release "Failed to cherry-pick" because o
 
 
 ## Resolve Merge Conflicts
-1. After cherry-picking, you should see the conflict resolution PR link. Open the link and follow the instructions to resolve the conflict.
+1. On this failed cherry-pick commit, you should see the conflict resolution PR link. Open the link and follow the instructions to resolve the conflict.
 ![](../../.gitbook/assets/release-conflict-action.png)
 2. follow the steps provided by Aviator-app bot to resolve the conflict, ensure you pick modify2 as the final result.
 ![](../../.gitbook/assets/release-conflict-resolve.png)
