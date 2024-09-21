@@ -42,7 +42,7 @@ on:
         name: Sync workflow run ID via Aviator API
         uses: fjogeleit/http-request-action@v1
         with:
-          url: '<https://api.aviator.co/api/v1/sync-build-github-action>'
+          url: 'https://api.aviator.co/api/v1/sync-build-github-action'
           method: 'POST'
           bearerToken: ${{ secrets.AVIATOR_API_TOKEN }}
           data: '{"release_cut_id": "${{ inputs.aviator_release_cut_id }}", "workflow_run_id": "${{ github.run_id }}"}'
@@ -95,7 +95,7 @@ on:
         name: Sync workflow run ID via Aviator API
         uses: fjogeleit/http-request-action@v1
         with:
-          url: '<https://api.aviator.co/api/v1/sync-deploy-github-action>'
+          url: 'https://api.aviator.co/api/v1/sync-deploy-github-action'
           method: 'POST'
           bearerToken: ${{ secrets.AVIATOR_API_TOKEN }}
           data: '{"deployment_id": "${{ inputs.aviator_deployment_id }}", "workflow_run_id": "${{ github.run_id }}"}'
