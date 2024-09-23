@@ -26,7 +26,7 @@ Setup a repository, connect it to Aviator and [create a release project](./creat
 ### Merge Conflict
 To create a merge conflict for this tutorial, go to the Aviator Release Dashboard, select the last PR (the one with modify2), and follow these steps:
 
-1. Select the PR: Click on the PR you want to cherry-pick.
+1. Select the PR: Click on the PR you want to cherry-pick(last PR in this case).
 2. Cherry-Pick: Click the "Cherry-Pick" button to integrate the changes into the base release.
 ![](../../.gitbook/assets/release-conflict-cherry-pick.png)
 
