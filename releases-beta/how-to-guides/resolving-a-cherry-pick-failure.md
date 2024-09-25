@@ -60,7 +60,7 @@ You will see a red tag indicating "Failed to cherry-pick" due to a merge conflic
 
 ![](../../.gitbook/assets/release-conflict-action.png)
 
-2. Follow the steps provided by the Aviator-app bot to fetch the code in your dev environment and resolve the conflict. Alternatively, you can use GitHub UI to resolve the conflicts. the conflicting files will be flagged with diffs showing the necessary resolutions. You can click on each conflict and choose which changes to keep or edit the file directly in the GitHub UI. Ensure you select the changes from the second PR as the final result.
+2. Follow the steps provided by the Aviator-app bot to fetch the code in your dev environment and resolve the conflict. Alternatively, you can use GitHub UI to resolve the conflicts. The conflicting files will be flagged with diffs showing the necessary resolutions. You can click on each conflict and choose which changes to keep or edit the file directly in the GitHub UI. Ensure you select the changes from the second PR as the final result.
 
 ![](../../.gitbook/assets/release-conflict-resolve.png)
 
