@@ -63,7 +63,7 @@
     * [Configure ChangeSets](mergequeue/how-to-guides/configuring-changesets.md)
     * [Custom Integrations](mergequeue/how-to-guides/custom-integrations/README.md)
       * [GitHub Integration](mergequeue/how-to-guides/custom-integrations/slack-integration.md)
-      * [Slack Integration](mergequeue/how-to-guides/custom-integrations/personal-integrations.md)
+      * [Slack Integration Guide](mergequeue/how-to-guides/custom-integrations/personal-integrations.md)
     * [Create Personal Access Tokens](mergequeue/how-to-guides/personal-access-tokens.md)
     * [Set Up SAML Configuration](mergequeue/how-to-guides/saml-configuration/README.md)
       * [Microsoft Active Directory](mergequeue/how-to-guides/saml-configuration/microsoft-active-directory.md)

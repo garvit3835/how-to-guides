@@ -1,61 +1,79 @@
-# Slack Integration
+# Slack Integration Guide
 
-## Initial Slack Setup
+With the Slack integration, you can receive notifications about various Aviator events directly in Slack. Follow this guide to set up and customize your notifications.'
 
-You can use the Slack app integration to receive notifications about queue events. Currently supported Slack events are queued, merged and failed. Slack notifications can be enabled from the `Webhooks` page.
+## Initial Slack setup
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-09-20 at 3.57.25 PM.png" alt=""><figcaption><p>Connect to Slack.</p></figcaption></figure>
+**Admin privileges required.**
 
-Once the Slack integration is set up, queue events for the account's repositories will be sent to the designated Slack channel.
+To set up the Aviator Slack integration:
 
-## Personal Slack Notifications
+1. Navigate to `Settings > Workspace > Integrations`.
+2. If you haven't connected Slack yet, click "Connect to Slack" and follow the prompts.
+3. Once connected, notifications for Aviator events will start appearing in your selected Slack channel.
 
-### DM Notifications
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.50.06 PM.png" alt="" width="563"><figcaption><p>Initial setup</p></figcaption></figure>
 
-Each individual can link their Slack account to their Aviator account. The Aviator Slack app will send direct messages about your own PR activity. Simply use the slash command `/aviator connect` and login to complete the integration.
+## Customizing the notification channel
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Follow link to connect your Slack account.</p></figcaption></figure>
+**Admin privileges required.**
 
-Once completed, you'll receive DMs about your own PR activity. Notifications about your PR activity will no longer go to the designated team Slack channel.
+To change the channel where notifications appear:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Notifications for your PR activity.</p></figcaption></figure>
+1. Create a new Slack channel or select an existing one in your Slack app.
+2. Open the channel settings by clicking on the channel name in the Slack header or through the top righ menu and click: `Edit settings`.
+3. In the settings, go to `Integrations > Add App`.
 
-### Personalized DMs (Opt-in or Opt-out)
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.58.53 PM (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-With Pilot's Direct Message Action, you can send a DM to a specific user or group based on a trigger. Each user can further customize which DMs to receive based on the Action's labels.
+4. Search for the “Aviator” app and click `Add app` to add it to the selected channel.
+5. Return to `Settings > Workspace > Integrations` in Aviator, copy the Slack channel name (without the `#` symbol), replace the old channel name, and save the changes.
+6. Now you can test the setup by sending a dummy notification.
 
-1. Make sure that you have connected both [<mark style="color:blue;">GitHub</mark>](https://app.aviator.co/integrations/personal) and [<mark style="color:blue;">Slack</mark>](personal-integrations.md#dm-notifications) accounts.
-2. Configure a Pilot scenario that uses the Slack Direct Message action. See below for both opt-out and opt-in examples.
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.53.57 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-```yaml
-scenarios:
-  - name: "Queued PRs (Opt-out example)"
-    trigger: 
-      mergequeue: queued
-    actions:
-      - slack:
-          direct:
-            text: “A new PR has been queued.”
-            github_users:
-              - login: test_user1
-              - login: test_user2
-            labels:
-              - queued-pr
-  - name: "Merged PRs (Opt-in example)"
-    trigger: 
-      mergequeue: merged
-    actions:
-      - slack:
-          direct:
-            text: “A PR has been merged.”
-            github_group: "engineering"
-            labels:
-              - merged-pr
-            opt-in: True
-```
+## Customizing Notifications
 
-3. For the Queued PRs trigger, by default, both `test_user1` and `test_user2` will receive DMs when a PR is queued. In order to opt-out of the DM, you can add the `queued-pr` label to your opt-out list shown below.\
-   \
-   For the Merged PRs trigger, by default, no users will receive DMs since the action requires users to opt-in. Anyone within the `engineering` GitHub group can opt-in by adding the `merged-pr` label to their opt-in list as shown below.
+Aviator supports two types of notifications: **Channel Notifications** and **Personal Notifications (DMs)**.
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-09-01 at 3.52.20 PM.png" alt=""><figcaption><p>Personalize individual DMs with opt-out or opt-in labels.</p></figcaption></figure>
+### Channel Notifications
+
+**Admin privileges required.**
+
+After setting up the Slack integration, you can choose which event notifications you want to receive in your channel. Some default notifications are already enabled.
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.38.51 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+
+You can subscribe to notifications for the following events:
+
+* **`MERGEQUEUE_ACTIVATE_DEACTIVATE`** – Notifications when MergeQueue is activated or deactivated.
+* **`MERGEQUEUE_CONFIG_UPDATE`** – Notifications when MergeQueue configuration is updated.
+* **`MERGEQUEUE_PAUSE_UNPAUSE`** – Notifications when MergeQueue is paused or unpaused.
+* **`PR_MERGED`** – Notifications for PRs merged via Aviator MergeQueue.
+* **`PR_BLOCKED`** – Notifications for PRs marked as blocked by MergeQueue.
+* **`PR_QUEUED`** – Notifications when PRs are queued for merging by Aviator MergeQueue.
+
+### Personal Notifications
+
+In addition to the channel notifications, all Aviator users can set up and customize personal notifications (DMs) in Slack. To do this, follow these steps:
+
+1. Open Slack and type `/aviator connect` in any channel, then follow the instructions to link your Slack account to your Aviator user.
+2. Go to `Settings > Personal > Integrations` in Aviator. If the Slack link is successful, you’ll see your Slack username with options to customize your personal notifications.
+
+{% hint style="info" %}
+You should also associate your GitHub handle with your Aviator user account from the same Integrations page for the Slack notifications to work.
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.39.02 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+
+Similar to channel notifications, you can subscribe to the following personal notification events:
+
+* **`INCOMING_ATTENTION`** – When a PR needs your attention.
+* **`PR_BLOCKED`** – When a PR is marked as blocked by MergeQueue.
+* **`QUEUE_CONDITION_SATISFIED`** – When a PR meets the queuing condition for MergeQueue (e.g., PR is approved and all checks are passing).
+* **`MENTIONED_IN_COMMENT`** – When your GitHub handle is mentioned in a PR comment.
+* **`TEST_FAILURE`** – When one of your PRs fails a required check.
+* **`RELEASE_DEPLOYED`** – When a new release containing your PR is deployed.
+* **`RELEASE_VERIFICATION_REQUIRED`** – When your PR requires verification before deployment.
+* **`FLEXREVIEW_REVIEW_ASSIGNED`** – When you are assigned as a reviewer for a PR.
+* **`FLEXREVIEW_REVIEW_PINGED`** – Reminder for pending PR reviews, based on your team’s reminder configuration.
