@@ -44,4 +44,4 @@ You will likely see metrics with some suffixes like `_total` and `_created`. Thi
 
 ## See Also
 
-* [How to Collect Prometheus Metrics in GCP](../tutorials/how-to-collect-monitoring-metrics-in-gcp-prometheus.md)
+* [How to Collect Prometheus Metrics in GCP](../how-to-collect-monitoring-metrics-in-gcp-prometheus.md)

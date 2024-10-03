@@ -4,7 +4,7 @@ description: Slack Notifications for On-prem Installations
 
 # Slack Integration
 
-There are extra steps for the on-prem installations in order to use [<mark style="color:blue;">Slack Integration</mark>](../../mergequeue/how-to-guides/custom-integrations/personal-integrations.md).
+There are extra steps for the on-prem installations in order to use [<mark style="color:blue;">Slack Integration</mark>](../../api/personal-integrations.md).
 
 ## Create your Slack App
 
