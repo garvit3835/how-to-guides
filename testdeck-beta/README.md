@@ -10,7 +10,7 @@ Aviator's TestDeck helps by identifying flaky tests and taking actions to reduce
 
 A flaky test is a non-deterministic test that passes and fails without any code changes. It causes builds to fail even though the developer hasn’t made any related changes. This requires manual reruns of full CI that result in unnecessary developer overhead and increase in CI compute cost.
 
-{% embed url="https://www.youtube.com/watch?v=p1PRvfMP5b8" %}
+{% embed url="https://www.youtube.com/watch?v=2w5gn6SAWRg" %}
 
 ### Reporting
 
