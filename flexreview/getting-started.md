@@ -31,13 +31,11 @@ Enter the pull request number in the textbox to see the suggestions on this page
 If it takes longer than 60 seconds to index the initial data, please try refreshing the page, or contact us at **howto@aviator.co.**
 {% endhint %}
 
-### Step 4: Configuration
+### Step 4: Picking the Team
 
-FlexReview requires a minimal configuration. Once you have tested Aviator FlexReview manually using Slash commands, you can turn on the auto suggestions and the approval checks on the [<mark style="color:blue;">config page</mark>](https://app.aviator.co/flexreview/config). To activate this for the entire repository, simply add `*` in the Reviewer Suggestion and Approval Check settings. All subsequent pull requests will start seeing the suggested reviewers and GitHub status checks when they are ready for review.
+FlexReview requires a minimal configuration. Once you have tested Aviator FlexReview manually using Slash commands, you can start activating it for specific teams in your organization. Once activated, you can now go to the Team config and set up the reviewer assignment rules and optionally define the SLOs and the automated actions. All subsequent pull requests that modify the code owned by this team will start seeing reviewer suggestion comments and assign reviewers based on the configured policy.
 
 
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-02-09 at 12.32.18 PM.png" alt=""><figcaption></figcaption></figure>
 
 To learn more about how FlexReview works, please read the [Concepts](concepts/) and [How-to-guides](../releases-beta/how-to-guides/) and check out the complete [reference guide](reference/) to understand all the configurations.
 
