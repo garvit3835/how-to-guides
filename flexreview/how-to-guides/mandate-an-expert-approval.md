@@ -1,4 +1,10 @@
-# Mandate an expert approval
+# Mandate an expert approval \[Deprecated]
+
+
+
+{% hint style="info" %}
+The approval requirement section is now deprecated, so the mandatary approvals now follow the same rules as specificied in GitHub Codeowners file.
+{% endhint %}
 
 In order to mandate expert approvals on PRs, you can use FlexReview’s Approval Check along with required status checks.
 

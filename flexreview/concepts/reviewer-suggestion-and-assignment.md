@@ -29,10 +29,10 @@ Based on these heuristics, reviewers are suggested for a pull request.
 
 ## Reviewer Assignment
 
-The reviewer assignment can be manual or automatic. In the case of manual reviewer assignment, a comment is posted with suggested reviewers and a detailed breakdown analysis of the suggestion.
+As part of reviewer assigned using Expert mode, Aviator also posts a comment on the GitHub pull request explaining the breakdown and reasoning for why that particular reviewer was assigned.
 
 <figure><img src="../../.gitbook/assets/flexreview-comment (1).png" alt=""><figcaption></figcaption></figure>
 
-In the case of automatic reviewer assignment, the suggested reviewers are automatically assigned to the PR at the time of suggestion. If GitHub assigns reviewers based on `CODEOWNERS`, FlexReview will replace the assigned reviewers based on the suggested reviewers.
+The suggested reviewers are automatically assigned to the PR at the time of suggestion. If GitHub assigns reviewers based on `CODEOWNERS`, FlexReview will replace the assigned reviewers based on the suggested reviewers.
 
 Note that if you are using the default `CODEOWNERS` file path, then GitHub will automatically assign teams or specific reviewers. In this case, FlexReview can override the add or remove reviewers.

@@ -1,4 +1,10 @@
-# Approval Requirements
+# Approval Requirements \[Deprecated]
+
+
+
+{% hint style="info" %}
+The approval requirement section is now deprecated. Aviator is now fully compatible with Codeowners file, and follows the same approval requirements.
+{% endhint %}
 
 One of the most significant advantages of using FlexReview is the ability to expand the pool of valid code reviewers depending the code complexity. This ensures that more complex PRs are validated by the relevant experts, while the simpler changes can pass through with lighter review requirements. To enforce this custom validation, FlexReview can report a GitHub status check.
 
