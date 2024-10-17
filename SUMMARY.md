@@ -39,7 +39,7 @@
     * [Mandate an expert approval \[Deprecated\]](flexreview/how-to-guides/mandate-an-expert-approval.md)
     * [Enable in a sub-repository](flexreview/how-to-guides/enable-in-a-sub-repository.md)
     * [Excluding reviewers](flexreview/how-to-guides/excluding-reviewers.md)
-    * [Set up alternate CODEOWNERS](flexreview/how-to-guides/set-up-alternate-codeowners.md)
+    * [Set up alternate CODEOWNERS \[Deprecated\]](flexreview/how-to-guides/set-up-alternate-codeowners.md)
     * [Set up team rules](flexreview/how-to-guides/set-up-team-rules.md)
   * [Reference](flexreview/reference/README.md)
     * [Configuration](flexreview/reference/configuration.md)
