@@ -1,6 +1,6 @@
 ---
-description: Automated merge workflows for GitHub repositories.
 icon: list-radio
+description: Automated merge workflows for GitHub repositories.
 ---
 
 # MergeQueue
@@ -9,7 +9,9 @@ icon: list-radio
 
 MergeQueue manages the merge workflow for pull requests in your GitHub repository and keeps your primary branch passing. When a developer marks a pull request as ready-to-merge, MergeQueue tests the pull request against the latest changes in the target branch and merges the pull request only if it passes all the required checks, ensuring no broken code can be merged into your primary branch.
 
-{% embed url="https://www.youtube.com/watch?v=Zt7lcGuaJtw" %}
+{% embed url="https://www.youtube.com/watch?v=JAuMXp2eu9Q" %}
+MergeQueue demo with Parallel mode
+{% endembed %}
 
 ## Why use a merge queue?
 

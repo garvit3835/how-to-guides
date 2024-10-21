@@ -2,7 +2,7 @@
 
 ## Repository
 
-## Pause / unpause the merging of PRs on a repository.
+### Pause / unpause the merging of PRs on a repository.
 
 <mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/repo`
 
@@ -35,7 +35,7 @@ Example:
 
 
 
-## Fetch the list of repositories along with their pause and active status.
+### Fetch the list of repositories along with their pause and active status.
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/repo`
 
@@ -71,7 +71,7 @@ The results are paginated with maximum 10 results in every request.
 
 ## Branches
 
-## Pause / unpause the merging of PRs for specific base branches.
+### Pause / unpause the merging of PRs for specific base branches.
 
 <mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/branches`
 
@@ -110,7 +110,7 @@ Example:
 {% endtab %}
 {% endtabs %}
 
-## Get base branches and their statuses (paused / unpaused)
+### Get base branches and their statuses (paused / unpaused)
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/branches`
 
@@ -154,7 +154,7 @@ Example:
 
 ## PullRequest
 
-## Queue or Dequeue a Pull Request
+### Queue or Dequeue a Pull Request
 
 <mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/pull_request`
 
@@ -201,7 +201,7 @@ Example:
 {% endtab %}
 {% endtabs %}
 
-## Request to backport a PR on the specified target branch.
+### Request to backport a PR on the specified target branch.
 
 <mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/pull_request/backport`
 
@@ -241,7 +241,7 @@ Example:
 {% endtab %}
 {% endtabs %}
 
-## Fetch information of a PR based on the branch name or number
+### Fetch information of a PR based on the branch name or number
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/pull_request`
 
@@ -282,7 +282,7 @@ Example:
 {% endtab %}
 {% endtabs %}
 
-## Fetch information of PRs that are in the queued state
+### Fetch information of PRs that are in the queued state
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/pull_request/queued`
 
@@ -358,7 +358,7 @@ Example:
 
 ## BotPullRequest
 
-## Fetch information of PRs associated with a provided Bot PullRequest
+### Fetch information of PRs associated with a provided Bot PullRequest
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/bot_pull_request`
 
@@ -407,7 +407,7 @@ Example:
 
 ## Config
 
-## Fetch the current YAML config associated with the given GitHub repository.
+### Fetch the current YAML config associated with the given GitHub repository.
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/config`
 
@@ -441,7 +441,7 @@ merge_rules:
 {% endtab %}
 {% endtabs %}
 
-## Change the YAML config associated with the given GitHub repository.
+### Change the YAML config associated with the given GitHub repository.
 
 <mark style="color:green;">`POST`</mark> `https://api.aviator.co/api/v1/config`
 
@@ -484,7 +484,7 @@ Example:
 
 ## Config Change
 
-## Fetch the history of config changes associated with a given repository.
+### Fetch the history of config changes associated with a given repository.
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/config/history`
 
@@ -536,7 +536,7 @@ The `modified_by` property contains email and gh\_username. If the config was mo
 
 ## Analytics
 
-## Get list of analytics objects representing statistics on a daily basis.
+### Get list of analytics objects representing statistics on a daily basis.
 
 <mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/analytics`
 
@@ -548,12 +548,7 @@ Example:
 
 #### Query Parameters
 
-| Name                                   | Type   | Description                                                                            |
-| -------------------------------------- | ------ | -------------------------------------------------------------------------------------- |
-| start                                  | String | UTC Start date in _YYYY-MM-DD_ format. Example: 2021-07-21                             |
-| end                                    | String | UTC End date in _YYYY-MM-DD_ format. Example: 2021-07-21                               |
-| repo<mark style="color:red;">\*</mark> | String | Name of the GitHub repo, in the format: _orgname/reponame_                             |
-| timezone                               | String | Standard tz format string. Defaults to account timezone. Example: America/Los\_Angeles |
+<table><thead><tr><th width="184">Name</th><th width="139">Type</th><th>Description</th></tr></thead><tbody><tr><td>start</td><td>String</td><td>UTC Start date in <em>YYYY-MM-DD</em> format. Example: 2021-07-21</td></tr><tr><td>end</td><td>String</td><td>UTC End date in <em>YYYY-MM-DD</em> format. Example: 2021-07-21</td></tr><tr><td>repo<mark style="color:red;">*</mark></td><td>String</td><td>Name of the GitHub repo, in the format: <em>orgname/reponame</em></td></tr><tr><td>timezone</td><td>String</td><td>Standard tz format string. Defaults to account timezone. Example: America/Los_Angeles</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="200: OK Success" %}
@@ -689,3 +684,53 @@ Currently this endpoint only reports statistics about the depth of the queue.
 ```
 {% endtab %}
 {% endtabs %}
+
+## User actions
+
+{% hint style="info" %}
+This API is only available in Enterprise plan.
+{% endhint %}
+
+Fetch the actions performed by the users on the Aviator web app dashboard (audit logs). The results returned are ordered reverse chronologically.
+
+<mark style="color:blue;">`GET`</mark> `https://api.aviator.co/api/v1/user_actions`
+
+Example:
+
+`curl -H "Authorization: Bearer <aviator_token>"`\
+`-H "Content-Type: application/json"`\
+`https://api.aviator.co/api/v1/user_actions/?page=2&entity=user&action=user_removed`
+
+#### Query parameters
+
+<table><thead><tr><th width="149">Name</th><th width="132">Type</th><th>Description</th></tr></thead><tbody><tr><td>entity</td><td>String</td><td>Represents the entity type that is changed. Currently supported entities are <code>user</code>, <code>merge_queue</code>, <code>repository</code>, <code>account</code>, <code>billing</code>, <code>integrations</code> and <code>flexreview</code></td></tr><tr><td>action</td><td>String</td><td>The type of action performed by the user.</td></tr><tr><td>page</td><td>Number</td><td>Page number</td></tr></tbody></table>
+
+**Response**
+
+The query returns a list of user actions with the following properties.
+
+<table><thead><tr><th width="188">Name</th><th width="132">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>action</code></td><td>String</td><td>The type of action performed by the user</td></tr><tr><td><code>actor</code></td><td>String</td><td>The email address of the user who performed the action</td></tr><tr><td><code>entity</code></td><td>String</td><td>The entity type that has changed.</td></tr><tr><td><code>target</code></td><td>String</td><td><em>Optional</em>. Represents the target entity that has changed. It could be null if not applicable. E.g. it will be null for entity type <code>account</code> or <code>integrations</code></td></tr><tr><td><code>timestamp</code></td><td>String</td><td>ISO timestamp representing the time with timezone</td></tr></tbody></table>
+
+{% tabs %}
+{% tab title="200" %}
+```json
+[
+    {
+        "action": "user_removed",
+        "actor": "ankit@aviator.co",
+        "entity": "user",
+        "target": "heeju@aviator.co",
+        "timestamp": "2024-10-02T00:45:05.881726+00:00"
+    },
+    {
+        "action": "queue_config_changed",
+        "actor": "ankit+masaya-demo@aviator.co",
+        "entity": "merge_queue",
+        "target": "aviator-staging-testing/release-testing",
+        "timestamp": "2024-10-02T00:31:46.471689+00:00"
+    }
+]
+```
+{% endtab %}
+{% endtabs %}
+

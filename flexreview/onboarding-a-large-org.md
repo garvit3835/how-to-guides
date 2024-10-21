@@ -4,16 +4,16 @@ Moving away from the strict Codeowners concept is a big cultural change. This re
 
 ### Why migrate
 
-Migrating away from the strict controls of the Codeowners concept can bring several benefits to your team. By adopting FlexReview, you can automate the assignment of reviewers based on their expertise, rather than solely relying on ownership of code files. That means:
+Migrating away from the strict controls of the Codeowners concept can bring several benefits to your team. By adopting FlexReview, you can automate the assignment of reviewers based on their expertise, rather than defining very fine-grained access control. That means:
 
-* No need to maintain a static file declaring ownership
+* No need to maintain a fine-grained file with hundreds of lines declaring ownership
 * Ensure that the most qualified individuals provide feedback on each pull request
 * Drastically reduce the number of reviewers required per code change
 * Improve code review response times significantly
 
-### Starting with one directory
+### Starting with one team
 
-To ease the transition and familiarize your team with FlexReview, we recommend starting with one specific directory in your repository. By selecting a single directory, you can test and evaluate the functionality of FlexReview in a controlled environment before expanding its usage to other parts of your repository. This approach allows you to gradually adapt to the new review process while minimizing any potential disruptions to your existing workflows.
+To ease the transition and familiarize your team with FlexReview, we recommend starting with one specific team in your engineering org. By selecting a single team, you can test and evaluate the functionality of FlexReview in a controlled environment before expanding its usage to other teams. This approach allows you to gradually adapt to the new review process while minimizing any potential disruptions to your existing workflows.
 
 #### Read-only mode
 
@@ -25,17 +25,15 @@ At this stage, you can use the slash command on any PR to get a suggestion from 
 /aviator flexreview suggest
 ```
 
-This will suggest reviewers and post a message with a list of suggested reviewers. This will display the list of files and corresponding need for experts based along with suggested reviewers. If you already use `CODEOWNERS` file, it will suggest reviewers that also satisfy the Codeowners requirement.
+This will suggest reviewers and post a message with a list of suggested reviewers. This will display the list of files and corresponding need for experts based along with suggested reviewers. It will suggest reviewers that also satisfy the Codeowners requirement.
 
-None of these commands change the PR merging process and no status check is reported.
+#### Choosing the right team
 
-#### Sub-directory mode
+You can specify one or more teams that you would like FlexReview to find reviewers for. You would ideally want to choose a team that gets a lot of review requests from outside of that team. That’s because these might be the reviews that hits the most bottlenecks and would benefit the most.
 
-You can specify one or more code paths that you would like FlexReview to find reviewers for. You would ideally want to choose a team that gets a lot of review requests from outside of that team. That’s because these might be the reviews that hits the most bottlenecks and would benefit the most.
+When specified, all PRs that touch the file paths owned by these teams will get a suggested reviewers GitHub comment from FlexReview. Since these directories are managed by Codeowners, FlexReview will only suggest valid reviewers based on the Codeowners file.
 
-When specified, all PRs that touch these file paths will get a suggested reviewers GitHub comment from FlexReview. Since these directories are managed by Codeowners, FlexReview will only suggest valid reviewers based on the Codeowners file, and provide a status check. You can ignore the status check for now.
-
-This would be a good opportunity to start educating the team about how FlexReview works and how to use it. You can continue using it in `manual` mode where the reviewers are suggested as comments so that the author can decide whether to add them to the list of reviewers.
+This would be a good opportunity to start educating the team about how FlexReview works and how to use it.&#x20;
 
 #### Expanding code ownership by one-level
 
@@ -55,10 +53,12 @@ At this stage, FlexReview will start handling approval requirement, and introduc
 
 Once you have tested this with a few PRs, you can expand this further, and edit the `CODEOWNERS` file to all of `eng` for this sub-directory and continue testing it.
 
-If you have chosen a good sub-directory / project to start with, it’s likely that the developers are now familiar with how FlexReview works and comfortable with the idea of flexible reviews and expert reviewers. You can continue expanding the same way for additional sub-directories or onboarding everyone together.
+If you have chosen a good team / project to start with, it’s likely that the developers are now familiar with how FlexReview works and comfortable with the idea of flexible reviews and expert reviewers. You can continue expanding the same way for additional sub-directories or onboarding everyone together.
+
+### Compliance
+
+Not all code paths are the same. As you are relaxing the requirements for code review, you can still require some security senstive code paths to have strict ownership. As a rule of thumb, this should not represent more than 10% of your code base. As a cultural shift, you can internally define a process for teams to submit a request with clear reasoning that certain code paths should be gated. Based on that information, you can make a judgement call on where strict ownership is still needed.
 
 ### Final steps
 
 At this point, reviewers were automatically or manually assigned to each PR, replacing the default reviewers / teams assigned by GitHub. To skip the auto-assignment of GitHub reviewers completely, you can rename the CODEOWNERS file and update the path of that file in the FlexReview configurations.
-
-You can now also make the FlexReview status check required in GitHub branch protection settings.

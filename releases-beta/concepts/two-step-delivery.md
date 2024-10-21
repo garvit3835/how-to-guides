@@ -4,7 +4,7 @@ In many software companies with cloud based infrastructure, releases and deploym
 
 In a two-step delivery workflow we create a build, and then deploy that build to an environment, or more appropriately:
 
-* **Cutting a release**: Cutting a release is an act of snapshotting your mainline (trunk) by picking a commit SHA, thereby creating a release candidate. The process of cutting a release defines an intent to deploy the software to production. After cutting a release, it may be deployed to various pre-production environments (sandbox, staging, etc) for validation. During this process, any critical bugs identified may also be fixed and cherry-picked to create additional release candidates.
+* **Cutting a release**: Cutting a release is an act of snapshotting your mainline (trunk) by picking a commit SHA, thereby creating a release candidate. In this process, you build the artifacts that will be then used to deploy. The advantage is to build this once and deploy the same artifacts to all environments ensuring that you are testing the same images in all environments. After cutting a release, it may be deployed to various pre-production environments (sandbox, staging, etc) for validation. During this process, any critical bugs identified may also be fixed and cherry-picked to create additional release candidates.
 * **Deployment**: Once a release candidate is validated in pre-production environments, it is then deployed to production using the same build artifacts.
 
 That means, we build once during the process of cutting a release, and then those build artifacts are then deployed to all environments.

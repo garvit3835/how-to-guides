@@ -12,9 +12,15 @@ Read our launch post about why we built FlexReview: [https://www.aviator.co/blog
 
 An alternative to CODEOWNERS for faster code review cycles.
 
-FlexReview introduces flexibility to your code review process by understanding the nuances of every code change and every reviewer. Instead of defining a static `CODEOWNERS` file, it analyses the history of code review patterns in your repository to calculate an expert score for every file and every developer. It uses this score along with reviewer availability, reviewer workloads, and the complexity of code changes to determine the right reviewers.
+FlexReview introduces flexibility to your code review process by understanding the nuances of every code change and every reviewer. It find the right reviewers based on the `CODEOWNERS` and the context. For the context part, it analyses the history of code review patterns in your repository to calculate an expert score for every file and every developer. It uses this score along with reviewer availability, reviewer workloads, and the complexity of code changes to determine the right reviewers.
 
 {% embed url="https://www.youtube.com/watch?v=jFkKZUSrEvA" %}
+
+## FlexReview Teams
+
+Teams are the core part of the FlexReview architecture. The code collaboration happens in teams, and ownership is also typically defined at team level.
+
+Using FlexReview Teams, each team (or a rolled up group of teams) can define review requirements and configure automated rules. This way, we build an agreement between the author and the reviewer to optimize the code review workflow.
 
 ## Why FlexReview
 
@@ -44,7 +50,7 @@ The key challenge with the codeowners feature is that it tries to define ownersh
 
 ## How it works
 
-FlexReview works directly from your GitHub interface. It connects with your GitHub repository as the Aviator app and analyzes past code review patterns. Once analysis is complete, it can start suggesting reviewers, validate code approval requirements, and track SLOs. It can either work alongside an existing `CODEOWNERS` file or completely replace it.
+FlexReview works directly from your GitHub interface. It connects with your GitHub repository as the Aviator app and analyzes past code review patterns. Once analysis is complete, it can start suggesting reviewers, validate code approval requirements, and track SLOs. It works alongside an existing `CODEOWNERS` file, but you can remove fine-grained code review responsibilities in favor of more high level ownership.
 
 FlexReview has four major components:
 
@@ -63,6 +69,8 @@ Establish a Service Level Objective (SLO) for code reviews across your organizat
 ### AttentionSet for PR management
 
 Inspired by [<mark style="color:blue;">Gerrit</mark>](https://gerrit-review.googlesource.com/Documentation/user-attention-set.html), AttentionSet helps you stay on top of your pull requests by tracking PRs awaiting your action, passing attention to others without nagging, and identifying PRs that are getting stale.
+
+You can also view AttentionSet for teams to track what changes are currently blocking our team.
 
 ## Future work
 

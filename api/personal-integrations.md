@@ -1,3 +1,7 @@
+---
+icon: slack
+---
+
 # Slack Integration Guide
 
 With the Slack integration, you can receive notifications about various Aviator events directly in Slack. Follow this guide to set up and customize your notifications.'
@@ -12,7 +16,7 @@ To set up the Aviator Slack integration:
 2. If you haven't connected Slack yet, click "Connect to Slack" and follow the prompts.
 3. Once connected, notifications for Aviator events will start appearing in your selected Slack channel.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.50.06 PM.png" alt="" width="563"><figcaption><p>Initial setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-25 at 10.50.06 PM.png" alt="" width="563"><figcaption><p>Initial setup</p></figcaption></figure>
 
 ## Customizing the notification channel
 
@@ -24,13 +28,13 @@ To change the channel where notifications appear:
 2. Open the channel settings by clicking on the channel name in the Slack header or through the top righ menu and click: `Edit settings`.
 3. In the settings, go to `Integrations > Add App`.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.58.53 PM (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-25 at 10.58.53 PM (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 4. Search for the “Aviator” app and click `Add app` to add it to the selected channel.
 5. Return to `Settings > Workspace > Integrations` in Aviator, copy the Slack channel name (without the `#` symbol), replace the old channel name, and save the changes.
 6. Now you can test the setup by sending a dummy notification.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.53.57 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-25 at 10.53.57 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ## Customizing Notifications
 
@@ -42,7 +46,7 @@ Aviator supports two types of notifications: **Channel Notifications** and **Per
 
 After setting up the Slack integration, you can choose which event notifications you want to receive in your channel. Some default notifications are already enabled.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.38.51 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-25 at 10.38.51 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 You can subscribe to notifications for the following events:
 
@@ -64,7 +68,7 @@ In addition to the channel notifications, all Aviator users can set up and custo
 You should also associate your GitHub handle with your Aviator user account from the same Integrations page for the Slack notifications to work.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-25 at 10.39.02 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-25 at 10.39.02 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 Similar to channel notifications, you can subscribe to the following personal notification events:
 
